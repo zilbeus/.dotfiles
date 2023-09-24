@@ -2,14 +2,14 @@
 
 sxhkd &
 picom --config /home/zilq/.config/picom/picom.conf &
-polybar main &
+eww open top_bar &
 
 #bspc wm --reorder-monitors DisplayPort-0 HDMI-A-0 DisplayPort-1
 bspc monitor DisplayPort-0 -d 2
 bspc monitor DisplayPort-1 -d 1
 bspc monitor HDMI-A-1 -d 3 4
 
-bspc config border_width         4
+bspc config border_width        2
 bspc config window_gap          30
 
 bspc config split_ratio          0.5
