@@ -38,4 +38,7 @@ cursor:
     #env:
   #  WINIT_X11_SCALE_FACTOR: "1.0"
 
+key_bindings:
+  - { key: V, mods: Control|Alt, action: ToggleViMode }
+
 live_config_reload: true
