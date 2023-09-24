@@ -33,6 +33,11 @@ XF86AudioMute
 super + ctrl + Escape
   /home/zilq/.config/rofi/powermenu/powermenu.sh
 
+# change keyboard layout
+
+alt + @space
+  /home/zilq/bin/update_kbmap.sh
+
 #
 # bspwm hotkeys
 #
@@ -100,8 +105,11 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
+super + shift + {1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+super + {1-9,0}
+      /home/zilq/bin/set_workspace.sh '^{1-9,10}'
 
 #
 # preselect
