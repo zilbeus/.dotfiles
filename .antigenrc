@@ -1,0 +1,25 @@
+# Load the oh-my-zsh's library
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+    # Bundles from the default repo (robbyrussell's oh-my-zsh)
+    git
+
+    # Fish-like auto suggestions
+    zsh-users/zsh-autosuggestions
+
+    # Extra zsh completions
+    zsh-users/zsh-completions
+    
+    # Syntax highlighting bundle
+    zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+
+antigen bundle /home/z1lq/zsh-themes z1lq.zsh-theme --no-local-clone
+
+# Set zsh theme
+# antigen theme gallois
+antigen theme z1lq
+
+# Tell antigen that you're done
+antigen apply
