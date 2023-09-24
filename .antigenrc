@@ -15,11 +15,11 @@ antigen bundles <<EOBUNDLES
     zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
-#antigen bundle /home/zilq/zsh-themes z1lq.zsh-theme --no-local-clone
+antigen bundle /home/zilq/zsh-themes zilq.zsh-theme --no-local-clone
 
 # Set zsh theme
-#antigen theme z1lq
-antigen theme romkatv/powerlevel10k
+#antigen theme darkblood
+antigen theme zilq
 
 # Tell antigen that you're done
 antigen apply
