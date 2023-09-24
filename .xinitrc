@@ -3,9 +3,11 @@
 xset s off -dpms
 WINIT_HIDPI_FACTOR=1
 xrdb -merge ~/.Xresources
+exec /usr/bin/bspwm &
+conky &
 xsetroot -cursor_name left_ptr
 redshift &
 setxkbmap -option grp:alt_space_toggle us,ee,ru
 emacs --daemon &
 /usr/libexec/xfce-polkit &
-exec /usr/bin/bspwm
+
