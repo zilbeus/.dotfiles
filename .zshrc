@@ -14,18 +14,20 @@ zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
+TERM=xterm-256color
 # Aliases
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
+alias ls='exa -la --icons --header --git --time-style=long-iso'
+alias lsg='exa -la --icons --header --git --time-style=long-iso --grid'
 alias ip='ip -color=auto'
 alias bat='bat --paging=never'
 alias vg='vagrant'
 alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cat='bat'
 
 export PAGER='most'
-
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
