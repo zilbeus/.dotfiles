@@ -6,7 +6,7 @@ xrdb -merge ~/.Xresources
 conky &
 xsetroot -cursor_name left_ptr
 redshift &
-setxkbmap -option grp:alt_space_toggle us,ee,ru
+setxkbmap -layout us
 emacs --daemon &
 /usr/libexec/xfce-polkit &
 dunst &
