@@ -16,7 +16,7 @@ window {
   transparency:                   "real";
   background-color:               @bg;
   text-color:                     @fg;
-	border:							0px 0px 0px 0px;
+	border:							2px 2px 2px 2px;
 	border-color:					          @ac;
   border-radius:                  0px;
 	width:							            800px;
@@ -34,9 +34,9 @@ prompt {
 }
 
 entry {
-    background-color:               @hibg;
-    text-color:                     #9aa5ce;
-    placeholder-color:              #9aa5ce;
+    background-color:               #1e1e1e;
+    text-color:                     #ffffff;
+    placeholder-color:              #535353;
     expand:                         true;
     placeholder:                    "Search...";
 	  padding: 						            20px;
@@ -45,12 +45,12 @@ entry {
 
 inputbar {
 	children: 						[ prompt, entry ];
-    background-color:               #62658f;
+    background-color:               #535353;
     text-color:                     @fg;
     expand:                         false;
 	border:							0px;
     border-radius:                  0px;
-	border-color:					#62658f;
+	border-color:					#ffffff;
     margin:                         0px;
     padding:                        0px;
 }
@@ -98,21 +98,27 @@ element-text {
     vertical-align:                 0.5;
     margin:                         0px 2.5px 0px 2.5px;
     background-color:               @bg;
-    text-color:                     #9aa5ce;
+    text-color:                     #ffffff;
 }
 
 element selected {
-    background-color:               @hibg;
+    background-color:               @bg;
     text-color:                     @fga;
-	  border:							0px 0px 0px 0px;
+	  border:							0px 0px 0px 4px;
     border-radius:                  0px;
-    border-color:                  	@ac;
+    border-color:                  	#fcb44c;
 }
 
 element-text selected {
-  background-color: @hibg;
+  background-color: @bg;
+  text-color:       #fcb44c;
 }
 
 element-icon selected {
-  background-color: @hibg;
+  background-color: @bg;
 }
+
+
+
+
+

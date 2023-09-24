@@ -4,13 +4,10 @@
 
 # terminal emulator
 super + Return
-	emacsclient -c -e '(vterm)' -a ""
-
-super + ctrl + Return
-        alacritty
+	alacritty
 
 # program launcher
-super + @space
+alt + @space
 	/home/zilq/.config/rofi/bin/launcher.sh
 
 # make sxhkd reload its configuration files:

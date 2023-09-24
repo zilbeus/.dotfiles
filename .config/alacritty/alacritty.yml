@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/color_schemes.yml
+    - ~/.alacritty-colorscheme/themes/hyper.yaml
 
 window:
   dynamic_title: true

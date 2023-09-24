@@ -7,10 +7,11 @@ radius = 0
 background = ${colors.bar_bg}
 foreground = ${colors.foreground}
 
-line-size = 0
+underline-size = 5
+underline-color = #ffffff
 
-border-size = 12px
-border-color = ${colors.bar_bg}
+border-bottom-size = 2
+border-color = ${colors.border}
 
 padding-left = 0
 padding-right = 0
@@ -44,17 +45,13 @@ enable-ipc = true
 [module/xworkspaces]
 type = internal/xworkspaces
 
-format-background = ${colors.block_bg}
-label-background = ${colors.block_bg}
 label-active = 
-label-active-background = ${colors.workspace_icon_fg}
-label-active-foreground = ${colors.block_bg}
+label-active-foreground = ${colors.fg_module_glyph_yellow}
 ;label-active-underline= ${colors.primary}
 label-active-padding = 15px
 
 label-occupied = 綠
 label-occupied-foreground = ${colors.workspace_icon_fg}
-label-occupied-background = ${colors.block_bg}
 label-occupied-padding = 15px
 
 label-urgent = %name%
@@ -63,18 +60,15 @@ label-urgent-padding = 15px
 
 label-empty = 祿
 label-empty-foreground = ${colors.fg_empty_workspace}
-label-empty-background = ${colors.block_bg}
 label-empty-padding = 15px
 
 [module/xwindow]
 type = internal/xwindow
-format-background = ${colors.block_bg}
 format-prefix-padding = 15px
 format-prefix = "缾"
-format-prefix-background = ${colors.block_icon_bg}
 format-prefix-foreground = ${colors.block_icon_fg}
 label = %title:0:40:...%
-label-padding = 15px
+label-padding = 5px
 ;label-foreground = ${colors.fg_selected_window}
 
 [module/filesystem]
@@ -95,12 +89,10 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 
 label-volume = "墳"
-label-volume-background = ${colors.block_icon_bg}
 label-volume-foreground = ${colors.block_icon_switch_on_fg}
 
 label-muted = "ﱝ"
 label-muted-foreground = ${colors.block_icon_switch_off_fg}
-label-muted-background = ${colors.block_icon_bg}
 format-volume-prefix-padding = 15px
 format-muted-prefix-padding = 15px
 label-volume-padding = 15px
@@ -113,7 +105,6 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = ""
-format-prefix-background = ${colors.block_icon_bg}
 format-prefix-foreground = ${colors.block_icon_fg}
 label-layout = %layout%
 
@@ -121,31 +112,26 @@ label-indicator-on-capslock-padding = 15px
 label-indicator-on-capslock = ""
 label-indicator-on-capslock-background = ${colors.bg_xkb_indicator}
 label-indicator-on-capslock-foreground = ${colors.fg_xkb_indicator}
-format-background = ${colors.block_bg}
-format-prefix-padding = 15px
-label-layout-padding = 15px
+format-prefix-padding = 5px
+label-layout-padding = 5px
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = ""
 format-prefix-foreground = ${colors.block_icon_fg}
-format-prefix-background = ${colors.block_icon_bg}
-format-prefix-padding = 15px
+format-prefix-padding = 5px
 label = %gb_used%
-label-background = ${colors.block_bg}
-label-padding = 15px
+label-padding = 5px
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = ""
-format-prefix-background = ${colors.block_icon_bg}
 format-prefix-foreground = ${colors.block_icon_fg}
 format-prefix-padding = 15px
 label = %percentage:2%%
-label-background = ${colors.block_bg}
-label-padding = 15px
+label-padding = 5px
 
 [network-base]
 type = internal/network
@@ -153,17 +139,12 @@ interval = 5
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 label-disconnected = n/a 
-format-connected-prefix-background = ${colors.fg_module_glyph_green}
-format-disconnected-prefix-background = ${colors.fg_module_glyph_red}
 format-connected-prefix-foreground = ${colors.block_bg}
 format-disconnected-prefix-foreground = ${colors.block_bg}
-format-connected-background = ${colors.block_bg}
 format-connected-prefix-padding = 15px
 format-disconnected-prefix-padding = 15px
 label-connected-padding = 15px
 label-disconnected-padding = 15px
-label-connected-background = ${colors.block_icon_bg}
-label-disconnected-background = ${colors.block_icon_bg}
 label-connected-foreground = ${colors.block_icon_switch_on_fg}
 label-disconnected-foreground = ${colors.fg_module_glyph_red}
 format-connected-offset = -20px
@@ -191,12 +172,10 @@ date = %H:%M
 date-alt = %Y-%m-%d %H:%M:%S
 
 format-prefix = ""
-format-prefix-background = ${colors.block_icon_bg}
 format-prefix-foreground = ${colors.block_icon_fg}
 label = %date%
 label-foreground = ${colors.foreground}
-format-background = ${colors.block_bg}
-format-prefix-padding = 15px
+format-prefix-padding = 5px
 label-padding = 15px
 
 [module/backlight]
@@ -215,7 +194,6 @@ format = <label>
 label-padding = 15px
 label = "%output%"
 ;label-foreground = ${colors.block_icon_fg}
-label-background = ${colors.block_icon_bg}
 label-fail = ""
 label-fail-foreground = ${colors.disabled}
 label-fail-background = ${colors.block_icon_bg}
@@ -228,9 +206,7 @@ format = <label>
 format-fail = <label-fail>
 label = ""
 label-fail = ""
-label-background = ${colors.block_icon_bg}
 label-foreground = ${colors.block_icon_switch_on_fg}
-label-fail-background = ${colors.block_icon_bg}
 label-fail-foreground = ${colors.disabled}
 label-padding = 15px
 label-fail-padding = 15px
@@ -240,11 +216,9 @@ format-fail-offset = -20px
 [module/spotify]
 type = custom/script
 interval = 1
-format-background = ${colors.block_bg}
 format-prefix = "ﱘ"
-format-prefix-background = ${colors.block_icon_bg}
 format-prefix-foreground = ${colors.block_icon_fg}
-format-prefix-padding = 15px
+format-prefix-padding = 5px
 format = <label>
 exec = python /home/zilq/tools/polybar_module_scripts/polybar-spotify/spotify_status.py -f '{song} - {artist}' -t 32
 label-padding = 15px
@@ -255,7 +229,6 @@ label-padding = 15px
 
 [module/weather]
 type = custom/script
-format-background = ${colors.block_bg}
 format-padding = 15px
 exec = /home/zilq/tools/polybar_module_scripts/weather-polybar-plugin/weather-plugin.sh
 tail = false
@@ -266,28 +239,23 @@ type = custom/text
 content = ** \\\\ ﮊ // **
 content-foreground = ${colors.fg_module_glyph_red}
 content-padding = 15px
-content-background = ${colors.block_icon_bg}
 
 [module/downspeed]
 type = internal/network
 interface-type = wired
 format-connected-prefix = ﯲ
-format-connected-prefix-padding = 20px
+format-connected-prefix-padding = 5px
 format-connected-prefix-foreground = ${colors.fg_module_glyph_green}
-format-connected-prefix-background = ${colors.block_icon_bg}
 label-connected = %downspeed:9%
-format-connected-background = ${colors.block_bg}
 label-connected-padding-right = 15px
 
 [module/upspeed]
 type = internal/network
 interface-type = wired
 format-connected-prefix = ﯴ
-format-connected-prefix-padding = 20px
+format-connected-prefix-padding = 5px
 format-connected-prefix-foreground = ${colors.block_icon_fg}
-format-connected-prefix-background = ${colors.block_icon_bg}
 label-connected = %upspeed:9%
-format-connected-background = ${colors.block_bg}
 label-connected-padding-right = 15px
 
 [settings]

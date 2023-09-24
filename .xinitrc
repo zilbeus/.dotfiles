@@ -5,5 +5,7 @@ WINIT_HIDPI_FACTOR=1
 xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
 redshift &
-setxkbmap -option grp:win_space_toggle us,ee,ru
+setxkbmap -option grp:alt_space_toggle us,ee,ru
+emacs --daemon &
+/usr/libexec/xfce-polkit &
 exec /usr/bin/bspwm
