@@ -1,0 +1,41 @@
+import:
+  - ~/.config/alacritty/color_schemes.yml
+
+window:
+  dynamic_title: true
+  padding:
+    x: 4
+    y: 4
+
+scrolling:
+  history: 10000
+
+font:
+  normal:
+    family: 'JetBrainsMono Nerd Font Mono'
+    style: Bold
+  size: 13
+
+colors:
+  cursor:
+    text: '0x32344a'
+    cursor: '0xe0af68'
+  selection:
+    text: '0x32344a'
+    background: '0xf7768e'
+
+selection:
+  save_to_clipboard: true
+
+cursor:
+  style:
+    shape: Block
+    blinking: Always
+  blink_interval: 750
+  unfocused_hollow: true
+  #thickness: 1.0
+
+env:
+  WINIT_X11_SCALE_FACTOR: "1.0"
+
+live_config_reload: true
