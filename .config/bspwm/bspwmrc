@@ -2,18 +2,19 @@
 
 sxhkd &
 picom --config /home/zilq/.config/picom/picom.conf &
-feh --bg-fill /home/zilq/Downloads/wallhaven-lmxmxy.png &
-xsetroot -cursor_name left_ptr &
-setxkbmap -option grp:win_space_toggle us,ee,ru &
-redshift &
-polybar &
+polybar main &
 
-bspc monitor -d      
+bspc wm --reorder-monitors DisplayPort-0 HDMI-A-0 DisplayPort-1
+bspc monitor DisplayPort-0 -d 1 2
+bspc monitor DisplayPort-1 -d 5 6
+bspc monitor HDMI-A-0 -d 3 4
 
-bspc config border_width         3
-bspc config window_gap          12
+bspc config border_width         5
+bspc config window_gap          20
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focused_border_color "#ff9e64"
+bspc config active_border_color "#565f89"
+

@@ -14,7 +14,7 @@ font:
   normal:
     family: 'JetBrainsMono Nerd Font Mono'
     style: Bold
-  size: 13
+  size: 11
 
 colors:
   cursor:
@@ -35,7 +35,7 @@ cursor:
   unfocused_hollow: true
   #thickness: 1.0
 
-env:
-  WINIT_X11_SCALE_FACTOR: "1.0"
+    #env:
+  #  WINIT_X11_SCALE_FACTOR: "1.0"
 
 live_config_reload: true

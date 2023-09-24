@@ -61,7 +61,7 @@ set cursorline                              " highlight current line
 syntax on				                            " syntax highlighting
 let base16colorspace=256
 set termguicolors
-let g:tokyonight_style = "storm"
+let g:tokyonight_style = "night"
 
 let g:indent_blankline_char = '¦'
 colorscheme tokyonight

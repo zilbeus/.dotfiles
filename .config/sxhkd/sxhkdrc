@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 alt + @space
-	/home/zilq/.config/rofi/launchers/colorful/launcher.sh
+	/home/zilq/.config/rofi/bin/launcher.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
