@@ -1,5 +1,7 @@
 source $HOME/antigen.zsh
 source $HOME/.antigenrc
+source /usr/share/fzf/shell/key-bindings.zsh
+source /usr/share/fzf/shell/completion.zsh
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -25,7 +27,12 @@ alias bat='bat --paging=never'
 alias vg='vagrant'
 alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cat='bat'
+alias vp='fd -t file -t d . /home/zilq/projects | fzf --print0 | xargs -0 -o nvim'
+alias vc='fd -t file -t d . /home/zilq/.config | fzf --print0 | xargs -0 -o nvim'
 
+export EDITOR='/usr/bin/nvim'
+export FZF_ALT_C_COMMAND='(fd -t d . /home/zilq/)'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border sharp --margin 1'
 export PAGER='less -R --use-color -Dd+r -Du+b'
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export NVM_DIR="$HOME/.config/nvm"
@@ -37,3 +44,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export PATH=$PATH:/home/zilq/.spicetify:/home/zilq/bin:/home/zilq/.local/bin
+eval "$(zoxide init zsh)"
