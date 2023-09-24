@@ -1,15 +1,29 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ayu-theme/ayu-vim'
-Plug 'sainnhe/sonokai'
-Plug 'ghifarit53/tokyonight-vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
-"Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
+Plug 'mhinz/vim-startify'
+Plug 'simrat39/symbols-outline.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'folke/trouble.nvim', {'branch': 'main'}
+Plug 'folke/lsp-colors.nvim', {'branch': 'main'}
+Plug 'williamboman/nvim-lsp-installer', {'branch': 'main'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'sindrets/diffview.nvim', {'branch': 'main'}
+Plug 'marko-cerovac/material.nvim', {'branch': 'main'}
+Plug 'folke/which-key.nvim', {'branch': 'main'}
+Plug 'winston0410/cmd-parser.nvim'
+Plug 'winston0410/range-highlight.nvim'
+Plug 'hrsh7th/cmp-nvim-lsp', {'branch': 'main'}
+Plug 'hrsh7th/cmp-buffer', {'branch': 'main'}
+Plug 'hrsh7th/cmp-path', {'branch': 'main'}
+Plug 'hrsh7th/cmp-cmdline', {'branch': 'main'}
+Plug 'hrsh7th/nvim-cmp', {'branch': 'main'}
 
 call plug#end()
 
@@ -30,6 +44,7 @@ set mouse=v				                          " middle-click paste with mouse
 set hlsearch				                        " highlight search results
 set number				                          " add line numbers
 set wildmode=longest,list		                "get bash-like tab completions
+set noshowmode
 
 " SPLITS
 set splitbelow
@@ -46,15 +61,94 @@ set cursorline                              " highlight current line
 syntax on				                            " syntax highlighting
 let base16colorspace=256
 set termguicolors
-let g:tokyonight_style = 'night'
-let g:tokyonight_enable_italic = 1
-colorscheme tokyonight
-hi CursorLineNr guifg=goldenrod2
-
-set guicursor=a:hor20-Cursor
-
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tokyonight'
+let g:tokyonight_style = "storm"
 
 let g:indent_blankline_char = '¦'
+colorscheme tokyonight
+
+hi CursorLineNr guifg=goldenrod2
+set guicursor=a:hor20-Cursor
+
+lua << EOF
+require'lualine'.setup {
+  options = {
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+    theme = 'tokyonight'
+  },
+  sections = {
+    lualine_a = {
+      {
+        'mode',
+        icons_enabled = true,
+        icon = ''
+      }
+    },
+    lualine_b = {'filename', 'diff', 'diagnostics'},
+    lualine_c = {'branch'},
+    lualine_x = {'encoding'},
+    lualine_y = {'filetype'},
+    lualine_z = {
+      {
+        'location',
+        icons_enabled = true,
+        icon = ''
+      }
+    }
+  }
+}
+EOF
+
+lua << EOF
+require'gitsigns'.setup {
+  numhl = true,
+  linehl = true,
+  current_line_blame = true
+}
+EOF
+
+lua << EOF
+require'trouble'.setup {}
+EOF
+
+lua << EOF
+vim.g.symbols_outline = {
+  show_numbers = true
+}
+EOF
+
+lua << EOF
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  server:setup(opts)
+end)
+EOF
+
+lua << EOF
+require('indent_blankline').setup {
+  show_current_context = true,
+  show_current_context_start = true
+}
+EOF
+
+lua << EOF
+require('which-key').setup {}
+EOF
+
+lua << EOF
+require('range-highlight').setup {}
+EOF
+
+lua << EOF
+require('nvim-treesitter.configs').setup {
+  highlight = {
+    enable = true
+  }
+}
+EOF
+
+lua << EOF
+require('cmp').setup {}
+EOF
 
