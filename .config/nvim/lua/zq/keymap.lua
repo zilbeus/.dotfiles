@@ -10,7 +10,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 
 -- DIAGNOSTICS
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set('n', '<leader>q', "<cmd>Trouble<cr>", { desc = "Open diagnostics list" })
 
 -- HALF PAGE NAVIGATION
 vim.keymap.set('n', '<C-d>', '<C-d>zz')

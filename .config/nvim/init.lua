@@ -31,8 +31,21 @@ require("lazy").setup({
 		"hrsh7th/nvim-cmp",
 		dependencies = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" },
 	},
-
-	{ "folke/which-key.nvim", opts = {} },
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = { "rafamadriz/friendly-snippets" }
+	},
+	{
+		"folke/which-key.nvim",
+		opts = {
+			window = {
+				border = "single"
+			},
+			layout = {
+				align = "center"
+			}
+		}
+	},
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -48,11 +61,29 @@ require("lazy").setup({
 
 	{
 		"projekt0n/github-nvim-theme",
+		lazy = false,
 		priority = 1000,
 		config = function()
-			require("github-theme").setup({})
-			vim.cmd("colorscheme github_dark_high_contrast")
 		end,
+	},
+
+	{
+		"p00f/alabaster.nvim",
+		priority = 1000,
+		config = function()
+		end,
+	},
+
+	{
+		"mcchrish/zenbones.nvim",
+		dependencies = {
+			"rktjmp/lush.nvim"
+		},
+		opts = {
+			transparent_background = true,
+		},
+		config = function()
+		end
 	},
 
 	{
@@ -138,8 +169,8 @@ require("lazy").setup({
 			enhanced_diff_hl = true,
 		},
 		config = function()
-			vim.opt.fillchars = vim.opt.fillchars + 'diff:╱' -- Kitty terminal could solve this issue
-			-- vim.opt.fillchars = vim.opt.fillchars + 'diff:-'
+			-- vim.opt.fillchars = vim.opt.fillchars + 'diff:╱' -- Kitty terminal could solve this issue
+			vim.opt.fillchars = vim.opt.fillchars + 'diff:-'
 		end,
 	},
 
@@ -150,6 +181,78 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
+	{
+		"fatih/vim-go",
+		config = function()
+		end,
+	},
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+		end,
+	},
+	{
+		"b0o/incline.nvim",
+		config = function()
+			require('incline').setup {
+				window = {
+					margin = {
+						vertical = 0,
+						horizontal = 1,
+					},
+					padding = 0,
+				},
+				hide = {
+					cursorline = false,
+					focused_win = false,
+					only_win = true,
+				},
+				render = function(props)
+					local fname = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
+					local modified_glyph = {}
+					if vim.api.nvim_buf_get_option(props.buf, "modified") then
+						modified_glyph = vim.tbl_extend('force', { '[+] ' }, {})
+					end
+					if props.focused == true then
+						return {
+							{
+								{ " " },
+								fname,
+								{ " " },
+								modified_glyph,
+								guibg = "#292929",
+								guifg = "#eda601",
+							}
+						}
+					else
+						return {
+							{
+								{ " " },
+								fname,
+								{ " " },
+								modified_glyph,
+								guibg = "#292929",
+								guifg = "#7a7a7a",
+							}
+						}
+					end
+				end
+			}
+		end
+	},
+	{
+		"creativenull/efmls-configs-nvim",
+		dependencies = { "neovim/nvim-lspconfig" }
 	},
 }, {})
 
@@ -258,6 +361,12 @@ local on_attach = function(_, bufnr)
 	end, { desc = 'Format current buffer with LSP' })
 
 	nmap('<leader>f', vim.lsp.buf.format, '[F]ormat buffer')
+	nmap('<leader>ob', ":Telescope file_browser path=%:p:h select_buffer=true<CR>", '[O]pen File [B]rowser')
+	nmap('<leader>hr', ":Gitsigns reset_hunk<CR>", '[R]eset hunk')
+	nmap('<leader>hR', ":Gitsigns reset_buffer<CR>", '[R]eset buffer')
+	nmap('<leader>hp', ":Gitsigns preview_hunk<CR>", '[P]review hunk')
+	nmap('<leader>hb', ":Gitsigns toggle_current_line_blame<CR>", 'Show line [B]lame')
+	nmap('<leader>og', ":Git<CR>", '[O]pen [G]it status')
 end
 
 -- Enable the following language servers
@@ -389,5 +498,31 @@ require("telescope").setup {
 		}
 	}
 }
+
+require("telescope").load_extension "file_browser"
+require('nvim-ts-autotag').setup()
+require("luasnip.loaders.from_vscode").lazy_load()
+
+vim.diagnostic.config({
+	virtual_text = false,
+	signs = true,
+	underline = false,
+})
+local icons = {
+	[vim.diagnostic.severity.ERROR] = "☒",
+	[vim.diagnostic.severity.WARN] = "⚠",
+	[vim.diagnostic.severity.INFO] = "▣",
+	[vim.diagnostic.severity.HINT] = "◉",
+}
+do
+	vim.fn.sign_define("DiagnosticSignError",
+		{ text = icons[vim.diagnostic.severity.ERROR], texthl = "DiagnosticSignError" })
+	vim.fn.sign_define("DiagnosticSignWarn",
+		{ text = icons[vim.diagnostic.severity.WARN], texthl = "DiagnosticSignWarn" })
+	vim.fn.sign_define("DiagnosticSignInfo",
+		{ text = icons[vim.diagnostic.severity.INFO], texthl = "DiagnosticSignInfo" })
+	vim.fn.sign_define("DiagnosticSignHint",
+		{ text = icons[vim.diagnostic.severity.HINT], texthl = "DiagnosticSignHint" })
+end
 
 require("zq")
