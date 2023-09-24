@@ -89,12 +89,11 @@
 (setq blink-cursor-blinks -1)
 
 (setq org-hide-emphasis-markers t)
-(use-package! mixed-pitch
-  :hook (org-mode . mixed-pitch-mode))
+;(use-package! mixed-pitch
+;  :hook (org-mode . mixed-pitch-mode))
 
-(with-eval-after-load 'org-faces
-  (set-face-attribute 'org-drawer nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold)
-  (set-face-attribute 'org-special-keyword nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold)
-  (set-face-attribute 'org-property-value nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold))
-;(set-face-attribute 'org-drawer nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold :size 22)
-;(set-face-attribute 'org-special-keyword nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold :size 22)
+;Fondi seadistused, kui mixed pitch fonts on sisse lülitatud
+;(with-eval-after-load 'org-faces
+;  (set-face-attribute 'org-drawer nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold)
+;  (set-face-attribute 'org-special-keyword nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold)
+;  (set-face-attribute 'org-property-value nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold))

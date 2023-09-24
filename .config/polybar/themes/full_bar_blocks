@@ -1,0 +1,282 @@
+width = 100%
+height = 50px
+radius = 0
+
+; dpi = 96
+
+background = ${colors.bar_bg}
+foreground = ${colors.foreground}
+
+line-size = 0
+
+border-size = 12px
+border-color = ${colors.bar_bg}
+
+padding-left = 0
+padding-right = 0
+
+module-margin = 10px
+
+;separator = ::
+;separator-foreground = ${colors.disabled}
+
+font-0 = "JetBrains Mono NL:style=Bold:size=18;5"
+font-1 = "FontAwesome:style=Bold:size=22;6"
+font-2 = "JetBrainsMono Nerd Font Mono:style=Bold:size=29;7"
+
+modules-left = xworkspaces memory spotify random_skull
+modules-center = xwindow
+modules-right = weather xkeyboard updates eth pulseaudio date
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+; tray-position = right
+
+; wm-restack = generic
+; wm-restack = bspwm
+; wm-restack = i3
+
+; override-redirect = true
+
+[module/xworkspaces]
+type = internal/xworkspaces
+
+format-background = ${colors.block_bg}
+label-background = ${colors.block_bg}
+label-active = 
+label-active-background = ${colors.workspace_icon_fg}
+label-active-foreground = ${colors.block_bg}
+;label-active-underline= ${colors.primary}
+label-active-padding = 15px
+
+label-occupied = 綠
+label-occupied-foreground = ${colors.workspace_icon_fg}
+label-occupied-background = ${colors.block_bg}
+label-occupied-padding = 15px
+
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 15px
+
+label-empty = 祿
+label-empty-foreground = ${colors.fg_empty_workspace}
+label-empty-background = ${colors.block_bg}
+label-empty-padding = 15px
+
+[module/xwindow]
+type = internal/xwindow
+format-background = ${colors.block_bg}
+format-prefix-padding = 15px
+format-prefix = "缾"
+format-prefix-background = ${colors.block_icon_bg}
+format-prefix-foreground = ${colors.block_icon_fg}
+label = %title:0:50:...%
+label-padding = 15px
+;label-foreground = ${colors.fg_selected_window}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /home
+
+label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
+
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.disabled}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+
+label-volume = "墳"
+label-volume-background = ${colors.block_icon_bg}
+label-volume-foreground = ${colors.block_icon_switch_on_fg}
+
+label-muted = "ﱝ"
+label-muted-foreground = ${colors.block_icon_switch_off_fg}
+label-muted-background = ${colors.block_icon_bg}
+format-volume-prefix-padding = 15px
+format-muted-prefix-padding = 15px
+label-volume-padding = 15px
+label-muted-padding = 15px
+format-volume-offset = -20px
+format-muted-offset = -20px
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = ""
+format-prefix-background = ${colors.block_icon_bg}
+format-prefix-foreground = ${colors.block_icon_fg}
+label-layout = %layout%
+
+label-indicator-on-capslock-padding = 15px
+label-indicator-on-capslock = ""
+label-indicator-on-capslock-background = ${colors.bg_xkb_indicator}
+label-indicator-on-capslock-foreground = ${colors.fg_xkb_indicator}
+format-background = ${colors.block_bg}
+format-prefix-padding = 15px
+label-layout-padding = 15px
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = ""
+format-prefix-foreground = ${colors.block_icon_fg}
+format-prefix-background = ${colors.block_icon_bg}
+format-prefix-padding = 15px
+label = %gb_used%
+label-background = ${colors.block_bg}
+label-padding = 15px
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.fg_module_glyph}
+label = %percentage:2%%
+
+[network-base]
+type = internal/network
+interval = 5
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-disconnected = n/a 
+format-connected-prefix-background = ${colors.fg_module_glyph_green}
+format-disconnected-prefix-background = ${colors.fg_module_glyph_red}
+format-connected-prefix-foreground = ${colors.block_bg}
+format-disconnected-prefix-foreground = ${colors.block_bg}
+format-connected-background = ${colors.block_bg}
+format-connected-prefix-padding = 15px
+format-disconnected-prefix-padding = 15px
+label-connected-padding = 15px
+label-disconnected-padding = 15px
+label-connected-background = ${colors.block_icon_bg}
+label-disconnected-background = ${colors.block_icon_bg}
+label-connected-foreground = ${colors.block_icon_switch_on_fg}
+label-disconnected-foreground = ${colors.fg_module_glyph_red}
+format-connected-offset = -20px
+format-disconnected-offset = -20px
+
+[module/wlan]
+inherit = network-base
+interface-type = wireless
+format-connected-prefix = " "
+format-disconnected-prefix = " "
+label-connected = %essid%
+
+[module/eth]
+inherit = network-base
+interface-type = wired
+label-connected = ""
+label-disconnected = ""
+
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = %H:%M
+date-alt = %Y-%m-%d %H:%M:%S
+
+format-prefix = ""
+format-prefix-background = ${colors.block_icon_bg}
+format-prefix-foreground = ${colors.block_icon_fg}
+label = %date%
+label-foreground = ${colors.foreground}
+format-background = ${colors.block_bg}
+format-prefix-padding = 15px
+label-padding = 15px
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = AC
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${colors.fg_glyph_bat_charging}
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-0-foreground = ${colors.fg_module_glyph_red}
+ramp-capacity-1-foreground = ${colors.fg_module_glyph_red}
+ramp-capacity-2-foreground = ${colors.fg_module_glyph_green}
+ramp-capacity-3-foreground = ${colors.fg_module_glyph_green}
+ramp-capacity-4-foreground = ${colors.fg_module_glyph_green}
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format-prefix = " "
+format-prefix-foreground = ${colors.block_icon_fg}
+format-prefix-background = ${colors.block_icon_bg}
+
+[module/updates]
+type = custom/script
+;exec = "dnf check-update -q --refresh | sed 1,1d | wc -l"
+exec = "~/.config/polybar/check_update"
+interval = 3600
+format = <label>
+label-padding = 15px
+label = "%output%"
+;label-foreground = ${colors.block_icon_fg}
+label-background = ${colors.block_icon_bg}
+label-fail = ""
+label-fail-foreground = ${colors.disabled}
+label-fail-background = ${colors.block_icon_bg}
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-background = ${colors.block_bg}
+format-prefix = "ﱘ"
+format-prefix-background = ${colors.block_icon_bg}
+format-prefix-foreground = ${colors.block_icon_fg}
+format-prefix-padding = 15px
+format = <label>
+exec = python /home/zilq/tools/polybar_module_scripts/polybar-spotify/spotify_status.py -f '{song} - {artist}' -t 42
+label-padding = 15px
+;control players (optional)
+;click-left = playerctl --player=spotify play-pause 
+;click-right = playerctl --player=spotify next 
+;click-middle = playerctl --player=spotify previous 
+
+[module/weather]
+type = custom/script
+format-background = ${colors.block_bg}
+format-padding = 15px
+exec = /home/zilq/tools/polybar_module_scripts/weather-polybar-plugin/weather-plugin.sh
+tail = false
+interval = 960
+
+[module/random_skull]
+type = custom/text
+content = ** \\\ ﮊ // **
+content-foreground = ${colors.fg_module_glyph_red}
+content-padding = 15px
+content-background = ${colors.block_icon_bg}
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
+[global/wm]
+;margin-bottom = 0
+
+; vim:ft=dosini
