@@ -142,3 +142,12 @@ super + {Left,Down,Up,Right}
 # move a floating window
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -v {-40 0,0 40,0 -40,40 0}
+
+
+# applications
+super + n
+      dunstctl close
+
+
+
+
