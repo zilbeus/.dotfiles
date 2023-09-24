@@ -21,7 +21,8 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font Mono" :weight 'bold :size 22))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font Mono" :weight 'bold :size 22)
+      doom-variable-pitch-font (font-spec :family "Inter" :style "Regular" :size 22))
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
@@ -86,3 +87,14 @@
 
 (blink-cursor-mode 1)
 (setq blink-cursor-blinks -1)
+
+(setq org-hide-emphasis-markers t)
+(use-package! mixed-pitch
+  :hook (org-mode . mixed-pitch-mode))
+
+(with-eval-after-load 'org-faces
+  (set-face-attribute 'org-drawer nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold)
+  (set-face-attribute 'org-special-keyword nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold)
+  (set-face-attribute 'org-property-value nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold))
+;(set-face-attribute 'org-drawer nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold :size 22)
+;(set-face-attribute 'org-special-keyword nil :family "JetBrainsMono Nerd Font Mono" :weight 'bold :size 22)
