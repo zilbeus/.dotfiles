@@ -14,7 +14,7 @@ font:
   normal:
     family: 'JetBrainsMono Nerd Font Mono'
     style: Bold
-  size: 11
+  size: 12
 
 colors:
   cursor:
