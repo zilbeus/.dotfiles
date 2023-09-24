@@ -33,7 +33,7 @@ alias vg='vagrant'
 alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cat='bat'
 
-export PAGER='most'
+export PAGER='less -R --use-color -Dd+r -Du+b'
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -45,3 +45,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH=$PATH:/home/zilq/.spicetify
