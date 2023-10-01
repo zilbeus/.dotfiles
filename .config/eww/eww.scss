@@ -1,21 +1,34 @@
 *{
-    font-family: JetBrainsMono Nerd Font Mono;
-    font-size: 25px;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 23px;
     font-weight: bold;
-    color: #ffffff;
+    color: #ebebeb;
 }
 
 .bar {
     background-color: #000000;
     border-width: 2px;
     border-color: #565656;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .bar_glyph {
-    color: #fec43f;
-    font-size: 40px;
+    color: #c68a01;
+    font-size: 25px;
+    background-color: #513900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.glyph_val {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #1b1b1b;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .clock {
@@ -60,10 +73,11 @@ calendar:selected {
 
 .kb_glyph {
     color: #fec43f;
-    font-size: 45px;
+    font-size: 25px;
 }
 
 .unit_suffix {
+    padding-left: 5px;
     color: #565656;
 }
 
@@ -74,7 +88,7 @@ calendar:selected {
 
 .data_row_prefix {
     color: #fec43f;
-    font-size: 40px;
+    font-size: 23px;
 }
 
 .option_enabled {
@@ -86,21 +100,33 @@ calendar:selected {
 }
 
 .vol_glyph {
-    font-size: 40px;
+    padding-right: 5px;
+    font-size: 30px;
 }
 
 .quick_settings {
-    padding-left: 0px;
-    padding-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #1b1b1b;
+}
+
+.buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #1b1b1b;
 }
 
 .eth_glyph {
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .random_skull {
-    font-family: JetBrainsMono Nerd Font Mono;
-    font-size: 40px;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 25px;
     color: #ff5f59;
 }
 
@@ -109,21 +135,21 @@ calendar:selected {
 }
 
 .redshift_glyph {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .dnf_glyph {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .active_window_glyph {
     color: #fec43f;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .current_track_glyph {
     color: #fec43f;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .song_details {
@@ -136,7 +162,7 @@ calendar:selected {
 }
 
 .player_control_glpyh {
-    font-size: 40px;
+    font-size: 23px;
 }
 
 .cover_art {
@@ -145,7 +171,7 @@ calendar:selected {
 
 .player_controls {
     padding-top: 25px;
-    font-size: 40px;
+    font-size: 23px;
 }
 
 .player_controls_panel {
@@ -153,7 +179,7 @@ calendar:selected {
 }
 
 .player_controls_panel_button {
-    font-family: JetBrainsMono Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 70px;
 }
 
@@ -162,21 +188,36 @@ calendar:selected {
 }
 
 .launcher_glyph {
-    font-size: 45px;
+    background-color: #270000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-right: 20px;
+    padding-left: 10px;
+    font-size: 25px;
+}
+
+.workspaces {
+    background-color: #1b1b1b;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 20px;
 }
 
 .workspace_glyph {
     color: #565656;
-    font-size: 45px;
+    font-size: 25px;
 }
 
 .focused_workspace {
     color: #70b900;
-    font-size: 45px;
+    font-size: 25px;
 }
 
 .notification_glyph {
-    font-size: 45px;
+    margin-right: 8px;
+    font-size: 25px;
     color: #565656;
 }
 
@@ -295,7 +336,8 @@ calendar:selected {
 }
 
 .dashboard-glyph {
-    font-size: 45px;
+    margin-right: 8px;
+    font-size: 25px;
     color: #565656;
 }
 
@@ -338,6 +380,7 @@ calendar:selected {
 }
 
 .hide-windows-button {
-    font-size: 45px;
+    margin-right: 8px;
+    font-size: 25px;
     color: #565656;   
 }
