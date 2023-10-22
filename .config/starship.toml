@@ -1,0 +1,42 @@
+palette='zilq'
+format = '''
+[┌](bold lines)[\[](bold bracket)$directory[\]](bold bracket)$git_branch$fill$nodejs$java[─](bold lines)[\[](bold bracket)[\]](bold bracket)
+[└](bold lines)$character
+'''
+
+[character]
+success_symbol='[\[](bold bracket)[\$](bold char)[\]](bold bracket)'
+error_symbol='[\[](bold bracket)[\$](bold char)[\]](bold bracket)'
+
+[directory]
+format='[$path]($style)'
+style='bold dir'
+read_only='RO'
+
+[git_branch]
+format='[─](bold lines)[\[](bold bracket)[$branch(:$remote_branch)]($style)[\]](bold bracket)'
+style='bold git'
+
+[status]
+format='[$status]($style)'
+disabled=false
+
+[fill]
+symbol='─'
+style='bold lines'
+
+[java]
+format='[─](bold lines)[\[](bold bracket)[java](bold ver_key)[:](bold ver_sep)[(${version})](bold ver_val)[\]](bold bracket)'
+
+[nodejs]
+format='[─](bold lines)[\[](bold bracket)[nodejs](bold ver_key)[:](bold ver_sep)[(${version})](bold ver_val)[\]](bold bracket)'
+
+[palettes.zilq]
+lines='#565656'
+char='#c2c2c2'
+bracket='#565656'
+dir='#70b900'
+git='#c68a01'
+ver_key='#c68a01'
+ver_sep='#c2c2c2'
+ver_val='#858585'

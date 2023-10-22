@@ -45,3 +45,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH=$PATH:/home/zilq/.spicetify:/home/zilq/bin:/home/zilq/.local/bin
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
