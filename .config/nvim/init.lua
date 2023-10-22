@@ -507,6 +507,11 @@ vim.diagnostic.config({
 	virtual_text = false,
 	signs = true,
 	underline = false,
+	float = {
+		header = false,
+		border = 'rounded',
+		focusable = true,
+	}
 })
 local icons = {
 	[vim.diagnostic.severity.ERROR] = "☒",
