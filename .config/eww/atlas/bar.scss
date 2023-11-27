@@ -1,0 +1,386 @@
+*{
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 23px;
+    font-weight: bold;
+    color: #ebebeb;
+}
+
+.bar {
+    background-color: #000000;
+    border-width: 2px;
+    border-color: #565656;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bar_glyph {
+    color: #c68a01;
+    font-size: 25px;
+    background-color: #513900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.glyph_val {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #1b1b1b;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.clock {
+    margin-right: 15px;
+}
+
+.cal_wrapper {
+    padding: 20px;
+    background-color: #000000;
+    border-width: 2px;
+    border-color: #565656;
+}
+
+.cal {
+    background-color: #000000;
+}
+
+calendar.highlight {
+    color: #565656;
+    font-weight: bolder;
+}
+
+calendar.header {
+    color: #fec43f;
+    font-weight: bolder;
+}
+
+calendar:selected {
+    color: #fec43f;
+    font-weight: bolder;
+}
+
+.bar_underline {
+    padding-bottom: 2px;
+    background-color: #565656;
+}
+
+.outline {
+    padding: 2px;
+    background-color: #565656;
+}
+
+.kb_glyph {
+    color: #fec43f;
+    font-size: 25px;
+}
+
+.unit_suffix {
+    padding-left: 5px;
+    color: #565656;
+}
+
+.ram_stats {
+    background-color: #000000;
+    padding: 25px;
+}
+
+.data_row_prefix {
+    color: #fec43f;
+    font-size: 23px;
+}
+
+.option_enabled {
+    color: #70b900;
+}
+
+.option_disabled {
+    color: #565656;
+}
+
+.vol_glyph {
+    padding-right: 5px;
+    font-size: 30px;
+}
+
+.quick_settings {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #1b1b1b;
+}
+
+.buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #1b1b1b;
+}
+
+.eth_glyph {
+    font-size: 25px;
+}
+
+.random_skull {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 25px;
+    color: #ff5f59;
+}
+
+.red {
+    color: #ff5f59;
+}
+
+.redshift_glyph {
+    font-size: 25px;
+}
+
+.dnf_glyph {
+    font-size: 30px;
+}
+
+.active_window_glyph {
+    color: #fec43f;
+    font-size: 25px;
+}
+
+.current_track_glyph {
+    color: #fec43f;
+    font-size: 25px;
+}
+
+.song_details {
+    padding: 30px;
+    background-color: #000000;
+}
+
+.song_info_row_field {
+    color: #fec43f;
+}
+
+.player_control_glpyh {
+    font-size: 23px;
+}
+
+.cover_art {
+    padding-bottom: 50px;
+}
+
+.player_controls {
+    padding-top: 25px;
+    font-size: 23px;
+}
+
+.player_controls_panel {
+    background-color: #565656;
+}
+
+.player_controls_panel_button {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 70px;
+}
+
+.player_controls_panel_button:hover {
+    color: #565656;
+}
+
+.launcher_glyph {
+    background-color: #270000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-right: 20px;
+    padding-left: 10px;
+    font-size: 25px;
+}
+
+.workspaces {
+    background-color: #1b1b1b;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+
+.workspace_glyph {
+    color: #565656;
+    font-size: 25px;
+}
+
+.focused_workspace {
+    color: #70b900;
+    font-size: 25px;
+}
+
+.notification_glyph {
+    margin-right: 8px;
+    font-size: 25px;
+    color: #565656;
+}
+
+.notifications {
+    background-color: #000000;
+    padding: 25px;
+}
+
+.notification {
+    background-color: #1f1f1f;
+    padding-left: 15px;
+}
+
+.notification-icon {
+    font-size: 100px;
+    color: #fec43f;
+}
+
+.notification-message {
+    background-color: #1f1f1f;
+}
+
+.notification-app {
+    color: #565656;
+    font-size: 23px;
+}
+
+.notification-body {
+    font-size: 25px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+}
+
+.dashboard {
+    background-color: #000000;
+    padding: 25px;
+}
+
+.power-control-glyph {
+    background-color: #1f1f1f;
+}
+
+.lock-glyph {
+    font-size: 40px;
+}
+
+.sleep-glyph {
+    font-size: 65px;
+}
+
+.reboot-glyph {
+    font-size: 65px;
+}
+
+.power-off-glyph {
+    font-size: 40px;
+}
+
+.hover-test {
+    &:hover {
+        color: #fec43f;
+    }
+}
+
+.uptime {
+    background-color: #1f1f1f;
+    padding: 30px;
+
+    .text {
+        font-size: 40px;
+        color: #fec43f;
+    }
+
+    .time {
+        font-size: 40px;
+        color: #565656;
+    }
+}
+
+.updates {
+    background-color: #1f1f1f;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    .icon {
+        font-size: 120px;
+    }
+
+    .text {
+        font-size: 35px;
+    }
+}
+
+.updates-not-available {
+    background-color: #1f1f1f;
+
+    .icon {
+        color: #565656;
+    }
+
+    .text {
+        color: #565656;
+    }
+}
+
+.updates-available {
+    background-color: #1d3000;
+
+    .icon {
+        color: #70b900;
+    }
+
+    .text {
+        color: #70b900;
+    }
+}
+
+.dashboard-glyph {
+    margin-right: 8px;
+    font-size: 25px;
+    color: #565656;
+}
+
+.separator {
+    font-size: 30px;
+    color: #565656;
+}
+
+.left-separator {
+    margin-left: 5px;
+}
+
+.right-separator {
+    margin-right: 5px;
+}
+
+.weather {
+    background-color: #6b97e6;
+    padding: 25px;
+
+    .temp {
+        color: #1f66e5;
+        font-size: 50px;
+    }
+
+    .icon {
+        color: #1f66e5;
+        font-size: 80px;
+    }
+
+    .desc {
+        color: #1f66e5;
+        font-size: 35px;
+    }
+
+    .loc {
+        color: #1f66e5;
+        font-size: 23px;
+    }
+}
+
+.hide-windows-button {
+    margin-right: 8px;
+    font-size: 25px;
+    color: #565656;   
+}

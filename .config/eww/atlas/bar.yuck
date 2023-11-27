@@ -1,0 +1,399 @@
+(defpoll time :interval "5s" "date +%H:%M")
+(defpoll date_iso :interval "1m" "date +%Y-%m-%d")
+(defpoll cal_day :interval "1m" "date +%d")
+(defpoll cal_year :interval "1m" "date +%Y")
+(defpoll nr_of_cores :interval "24h" "getconf _NPROCESSORS_ONLN")
+(defpoll redshift_enabled :interval "5s" "/home/zilq/.config/eww/scripts/redshift_status.sh")
+(defpoll nr_of_updates_available :interval "1h" "/home/zilq/.config/eww/scripts/dnf_status.sh")
+(deflisten current_track :initial "" `playerctl --follow metadata --player=spotify --format '{{title}} - {{artist}}'`)
+(defpoll track_details :interval "2s" "/home/zilq/.config/eww/scripts/track_details.sh")
+(defpoll workspaces :interval "2s" "/home/zilq/.config/eww/scripts/workspaces.sh")
+(defpoll notifications_history :interval "1s" :run-while show_notifications "dunstctl history")
+(defpoll uptime :interval "1m" :run-while show_dashboard "uptime --pretty | cut -d ' ' -f2-")
+(defpoll weather :interval "30m" "/home/zilq/bin/weather.sh")
+(defvar show_cal false)
+(defvar show_ram false)
+(defvar show_song_details false)
+(defvar show_notifications false)
+(defvar show_dashboard false)
+(defvar eww "/home/zilq/tools/eww/target/release/eww")
+(defvar scripts_dir "/home/zilq/.config/eww/scripts")
+(defvar kb_layout "us")
+(defvar is_muted false)
+(defvar is_eth_conn_available true)
+(defvar windows_hidden false)
+
+(defwindow top_bar
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "0%"
+                               :width "100%"
+                               :height "35px"
+                               :anchor "top center")
+           :stacking "fg"
+           :reserve (struts :distance "64px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+       (bar))
+
+(defwindow cal
+           :monitor 0
+           :geometry (geometry :x "-250px"
+                               :y "75px"
+                               :width "500px"
+                               :height "300px"
+                               :anchor "top right")
+           :stacking "fg"
+           :wm-ignore true
+   (box :orientation "horizontal" :class "outline"
+        (box :orientation "horizontal" :class "cal_wrapper"
+             (calendar :class "cal"))))
+
+(defwindow ram
+           :monitor 0
+           :geometry (geometry :x "440px"
+                               :y "75px"
+                               :width "100px"
+                               :height "300px"
+                               :anchor "top left")
+           :stacking "fg"
+           :wm-ignore true
+   (box :orientation "horizontal" :class "outline"
+        (box :orientation "horizontal"
+             (ram_stats))))
+
+(defwindow song_details
+           :monitor 0
+           :geometry (geometry :y "75px"
+                               :width "300px"
+                               :height "600px"
+                               :anchor "top center")
+           :stacking "fg"
+           :wm-ignore true
+   (box :orientation "h" :class "outline"
+        (box :orientation "h" :class "song_details"
+             (spotify_song_details))))
+
+(defwindow notifications
+           :monitor 0
+           :geometry (geometry :x "-55px"
+                               :y "75px"
+                               :width "800px"
+                               :height "1000px"
+                               :anchor "top right")
+           :stacking "fg"
+           :wm-ignore true
+   (box :orientation "h" :class "outline"
+     (notifications)))
+
+(defwindow dashboard
+           :monitor 0
+           :geometry (geometry :x "-15px"
+                               :y "75px"
+                               :width "800px"
+                               :height "400px"
+                               :anchor "top right")
+           :stacking "fg"
+           :wm-ignore true
+   (box :orientation "h" :class "outline"
+     (dashboard)))
+
+(defwidget sep [sep_width horiz_align glyph sep_class]
+  (box :orientation "h" :width sep_width
+    (label :text glyph :class "separator ${sep_class}" :halign horiz_align)))
+
+(defwidget dashboard []
+   (box :orientation "v" :class "dashboard" :space-evenly false :spacing 25
+     (uptime)
+     (updates)
+     (weather)
+     (power_controls)))
+
+(defwidget uptime []
+   (box :orientation "h" :class "uptime" :space-evenly false :valign "start" :spacing 15
+     (label :text "UPTIME:" :class "text")
+     (label :text uptime :class "time")))
+
+(defwidget updates []
+   (box :orientation "h" :space-evenly false :spacing 50
+        :class {nr_of_updates_available > 0
+               ? "updates updates-available"
+               : "updates updates-not-available"}
+        :valign "start"
+     (label :text "󰏗" :class "icon")
+     (label :text "${nr_of_updates_available} packages to update"
+            :class "text")))
+
+(defwidget weather []
+  (box :orientation "h" :class "weather"
+    (box :orientation "h" :space-evenly false :spacing 35 :halign "center"
+    (weather_icon_and_temp)
+    (weather_desc_and_location))))
+
+(defwidget weather_icon_and_temp []
+  (box :orientation "h" :space-evenly false :spacing 25 :valign "center"
+    (label :text "" :class "icon")
+    (label :text "${weather['main']['temp']}℃" :class "temp")))
+
+(defwidget weather_desc_and_location []
+  (box :orientation "v" :space-evenly false :spacing 0 :valign "center"
+    (label :text {weather['weather'][0]['description']} :halign "start" :class "desc")
+    (label :text {weather['name']} :halign "start" :class "loc")))
+
+(defwidget power_controls []
+   (box :orientation "h" :valign "end" :spacing 25
+     (power_control_button :script "" :icon "" :icon_class "lock-glyph")
+     (power_control_button :script "" :icon "󰤄" :icon_class "sleep-glyph")
+     (power_control_button :script "" :icon "󰜉" :icon_class "reboot-glyph")
+     (power_control_button :script "" :icon "" :icon_class "power-off-glyph")))
+
+(defwidget power_control_button [script icon icon_class]
+   (eventbox :onclick script :cursor "pointer" :class "hover-test"
+   (box :orientation "h"
+     (label :text icon :class "${icon_class} power-control-glyph"))))
+
+(defwidget notifications []
+   (scroll :vscroll true :hscroll false
+   (box :orientation "v" :class "notifications" :spacing 25 :space-evenly false
+     (for entry in {notifications_history['data'][0]}
+          (notification :entry entry)))))
+
+(defwidget notification [entry]
+   (box :orientation "h" :class "notification" :space-evenly false :spacing 25 :height 200
+     (notification_icon)
+     (notification_message :entry entry)))
+
+(defwidget notification_icon []
+   (box :orientation "h"
+     (label :text "󱅫" :class "notification-icon")))
+
+(defwidget notification_message [entry]
+   (box :orientation "v" :class "notification-message" :space-evenly true
+     (label :text {entry['appname']['data']} :halign "start" :class "notification-app")
+     (label :text {entry['body']['data']} :halign "start" :xalign 0 :yalign 0
+            :class "notification-body" :wrap true)))
+
+(defwidget spotify_song_details []
+           (box :orientation "v" :spacing 10 :space-evenly false
+                (cover_art)
+                (track_info_row :field "Artist" :value {track_details?.artist})
+                (track_info_row :field "Title" :value {track_details?.title})
+                (track_info_row :field "Album" :value {track_details?.album})
+                (player_controls)))
+
+(defwidget cover_art []
+           (box :orientation "h" :class "cover_art"
+                (image :path "/tmp/album_art" :image-width 500 :image-height 500)))
+
+(defwidget track_info_row [field value]
+           (box :orientation "h" :space-evenly false :spacing 15 :width 350
+                (label :text "${field}:" :halign "start" :class "song_info_row_field")
+                (box :orientation "h" :space-evenly true
+                (label :text value :halign "start" :limit-width 25
+                       :show-truncated true :tooltip value))))
+
+(defwidget player_controls []
+            (box :orientation "h" :class "player_controls"
+           (box :orientation "h" :spacing 100 :space-evenly true :halign "center"
+                (prev_track)
+                (play_pause_track)
+                (next_track))))
+
+(defwidget prev_track []
+           (eventbox :onclick "playerctl --player=spotify previous"
+           (box :orientation "h" :class "player_controls_panel_button"
+                (label :text "󰒮" :class "player_controls_panel_button"))))
+
+(defwidget play_pause_track []
+           (eventbox :onclick "playerctl --player=spotify play-pause"
+           (box :orientation "h"
+                (label :text "󰐊" :class "player_controls_panel_button"))))
+
+(defwidget next_track []
+           (eventbox :onclick "playerctl --player=spotify next"
+           (box :orientation "h"
+                (label :text "󰒭" :class "player_controls_panel_button"))))
+
+(defwidget ram_stats []
+   (box :orientation "vertical" :class "ram_stats" :spacing "0"
+        (sys_data_row
+          :prefix ""
+          :label "Total memory:"
+          :value {round(EWW_RAM["total_mem"] / 1024 / 1024 / 1024, 2)}
+          :unit "GiB")
+        (sys_data_row
+          :prefix ""
+          :label "Free memory:"
+          :value {round(EWW_RAM["free_mem"] / 1024 / 1024 / 1024, 2)}
+          :unit "GiB")
+        (sys_data_row
+          :prefix ""
+          :label "Total swap:"
+          :value {round(EWW_RAM["total_swap"] / 1024 / 1024 / 1024, 2)}
+          :unit "GiB")
+        (sys_data_row
+          :prefix ""
+          :label "Free swap:"
+          :value {round(EWW_RAM["free_swap"] / 1024 / 1024 / 1024, 2)}
+          :unit "GiB")))
+
+(defwidget sys_data_row [prefix label value unit]
+   (box :orientation "horizontal" :width "400" :space-evenly true :spacing 0
+     (box :orientation "h" :space-evenly false :halign "start" :spacing 10
+     (label :text prefix :halign "start" :class "data_row_prefix")
+     (label :text label :halign "start"))
+     (box :orientation "horizontal" :space-evenly false :spacing 10 :halign "end"
+     (label :text value :halign "end")
+     (label :text unit :class "unit_suffix" :halign "end"))))
+
+(defwidget bar []
+   (box :orientation "horizontal" :class "bar_underline"
+        (box :orientation "horizontal" :class "bar" :space-evenly true
+                (left)
+                (center)
+                (right))))
+
+(defwidget center []
+   (box :orientation "h" :halign "center" :space-evenly false
+     (current_track_name)))
+
+(defwidget current_track_name []
+   (eventbox :onclick {current_track != ""
+                      ? "${scripts_dir}/toggle_window.sh song_details ${!show_song_details}"
+                      : ""} :cursor "pointer"
+   (box :orientation "h" :space-evenly false :spacing 0
+     (label :text "ﱘ" :class "bar_glyph")
+     (label :text {current_track != "" ? current_track : "n/a"} :show_truncated true
+            :limit-width 65 :tooltip current_track :class "glyph_val"))))
+
+(defwidget left []
+   (box :orientation "horizontal" :halign "start" :spacing 20 :space-evenly false
+     (launcher)
+     (workspaces)
+     (cpu)
+     (ram)
+     (random_skull)))
+
+(defwidget launcher []
+   (eventbox :onclick "/home/zilq/.config/rofi/bin/launcher.sh" :cursor "pointer"
+   (box :orientation "h"
+     (label :text "󱓇" :class "launcher_glyph red"))))
+
+(defwidget workspaces []
+   (box :orientation "h" :spacing 25 :class "workspaces"
+     (for workspace in workspaces
+       (label :text {workspace?.is_focused ? "󰿦" : workspace?.is_empty ? "󰔌" : "󰿦"}
+              :class {workspace?.is_focused
+                     ? "focused_workspace" : "workspace_glyph"}))))
+
+(defwidget cpu []
+   (box :orientation "horizontal" :space-evenly false
+      (label :text "" :class "bar_glyph" :justify "center" :yalign 0.5)
+      (cpu_val)))
+
+(defwidget cpu_val []
+  (box :orientation "h" :spacing 0 :space-evenly false :class "glyph_val"
+    (label :text {round(EWW_CPU["avg"], 1)})
+    (label :text "%" :class "unit_suffix")))
+
+(defwidget ram []
+   (eventbox :onclick "${scripts_dir}/toggle_window.sh ram ${!show_ram}" :cursor "pointer"
+   (box :orientation "horizontal" :spacing "0" :space-evenly false
+     (label :text "" :class "bar_glyph")
+     (ram_val))))
+
+(defwidget ram_val []
+  (box :orientation "h" :spacing 0 :space-evenly false :class "glyph_val"
+    (label :text {round(EWW_RAM["used_mem"] / 1024 / 1024 / 1024, 2)})
+    (label :text "GiB" :class "unit_suffix")))
+
+(defwidget random_skull []
+   (box :orientation "h" :spacing 0
+     (label :text "** \\\\\\\\" :class "red")
+     (label :text "ﮊ" :class "random_skull")
+     (label :text "// **" :class "red")))
+
+(defwidget right []
+   (box :orientation "horizontal" :halign "end" :space-evenly false :spacing 25
+     (kbmap)
+     (quick_settings)
+     (date)
+     (clock)
+     (buttons)))
+
+(defwidget quick_settings []
+   (box :orientation "h" :halign "end" :width 100
+        :class "quick_settings" :space-evenly false :spacing 25
+     (dnf_updates)
+     (redshift)
+     (eth)
+     (volume)))
+
+(defwidget volume []
+   (eventbox :onclick "${scripts_dir}/toggle_mute.sh" :cursor "pointer"
+   (box :orientation "h" :halign "end"
+     (label :text "ﱝ" :visible is_muted :class "option_disabled vol_glyph")
+     (label :text "墳" :visible "${!is_muted}" :class "option_enabled vol_glyph"))))
+
+(defwidget eth []
+   (box :orientation "h" :halign "end"
+     (label :text "" :visible is_eth_conn_available :class "option_enabled eth_glyph")
+     (label :text "" :visible "${!is_eth_conn_available}" :class "option_disabled eth_glyph")))
+
+(defwidget redshift []
+   (box :orientation "h" :halign "end"
+     (label :text "" :visible redshift_enabled :class "option_enabled redshift_glyph")
+     (label :text "" :visible "${!redshift_enabled}" :class "option_disabled redshift_glyph")))
+
+(defwidget dnf_updates []
+   (box :orientation "h" :halign "end"
+     (label :text ""
+            :class {nr_of_updates_available > 0
+                   ? "option_enabled dnf_glyph"
+                   : "option_disabled dnf_glyph"})))
+
+(defwidget clock []
+   (box :orientation "horizontal" :space-evenly false :spacing 0
+     (label :text "" :class "bar_glyph")
+     (label :text time :class "glyph_val")))
+
+(defwidget date []
+   (eventbox :onclick "${scripts_dir}/toggle_window.sh cal ${!show_cal}"
+   (box :orientation "horizontal" :space-evenly false :spacing 0
+     (label :text "" :class "bar_glyph")
+     (label :text date_iso :class "glyph_val"))))
+
+(defwidget kbmap []
+   (eventbox :onclick "/home/zilq/bin/update_kbmap.sh" :cursor "pointer"
+   (box :orientation "horizontal" :halign "end" :spacing 0 :space-evenly false
+     (label :text "" :class "bar_glyph")
+     (label :text kb_layout :class "glyph_val"))))
+
+(defwidget buttons []
+   (box :orientation "h" :halign "end" :width 100
+        :class "buttons" :space-evenly false :spacing 25
+     (hide_windows_button)
+     (notification_button)
+     (dashboard_button)))
+
+(defwidget hide_windows_button []
+  (box :orientation "h"
+    (eventbox :cursor "pointer" :onclick {windows_hidden
+              ? "${scripts_dir}/show_all_hidden_windows.sh"
+              : "${scripts_dir}/hide_workspace_windows.sh"}
+      (label :text {windows_hidden ? "󰈉" : "󰈈"} :class "hide-windows-button"))))
+
+(defwidget notification_button []
+   (eventbox :onclick "${scripts_dir}/toggle_window.sh notifications ${!show_notifications}"
+             :cursor "pointer"
+   (box :orientation "h"
+     (label :text "󰂚" :class "notification_glyph"))))
+
+(defwidget dashboard_button []
+   (eventbox :onclick "${scripts_dir}/toggle_window.sh dashboard ${!show_dashboard}"
+             :cursor "pointer"
+   (box :orientation "h"
+     (label :text "󰕮" :class "dashboard-glyph"))))
+
+(defwidget bar_underline []
+   (box :orientation "horizontal" :height 2 :vexpand false :class "bar_underline"))
