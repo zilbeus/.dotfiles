@@ -321,7 +321,7 @@
 
 (defwidget quick_settings []
    (box :orientation "h" :halign "end" :width 100
-        :class "quick_settings" :space-evenly false :spacing 10
+        :class "quick_settings" :space-evenly false :spacing 20
      (dnf_updates)
      (redshift)
      (eth)
@@ -368,18 +368,10 @@
      (label :text kb_layout :class "glyph_val"))))
 
 (defwidget buttons []
-   (box :orientation "h" :halign "end" :width 100
+   (box :orientation "h" :halign "end" 
         :class "buttons" :space-evenly false :spacing 10
-     (hide_windows_button)
      (notification_button)
      (dashboard_button)))
-
-(defwidget hide_windows_button []
-  (box :orientation "h"
-    (eventbox :cursor "pointer" :onclick {windows_hidden
-              ? "${scripts_dir}/show_all_hidden_windows.sh"
-              : "${scripts_dir}/hide_workspace_windows.sh"}
-      (label :text {windows_hidden ? "󰈉" : "󰈈"} :class "hide-windows-button"))))
 
 (defwidget notification_button []
    (eventbox :onclick "${scripts_dir}/toggle_window.sh notifications ${!show_notifications}"
