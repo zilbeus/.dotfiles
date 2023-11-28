@@ -43,6 +43,6 @@ export NVM_DIR="$HOME/.config/nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export PATH=$PATH:/home/zilq/.spicetify:/home/zilq/bin:/home/zilq/.local/bin
+export PATH=$PATH:/home/zilq/.spicetify:/home/zilq/bin:/home/zilq/.local/bin:/usr/local/go/bin
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
