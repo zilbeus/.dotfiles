@@ -1,10 +1,7 @@
 local efmls = require "efmls-configs"
-efmls.init {
-    default_config = false,
-    init_option = { documentFormatting = true },
-}
 
-efmls.setup {
+local languages = require('efmls-configs.defaults').languages()
+languages = vim.tbl_extend('force', languages, {
     javascript = {
         linter = require 'efmls-configs.linters.eslint_d',
         formatter = require 'efmls-configs.formatters.prettier_d',
@@ -24,4 +21,4 @@ efmls.setup {
     json = {
         formatter = require 'efmls-configs.formatters.prettier_d',
     }
-}
+})

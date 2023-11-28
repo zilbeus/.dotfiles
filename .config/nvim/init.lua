@@ -109,10 +109,11 @@ require("lazy").setup({
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
 		opts = {
-			chars = '│',
-			show_trailing_blankline_indent = true,
-			show_current_context = true,
+			-- chars = '│',
+			-- show_trailing_blankline_indent = true,
+			-- show_current_context = true,
 		},
 	},
 
