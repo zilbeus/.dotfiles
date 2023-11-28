@@ -1,6 +1,6 @@
 *{
     font-family: JetBrainsMono Nerd Font;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     color: #ebebeb;
 }
@@ -9,26 +9,26 @@
     background-color: #000000;
     border-width: 2px;
     border-color: #565656;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .bar_glyph {
     color: #c68a01;
-    font-size: 15px;
+    font-size: 17px;
     background-color: #513900;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 18px;
 }
 
 .glyph_val {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: #1b1b1b;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .clock {
@@ -101,32 +101,32 @@ calendar:selected {
 
 .vol_glyph {
     padding-right: 5px;
-    font-size: 10px;
+    font-size: 25px;
 }
 
 .quick_settings {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding-left: 15px;
     padding-right: 15px;
     background-color: #1b1b1b;
 }
 
 .buttons {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: #1b1b1b;
 }
 
 .eth_glyph {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .random_skull {
     font-family: JetBrainsMono Nerd Font;
-    font-size: 15px;
+    font-size: 19px;
     color: #ff5f59;
 }
 
@@ -135,11 +135,11 @@ calendar:selected {
 }
 
 .redshift_glyph {
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .dnf_glyph {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .active_window_glyph {
@@ -189,8 +189,8 @@ calendar:selected {
 
 .launcher_glyph {
     background-color: #270000;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding: 5px;
     padding-right: 20px;
     padding-left: 10px;
@@ -199,8 +199,8 @@ calendar:selected {
 
 .workspaces {
     background-color: #1b1b1b;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding-left: 15px;
     padding-right: 20px;
 }

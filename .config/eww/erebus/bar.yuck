@@ -28,7 +28,7 @@
            :geometry (geometry :x "0%"
                                :y "0%"
                                :width "100%"
-                               :height "15px"
+                               :height "40px"
                                :anchor "top center")
            :stacking "fg"
            :exclusive true
@@ -118,7 +118,7 @@
                ? "updates updates-available"
                : "updates updates-not-available"}
         :valign "start"
-     (label :text "󰏗" :class "icon")
+     (label :text "" :class "icon")
      (label :text "${nr_of_updates_available} packages to update"
             :class "text")))
 
@@ -260,7 +260,7 @@
                       ? "${scripts_dir}/toggle_window.sh song_details ${!show_song_details}"
                       : ""} :cursor "pointer"
    (box :orientation "h" :space-evenly false :spacing 0
-     (label :text "ﱘ" :class "bar_glyph")
+     (label :text "" :class "bar_glyph")
      (label :text {current_track != "" ? current_track : "n/a"} :show_truncated true
             :limit-width 65 :tooltip current_track :class "glyph_val"))))
 
@@ -286,7 +286,7 @@
 
 (defwidget cpu []
    (box :orientation "horizontal" :space-evenly false
-      (label :text "" :class "bar_glyph" :justify "center" :yalign 0.5)
+      (label :text "" :class "bar_glyph" :justify "center" :yalign 0.5)
       (cpu_val)))
 
 (defwidget cpu_val []
@@ -297,7 +297,7 @@
 (defwidget ram []
    (eventbox :onclick "${scripts_dir}/toggle_window.sh ram ${!show_ram}" :cursor "pointer"
    (box :orientation "horizontal" :spacing "0" :space-evenly false
-     (label :text "" :class "bar_glyph")
+     (label :text "" :class "bar_glyph")
      (ram_val))))
 
 (defwidget ram_val []
@@ -308,7 +308,7 @@
 (defwidget random_skull []
    (box :orientation "h" :spacing 0
      (label :text "** \\\\\\\\" :class "red")
-     (label :text "ﮊ" :class "random_skull")
+     (label :text "󰚌" :class "random_skull")
      (label :text "// **" :class "red")))
 
 (defwidget right []
@@ -321,7 +321,7 @@
 
 (defwidget quick_settings []
    (box :orientation "h" :halign "end" :width 100
-        :class "quick_settings" :space-evenly false :spacing 10
+        :class "quick_settings" :space-evenly false :spacing 20
      (dnf_updates)
      (redshift)
      (eth)
@@ -330,13 +330,13 @@
 (defwidget volume []
    (eventbox :onclick "${scripts_dir}/toggle_mute.sh" :cursor "pointer"
    (box :orientation "h" :halign "end"
-     (label :text "ﱝ" :visible is_muted :class "option_disabled vol_glyph")
-     (label :text "墳" :visible "${!is_muted}" :class "option_enabled vol_glyph"))))
+     (label :text "󰖁" :visible is_muted :class "option_disabled vol_glyph")
+     (label :text "󰕾" :visible "${!is_muted}" :class "option_enabled vol_glyph"))))
 
 (defwidget eth []
    (box :orientation "h" :halign "end"
-     (label :text "" :visible is_eth_conn_available :class "option_enabled eth_glyph")
-     (label :text "" :visible "${!is_eth_conn_available}" :class "option_disabled eth_glyph")))
+     (label :text "󰈀" :visible is_eth_conn_available :class "option_enabled eth_glyph")
+     (label :text "󰈀" :visible "${!is_eth_conn_available}" :class "option_disabled eth_glyph")))
 
 (defwidget redshift []
    (box :orientation "h" :halign "end"
@@ -345,7 +345,7 @@
 
 (defwidget dnf_updates []
    (box :orientation "h" :halign "end"
-     (label :text ""
+     (label :text ""
             :class {nr_of_updates_available > 0
                    ? "option_enabled dnf_glyph"
                    : "option_disabled dnf_glyph"})))
@@ -358,7 +358,7 @@
 (defwidget date []
    (eventbox :onclick "${scripts_dir}/toggle_window.sh cal ${!show_cal}"
    (box :orientation "horizontal" :space-evenly false :spacing 0
-     (label :text "" :class "bar_glyph")
+     (label :text "󰃭" :class "bar_glyph")
      (label :text date_iso :class "glyph_val"))))
 
 (defwidget kbmap []
@@ -368,18 +368,10 @@
      (label :text kb_layout :class "glyph_val"))))
 
 (defwidget buttons []
-   (box :orientation "h" :halign "end" :width 100
+   (box :orientation "h" :halign "end" 
         :class "buttons" :space-evenly false :spacing 10
-     (hide_windows_button)
      (notification_button)
      (dashboard_button)))
-
-(defwidget hide_windows_button []
-  (box :orientation "h"
-    (eventbox :cursor "pointer" :onclick {windows_hidden
-              ? "${scripts_dir}/show_all_hidden_windows.sh"
-              : "${scripts_dir}/hide_workspace_windows.sh"}
-      (label :text {windows_hidden ? "󰈉" : "󰈈"} :class "hide-windows-button"))))
 
 (defwidget notification_button []
    (eventbox :onclick "${scripts_dir}/toggle_window.sh notifications ${!show_notifications}"
