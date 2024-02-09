@@ -1,0 +1,43 @@
+import = ["/home/zilq/.config/alacritty/hyper.toml"]
+live_config_reload = true
+
+[colors.cursor]
+cursor = "0xe0af68"
+text = "0x32344a"
+
+[colors.selection]
+background = "0xf7768e"
+text = "0x32344a"
+
+[cursor]
+blink_interval = 750
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "V"
+mods = "Control|Alt"
+
+[scrolling]
+history = 10000
+
+[selection]
+save_to_clipboard = true
+
+[window]
+dynamic_title = true
+
+[window.padding]
+x = 4
+y = 4
