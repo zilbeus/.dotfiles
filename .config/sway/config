@@ -204,6 +204,13 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# or input <identifier>
+input "type:keyboard" {
+    xkb_layout us
+    xkb_variant ,nodeadkeys
+    xkb_options grp:alt_shift_toggle
+}
+
 exec_always /home/zilq/bin/eww open top_bar &
 #exec_always conky &
 
