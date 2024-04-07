@@ -1,0 +1,15 @@
+themes {
+    gnomish {
+        fg "#8a8a8a"
+        bg "#8a8a8a"
+        black "#0D0D0D" // top and bottom bg
+        red "#af0000"
+        green "#afff00"
+        yellow "#D79921"
+        blue "#3C8588"
+        magenta "#B16286"
+        cyan "#689D6A"
+        white "#FBF1C7"
+        orange "#D65D0E"
+ 	}
+}
