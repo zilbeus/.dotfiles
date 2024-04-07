@@ -9,7 +9,7 @@ local bg = vim.o.background
 
 local palette
 palette = util.palette_extend({
-  bg = hsluv "#000000",
+  bg = hsluv "#0d0d0d",
   fg = hsluv "#f5f5f5",
   statement = hsluv "#eda601",
   telescope_match = hsluv "#eda601",
