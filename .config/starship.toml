@@ -1,8 +1,10 @@
 palette='zilq'
-format = '''
-[┌](bold lines)[\[](bold bracket)$directory[\]](bold bracket)$git_branch$fill$nodejs$java[─](bold lines)[\[](bold bracket)[\]](bold bracket)
-[└](bold lines)$character
-'''
+# format = '''
+# [┌](bold lines)[\[](bold bracket)$directory[\]](bold bracket)$git_branch$fill$nodejs$java[─](bold lines)[\[](bold bracket)[\]](bold bracket)
+# [└](bold lines)$character
+# '''
+format = '''[\[](bold bracket)$directory[\]](bold bracket)$git_branch$nodejs$java[-](bold lines)$character'''
+add_newline = false
 
 [character]
 success_symbol='[\[](bold bracket)[\$](bold char)[\]](bold bracket)'
