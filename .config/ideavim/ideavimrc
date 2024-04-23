@@ -1,0 +1,128 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+set number relativenumber
+set ideajoin
+
+" leader
+map <space> <nop>
+let mapleader="\<space>"
+
+" location
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+" buffer (buffer < window < tab)
+nmap <leader>xx <Action>(CloseContent)
+nmap <leader>xa <Action>(CloseAllEditors)
+nmap <leader>xo <Action>(CloseAllEditorsButActive)
+
+nmap <C-k> <C-w>k
+nmap <C-j> <C-w>j
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+
+" debug
+nmap <leader>dc <Action>(ContextDebug)
+nmap <leader>dx <Action>(Debug)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>de <Action>(EditBreakpoint)
+nmap <leader>dv <Action>(ViewBreakpoints)
+
+" refactor
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>re <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>uw <Action>(Unwrap)
+nmap <leader>sw <Action>(SurroundWith)
+nmap <leader>sd <Action>(SafeDelete)
+nmap <leader>oi <Action>(OptimizeImports)
+
+" hierarchy
+nmap <leader>hc <Action>(CallHierarchy)
+nmap <leader>hm <Action>(MethodHierarchy)
+nmap <leader>ht <Action>(TypeHierarchy)
+
+
+" goto
+nmap <leader>a <Action>(SearchEverywhere)
+nmap ga <Action>(GotoAction)
+nmap gc <Action>(GotoClass)
+nmap gf <Action>(GotoFile)
+nmap gs <Action>(GotoSymbol)
+nmap gt <Action>(GoToTest)
+nmap gb <Action>(GotoDatabaseObject)
+nmap gT <Action>(TextSearchAction)
+nmap go <Action>(GotoSuperMethod)
+nmap gd <Action>(GotoDeclaration)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gI <Action>(QuickImplementations)
+nmap gn <Action>(ShowNavBar)
+
+" terminal
+nmap <leader>tt <Action>(ActivateTerminalToolWindow)
+nmap <leader>tc <Action>(Terminal.OpenInTerminal)
+
+" better HJKL
+map H ^
+map L $
+map J }
+map K {
+
+" better escape
+imap jk <Esc>
+
+" splits
+nmap <leader>wu <Action>(UnsplitAll)
+nmap sv <Action>(SplitVertically)
+nmap ss <Action>(SplitHorizontally)
+
+" tag
+nmap <leader>fu <Action>(FindUsages)
+nmap <leader>fs <Action>(FileStructurePopup)
+nmap <leader>su <Action>(ShowUsages)
+
+" redo
+nnoremap U <C-r>
+
+nmap <TAB> <Action>(PreviousTab)
+nmap <S-TAB> <Action>(NextTab)
+
+" code selection
+nmap <Alt>j <Action>(MoveLineDown)
+nmap <Alt>k <Action>(MoveLineUp)
+
+nmap <leader>rf <Action>(RecentFiles)
+nmap <leader>rl <Action>(RecentLocations)
