@@ -58,7 +58,16 @@ require("lazy").setup({
 			},
 		},
 	},
-
+	{
+		"NeogitOrg/neogit",
+		tag = "v0.0.1",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		config = true
+	},
 	{
 		"projekt0n/github-nvim-theme",
 		lazy = false,
@@ -526,6 +535,7 @@ require('nvim-ts-autotag').setup()
 require("luasnip.loaders.from_vscode").lazy_load()
 require("java").setup()
 require("lspconfig").jdtls.setup({})
+require("neogit").setup({})
 
 vim.diagnostic.config({
 	virtual_text = false,
