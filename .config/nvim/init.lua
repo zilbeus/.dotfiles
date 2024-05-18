@@ -118,6 +118,7 @@ require("lazy").setup({
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		tag = "v3.5.4",
 		main = "ibl",
 		opts = {
 			-- chars = '│',
@@ -268,6 +269,7 @@ require("lazy").setup({
 		"nvim-java/nvim-java",
 		dependencies = {
 			"nvim-java/lua-async-await",
+			"nvim-java/nvim-java-refactor",
 			"nvim-java/nvim-java-core",
 			"nvim-java/nvim-java-test",
 			"nvim-java/nvim-java-dap",
@@ -536,6 +538,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 require("java").setup()
 require("lspconfig").jdtls.setup({})
 require("neogit").setup({})
+require("ibl").setup({})
 
 vim.diagnostic.config({
 	virtual_text = false,

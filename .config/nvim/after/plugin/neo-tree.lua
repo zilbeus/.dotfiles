@@ -15,6 +15,8 @@ require("neo-tree").setup({
       hide_gitignored = false,
       hide_hidden = false,
     },
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true,
+    },
   },
 })
