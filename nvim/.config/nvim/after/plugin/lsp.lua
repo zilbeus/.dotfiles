@@ -1,12 +1,34 @@
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
-	-- NOTE: Remember that lua is a real programming language, and as such it is possible
-	-- to define small helper and utility functions so you don't have to repeat yourself
-	-- many times.
-	--
-	-- In this case, we create a function that lets us more easily define mappings specific
-	-- for LSP related items. It sets the mode, buffer and description for us each time.
+local on_attach = function(client, bufnr)
+	--- toggle inlay hints
+	vim.g.inlay_hints_visible = false
+	local function toggle_inlay_hints()
+		if vim.g.inlay_hints_visible then
+			vim.g.inlay_hints_visible = false
+			vim.lsp.inlay_hint(bufnr, false)
+		else
+			if client.server_capabilities.inlayHintProvider then
+				vim.g.inlay_hints_visible = true
+				vim.lsp.inlay_hint(bufnr, true)
+			else
+				print("Inlay hints not available")
+			end
+		end
+	end
+
+	--- toggle diagnostics
+	vim.g.diagnostics_visible = true
+	local function toggle_diagnostics()
+		if vim.g.diagnostics_visible then
+			vim.g.diagnostics_visible = false
+			vim.diagnostic.disable()
+		else
+			vim.g.diagnostics_visible = true
+			vim.diagnostic.enable()
+		end
+	end
+
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc
@@ -49,4 +71,7 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>hp", ":Gitsigns preview_hunk<CR>", "[P]review hunk")
 	nmap("<leader>hb", ":Gitsigns toggle_current_line_blame<CR>", "Show line [B]lame")
 	nmap("<leader>og", ":Git<CR>", "[O]pen [G]it status")
+
+	nmap("<leader>th", toggle_inlay_hints, "[T]oggle Inlay [H]ints")
+	nmap("<leader>td", toggle_diagnostics, "[T]oggle [D]iagnostics")
 end
