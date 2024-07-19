@@ -1,3 +1,4 @@
+require("zq.lsp")
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
