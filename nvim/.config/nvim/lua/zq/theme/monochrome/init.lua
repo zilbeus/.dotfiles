@@ -13,6 +13,7 @@ M.setup = function()
 	vim.g.colors_name = "monochrome"
 
 	theme.set_highlights()
+	require("zq.theme.integrations.cmp")
 end
 
 return M

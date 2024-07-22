@@ -30,9 +30,9 @@ cmp.setup({
 		completion = {
 			border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
 		},
-		documentation = {
-			border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-		},
+		-- documentation = {
+		-- 	border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+		-- },
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-n>"] = cmp.mapping.select_next_item(),
