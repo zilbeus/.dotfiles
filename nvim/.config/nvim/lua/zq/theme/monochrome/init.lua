@@ -14,6 +14,10 @@ M.setup = function()
 
 	theme.set_highlights()
 	require("zq.theme.integrations.cmp")
+	local syntax = require("zq.theme.integrations.syntax")
+	local treesitter = require("zq.theme.integrations.treesitter")
+	local highlights = vim.tbl_deep_extend("force", vim.api.nvim_get_hl(0, {}), syntax)
+	local highlights = vim.tbl_deep_extend("force", vim.api.nvim_get_hl(0, {}), treesitter)
 end
 
 return M
