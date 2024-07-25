@@ -2,19 +2,10 @@
 --  This function gets run when an LSP connects to a particular buffer.
 function on_attach(client, bufnr)
 	--- toggle inlay hints
-	vim.g.inlay_hints_visible = false
+	-- vim.g.inlay_hints_visible = false
 	local function toggle_inlay_hints()
-		if vim.g.inlay_hints_visible then
-			vim.g.inlay_hints_visible = false
-			vim.lsp.inlay_hint(bufnr, false)
-		else
-			if client.server_capabilities.inlayHintProvider then
-				vim.g.inlay_hints_visible = true
-				vim.lsp.inlay_hint(bufnr, true)
-			else
-				print("Inlay hints not available")
-			end
-		end
+		local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
+		vim.lsp.inlay_hint.enable(not enabled, { bufnr = bufnr })
 	end
 
 	--- toggle diagnostics
