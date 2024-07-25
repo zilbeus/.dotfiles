@@ -1,6 +1,26 @@
 local M = {}
 local theme = require("zq.theme.monochrome.theme")
 
+local integrations = {
+	"zq.theme.integrations.syntax",
+	"zq.theme.integrations.treesitter",
+	"zq.theme.integrations.codeactionmenu",
+	"zq.theme.integrations.devicons",
+	"zq.theme.integrations.git",
+	"zq.theme.integrations.lsp",
+	"zq.theme.integrations.neogit",
+	"zq.theme.integrations.nvimtree",
+	"zq.theme.integrations.telescope",
+	"zq.theme.integrations.whichkey",
+}
+
+local apply_integration = function(integrationName)
+	local integration = require(integrationName)
+	for k, v in pairs(integration) do
+		vim.api.nvim_set_hl(0, k, v)
+	end
+end
+
 M.setup = function()
 	vim.cmd("hi clear")
 
@@ -14,10 +34,10 @@ M.setup = function()
 
 	theme.set_highlights()
 	require("zq.theme.integrations.cmp")
-	local syntax = require("zq.theme.integrations.syntax")
-	local treesitter = require("zq.theme.integrations.treesitter")
-	local highlights = vim.tbl_deep_extend("force", vim.api.nvim_get_hl(0, {}), syntax)
-	local highlights = vim.tbl_deep_extend("force", vim.api.nvim_get_hl(0, {}), treesitter)
+
+	for i, integrationname in pairs(integrations) do
+		apply_integration(integrationname)
+	end
 end
 
 return M

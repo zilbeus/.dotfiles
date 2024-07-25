@@ -51,7 +51,7 @@ return {
 
 	["@operator"] = { fg = theme.base05 },
 	["@reference"] = { fg = theme.base05 },
-	["@punctuation.bracket"] = { fg = theme.base0F },
+	["@punctuation.bracket"] = { fg = base30.red },
 	["@punctuation.delimiter"] = { fg = theme.base0F },
 	["@symbol"] = { fg = theme.base0B },
 	["@tag"] = { fg = theme.base0A },
