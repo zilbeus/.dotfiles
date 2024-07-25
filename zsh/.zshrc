@@ -28,6 +28,7 @@ alias vg='vagrant'
 alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vp='fd -t file -t d . /home/zilq/projects | fzf --print0 | xargs -0 -o nvim'
 alias vc='fd -t file -t d . /home/zilq/.config | fzf --print0 | xargs -0 -o nvim'
+alias ng='nvim -c Neogit'
 
 export EDITOR='/usr/bin/nvim'
 export FZF_ALT_C_COMMAND='(fd -t d . /home/zilq/)'
