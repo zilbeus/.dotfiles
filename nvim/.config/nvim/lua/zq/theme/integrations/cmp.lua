@@ -94,6 +94,5 @@ local styles = {
 
 highlights = vim.tbl_deep_extend("force", highlights, styles["default"] or {})
 highlights = vim.tbl_deep_extend("force", highlights, item_kinds)
-print("in cmp.lua integration")
 
 return highlights
