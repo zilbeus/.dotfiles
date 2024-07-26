@@ -16,11 +16,7 @@ return {
 		"lukas-reineke/indent-blankline.nvim",
 		tag = "v3.5.4",
 		main = "ibl",
-		opts = {
-			-- chars = '│',
-			-- show_trailing_blankline_indent = true,
-			-- show_current_context = true,
-		},
+		opts = {},
 	},
 	{
 		"b0o/incline.nvim",
