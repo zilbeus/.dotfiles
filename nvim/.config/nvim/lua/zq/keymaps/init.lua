@@ -24,3 +24,5 @@ vim.keymap.set("n", "<leader>gf", "<cmd>Neotree<cr>", { desc = "Open file tree" 
 
 -- DIFFVIEW
 vim.keymap.set("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", { desc = "Open [G]it File [H]istory view" })
+
+require("zq.keymaps.lsp")

@@ -1,3 +1,3 @@
 require("zq.editor")
-require("zq.keymap")
+require("zq.keymaps")
 require("zq.efmls")
