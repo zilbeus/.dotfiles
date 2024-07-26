@@ -29,6 +29,7 @@ cmp.setup({
 	window = {
 		completion = {
 			border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+			winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
 		},
 		-- documentation = {
 		-- 	border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },

@@ -49,7 +49,8 @@ local item_kinds = {
 local styles = {
 
 	default = {
-		CmpBorder = { fg = colors.grey_fg },
+		-- CmpBorder = { fg = colors.grey_fg },
+		CmpBorder = { fg = colors.line },
 	},
 
 	atom = {
