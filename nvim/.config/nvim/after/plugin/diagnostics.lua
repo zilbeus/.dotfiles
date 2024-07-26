@@ -32,3 +32,15 @@ do
 		{ text = icons[vim.diagnostic.severity.HINT], texthl = "DiagnosticSignHint" }
 	)
 end
+
+require("tiny-inline-diagnostic").setup({
+	signs = {
+		left = "",
+		right = "",
+		diag = "●",
+		arrow = " ",
+		up_arrow = "    ",
+		vertical = " │",
+		vertical_end = " └",
+	},
+})

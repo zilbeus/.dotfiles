@@ -33,13 +33,6 @@ return {
 	},
 
 	{
-		"folke/trouble.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-	},
-
-	{
 		"nvim-neo-tree/neo-tree.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
