@@ -21,9 +21,21 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Git status w
 
 -- NEOTREE
 vim.keymap.set("n", "<leader>gf", "<cmd>Neotree<cr>", { desc = "Open file tree" })
+vim.keymap.set(
+	"n",
+	"<leader>kf",
+	'<cmd>lua require("neo-tree.command").execute({ action = "close" })<cr>',
+	{ desc = "[K]ill [F]ile tree" }
+)
 
 -- DIFFVIEW
 vim.keymap.set("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", { desc = "Open [G]it File [H]istory view" })
 vim.keymap.set("n", "<leader>gkg", "<cmd>DiffviewFileHistory<cr>", { desc = "[K]ill [G]it Diff view" })
+
+-- GITSIGNS
+vim.keymap.set("n", "<leader>gd", require("gitsigns").preview_hunk, { desc = "Open [G]it Hunk [D]iff" })
+vim.keymap.set("n", "<leader>gr", require("gitsigns").reset_hunk, { desc = "[R]eset [G]it Hunk" })
+vim.keymap.set("n", "<leader>ghn", require("gitsigns").next_hunk, { desc = "[N]ext [G]it [H]unk" })
+vim.keymap.set("n", "<leader>ghp", require("gitsigns").prev_hunk, { desc = "[P]revious [G]it [H]unk" })
 
 require("zq.keymaps.lsp")
