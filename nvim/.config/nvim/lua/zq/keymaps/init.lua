@@ -20,13 +20,16 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Git status window" })
 
 -- NEOTREE
-vim.keymap.set("n", "<leader>gf", "<cmd>Neotree<cr>", { desc = "Open file tree" })
+-- vim.keymap.set("n", "<leader>gf", "<cmd>Neotree<cr>", { desc = "Open file tree" })
 vim.keymap.set(
 	"n",
 	"<leader>kf",
 	'<cmd>lua require("neo-tree.command").execute({ action = "close" })<cr>',
 	{ desc = "[K]ill [F]ile tree" }
 )
+
+-- MINI.FILES
+vim.keymap.set("n", "<leader>gf", require("mini.files").open, { desc = "Open file tree" })
 
 -- DIFFVIEW
 vim.keymap.set("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", { desc = "Open [G]it File [H]istory view" })
