@@ -17,14 +17,6 @@ return {
 	},
 	{
 		"folke/which-key.nvim",
-		opts = {
-			window = {
-				border = "single",
-			},
-			layout = {
-				align = "center",
-			},
-		},
 	},
 
 	{

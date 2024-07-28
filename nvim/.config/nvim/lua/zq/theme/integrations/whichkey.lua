@@ -6,4 +6,5 @@ return {
 	WhichKeyDesc = { fg = colors.red },
 	WhichKeyGroup = { fg = colors.green },
 	WhichKeyValue = { fg = colors.green },
+	WhichKeyNormal = { bg = colors.base00 },
 }
