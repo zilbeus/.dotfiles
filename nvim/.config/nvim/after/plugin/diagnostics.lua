@@ -9,10 +9,10 @@ vim.diagnostic.config({
 	},
 })
 local icons = {
-	[vim.diagnostic.severity.ERROR] = "☒",
-	[vim.diagnostic.severity.WARN] = "⚠",
-	[vim.diagnostic.severity.INFO] = "▣",
-	[vim.diagnostic.severity.HINT] = "◉",
+	[vim.diagnostic.severity.ERROR] = "E",
+	[vim.diagnostic.severity.WARN] = "W",
+	[vim.diagnostic.severity.INFO] = "I",
+	[vim.diagnostic.severity.HINT] = "H",
 }
 do
 	vim.fn.sign_define(
@@ -42,5 +42,8 @@ require("tiny-inline-diagnostic").setup({
 		up_arrow = "    ",
 		vertical = " │",
 		vertical_end = " └",
+	},
+	options = {
+		show_source = true,
 	},
 })
