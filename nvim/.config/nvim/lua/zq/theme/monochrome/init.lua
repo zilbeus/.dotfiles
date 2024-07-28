@@ -12,6 +12,7 @@ local integrations = {
 	"zq.theme.integrations.nvimtree",
 	"zq.theme.integrations.telescope",
 	"zq.theme.integrations.whichkey",
+	"zq.theme.integrations.trouble",
 }
 
 local apply_integration = function(integrationName)
