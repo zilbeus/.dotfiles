@@ -7,7 +7,7 @@ config.enable_tab_bar = false
 config.window_decorations = "TITLE | RESIZE"
 config.enable_wayland = false
 config.font = wezterm.font({ family = "JetBrainsMono Nerd Font Mono", weight = "Bold" })
-config.font_size = 13.0
+config.font_size = 11.0
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 config.colors = {
