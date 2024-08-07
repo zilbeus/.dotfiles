@@ -24,7 +24,7 @@ layout {
         pane size=2 borderless=true {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} #[fg=#89B4FA,bold]{tabs}"
-                format_center "{session}"
+                format_center "#[fg=#2e2e2e,bold]{session}"
                 format_right  "{command_git_branch} {datetime}"
                 format_space  ""
  
@@ -33,11 +33,23 @@ layout {
                 border_format   "#[fg=#6C7086]{char}"
                 border_position "bottom"
  
-                mode_normal  "#[bg=blue] {name} "
-                mode_tmux    "#[bg=#ffc387] {name} "
+                mode_normal  "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]NORMAL#[bg=#101010,fg=#6484a4]"
+                mode_locked  "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]LOCKED#[bg=#101010,fg=#6484a4]"
+                mode_resize  "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]RESIZE#[bg=#101010,fg=#6484a4]"
+                mode_pane "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]PANE#[bg=#101010,fg=#6484a4]"
+                mode_tab "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]TAB#[bg=#101010,fg=#6484a4]"
+                mode_scroll "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]SCROLL#[bg=#101010,fg=#6484a4]"
+                mode_enter_search "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]ENTER SEARCH#[bg=#101010,fg=#6484a4]"
+                mode_search "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]SEARCH#[bg=#101010,fg=#6484a4]"
+                mode_rename_tab "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]RENAME TAB#[bg=#101010,fg=#6484a4]"
+                mode_rename_pane "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]RENAME PANE#[bg=#101010,fg=#6484a4]"
+                mode_session "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]SESSION#[bg=#101010,fg=#6484a4]"
+                mode_move "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]MOVE#[bg=#101010,fg=#6484a4]"
+                mode_prompt "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]PROMPT#[bg=#101010,fg=#6484a4]"
+                mode_tmux  "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]TMUX#[bg=#101010,fg=#6484a4]"
  
-                tab_normal   "#[fg=#6C7086] {index} {name} "
-                tab_active   "#[fg=#9399B2,bold] {index} {name} "
+                tab_normal   "#[bg=#101010,fg=#424242]#[fg=#ced4df,bg=#424242,bold]{index} #[bg=#2e2e2e,fg=#ced4df] {name}#[bg=#101010,fg=#2e2e2e] "
+                tab_active   "#[bg=#101010,fg=#eee8d5]#[fg=#101010,bg=#eee8d5,bold]{index} #[bg=#2e2e2e,fg=#ced4df] {name}#[bg=#101010,fg=#2e2e2e] "
  
                 command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
                 command_git_branch_format      "#[fg=blue] {stdout} "
@@ -45,7 +57,8 @@ layout {
                 command_git_branch_rendermode  "static"
  
                 datetime        "#[fg=#6C7086,bold] {format} "
-                datetime_format "%A, %d %b %Y %H:%M"
+                datetime   "#[bg=#101010,fg=#eee8d5]#[fg=#101010,bg=#eee8d5,bold]DATE #[bg=#2e2e2e,fg=#ced4df] {format}#[bg=#101010,fg=#2e2e2e] "
+                datetime_format "%Y-%m-%d %H:%M"
                 datetime_timezone "Europe/Tallinn"
             }
         }
