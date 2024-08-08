@@ -25,16 +25,15 @@ layout {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} #[fg=#89B4FA,bold]{tabs}"
                 format_center "#[fg=#2e2e2e,bold]{session}"
-                format_right  "{command_git_branch} {datetime}"
+                format_right  "#[bg=#101010,fg=#eee8d5]#[bg=#eee8d5,fg=#101010]USER #[bg=#2e2e2e,fg=#ced4df] {command_user}@{command_host}#[bg=#101010,fg=#2e2e2e] {datetime}"
                 format_space  ""
- 
                 border_enabled  "true"
                 border_char     "─"
                 border_format   "#[fg=#6C7086]{char}"
                 border_position "bottom"
- 
+
                 mode_normal  "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]NORMAL#[bg=#101010,fg=#6484a4]"
-                mode_locked  "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]LOCKED#[bg=#101010,fg=#6484a4]"
+                mode_locked  "#[bg=#101010,fg=#2e2e2e]#[bg=#2e2e2e,fg=#D83230]LOCKED#[bg=#101010,fg=#2e2e2e]"
                 mode_resize  "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]RESIZE#[bg=#101010,fg=#6484a4]"
                 mode_pane "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]PANE#[bg=#101010,fg=#6484a4]"
                 mode_tab "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]TAB#[bg=#101010,fg=#6484a4]"
@@ -57,9 +56,19 @@ layout {
                 command_git_branch_rendermode  "static"
  
                 datetime        "#[fg=#6C7086,bold] {format} "
-                datetime   "#[bg=#101010,fg=#eee8d5]#[fg=#101010,bg=#eee8d5,bold]DATE #[bg=#2e2e2e,fg=#ced4df] {format}#[bg=#101010,fg=#2e2e2e] "
+                datetime   "#[bg=#101010,fg=#eee8d5]#[fg=#101010,bg=#eee8d5,bold]DATETIME #[bg=#2e2e2e,fg=#ced4df] {format}#[bg=#101010,fg=#2e2e2e] "
                 datetime_format "%Y-%m-%d %H:%M"
                 datetime_timezone "Europe/Tallinn"
+
+                command_user_command  "whoami"
+                command_user_format  "{stdout}"
+                command_user_interval  "0"
+                command_user_rendermode  "static"
+
+                command_host_command  "uname -n"
+                command_host_format  "{stdout}"
+                command_host_interval  "0"
+                command_host_rendermode  "static"
             }
         }
        children
