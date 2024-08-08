@@ -29,7 +29,7 @@ layout {
                 format_space  ""
                 border_enabled  "true"
                 border_char     "─"
-                border_format   "#[fg=#6C7086]{char}"
+                border_format   "#[fg=#2e2e2e]{char}"
                 border_position "bottom"
 
                 mode_normal  "#[bg=#101010,fg=#6484a4]#[bg=#6484a4]NORMAL#[bg=#101010,fg=#6484a4]"
