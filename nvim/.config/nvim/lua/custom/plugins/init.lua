@@ -78,4 +78,7 @@ return {
 			require("mini.files").setup()
 		end,
 	},
+	{
+		"kevinhwang91/nvim-bqf",
+	},
 }
