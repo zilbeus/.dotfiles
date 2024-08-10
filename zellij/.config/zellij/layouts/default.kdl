@@ -25,7 +25,7 @@ layout {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} #[fg=#89B4FA,bold]{tabs}"
                 format_center "#[fg=#2e2e2e,bold]{session}"
-                format_right  "#[bg=#101010,fg=#eee8d5]#[bg=#eee8d5,fg=#101010]USER #[bg=#2e2e2e,fg=#ced4df] {command_user}@{command_host}#[bg=#101010,fg=#2e2e2e] {datetime}"
+                format_right  "{command_mem} #[bg=#101010,fg=#eee8d5]#[bg=#eee8d5,fg=#101010]USER #[bg=#2e2e2e,fg=#ced4df] {command_user}@{command_host}#[bg=#101010,fg=#2e2e2e] {datetime}"
                 format_space  ""
                 border_enabled  "true"
                 border_char     "─"
@@ -69,6 +69,11 @@ layout {
                 command_host_format  "{stdout}"
                 command_host_interval  "0"
                 command_host_rendermode  "static"
+
+                command_mem_command "bash -c /home/zilq/bin/mem.sh"
+                command_mem_format "#[bg=#101010,fg=#eee8d5]#[bg=#eee8d5,fg=#101010]MEM #[bg=#2e2e2e,fg=#ced4df] {stdout}#[bg=#101010,fg=#2e2e2e]"
+                command_mem_interval  "5"
+                command_mem_rendermode  "static"
             }
         }
        children
