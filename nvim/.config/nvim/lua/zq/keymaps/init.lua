@@ -32,7 +32,7 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>gf", require("mini.files").open, { desc = "Open file tree" })
 
 -- DIFFVIEW
-vim.keymap.set("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", { desc = "Open [G]it File [H]istory view" })
+vim.keymap.set("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>", { desc = "Open [G]it File [H]istory view" })
 vim.keymap.set("n", "<leader>gkg", "<cmd>DiffviewFileHistory<cr>", { desc = "[K]ill [G]it Diff view" })
 
 -- GITSIGNS
