@@ -25,7 +25,7 @@ layout {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} {tabs}"
                 format_center "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]SSN #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {session}#[bg=$bg,fg=$info_val_pill_bg]"
-                format_right  "{command_mem} #[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]USR #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {command_user}@{command_host}#[bg=$bg,fg=$info_val_pill_bg] {datetime}"
+                format_right  "{command_uptime} {command_mem} #[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]USR #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {command_user}@{command_host}#[bg=$bg,fg=$info_val_pill_bg] {datetime}"
                 format_space  ""
                 border_enabled  "true"
                 border_char     "─"
@@ -73,6 +73,11 @@ layout {
                 command_mem_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]MEM #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
                 command_mem_interval  "5"
                 command_mem_rendermode  "static"
+
+                command_uptime_command "bash -c /home/zilq/bin/uptime.sh"
+                command_uptime_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]UP #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
+                command_uptime_interval  "60"
+                command_uptime_rendermode  "static"
 
                 color_info_key_pill_bg "#677777"
                 color_info_key_pill_fg "#242424"
