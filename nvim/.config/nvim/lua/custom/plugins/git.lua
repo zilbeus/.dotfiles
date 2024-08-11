@@ -31,8 +31,8 @@ return {
 			enhanced_diff_hl = true,
 		},
 		config = function()
-			-- vim.opt.fillchars = vim.opt.fillchars + 'diff:╱' -- Kitty terminal could solve this issue
-			vim.opt.fillchars = vim.opt.fillchars + "diff:-"
+			vim.opt.fillchars = vim.opt.fillchars + "diff:╱" -- Kitty terminal could solve this issue
+			-- vim.opt.fillchars = vim.opt.fillchars + "diff:-"
 		end,
 	},
 }
