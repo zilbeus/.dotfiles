@@ -2,35 +2,21 @@ vim.diagnostic.config({
 	virtual_text = false,
 	signs = true,
 	underline = false,
+	update_in_insert = true,
 	float = {
 		header = false,
 		border = "rounded",
 		focusable = true,
 	},
 })
-local icons = {
-	[vim.diagnostic.severity.ERROR] = "E",
-	[vim.diagnostic.severity.WARN] = "W",
-	[vim.diagnostic.severity.INFO] = "I",
-	[vim.diagnostic.severity.HINT] = "H",
-}
-do
-	vim.fn.sign_define(
-		"DiagnosticSignError",
-		{ text = icons[vim.diagnostic.severity.ERROR], texthl = "DiagnosticSignError" }
-	)
-	vim.fn.sign_define(
-		"DiagnosticSignWarn",
-		{ text = icons[vim.diagnostic.severity.WARN], texthl = "DiagnosticSignWarn" }
-	)
-	vim.fn.sign_define(
-		"DiagnosticSignInfo",
-		{ text = icons[vim.diagnostic.severity.INFO], texthl = "DiagnosticSignInfo" }
-	)
-	vim.fn.sign_define(
-		"DiagnosticSignHint",
-		{ text = icons[vim.diagnostic.severity.HINT], texthl = "DiagnosticSignHint" }
-	)
+
+for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
+	vim.fn.sign_define("DiagnosticSign" .. diag, {
+		text = "",
+		texthl = "DiagnosticSign" .. diag,
+		linehl = "",
+		numhl = "DiagnosticSign" .. diag,
+	})
 end
 
 require("tiny-inline-diagnostic").setup({
