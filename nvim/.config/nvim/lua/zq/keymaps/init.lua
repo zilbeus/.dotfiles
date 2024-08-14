@@ -47,4 +47,10 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
+-- GLANCE
+vim.keymap.set("n", "<leader>gD", "<cmd>Glance definitions<cr>", { desc = "Peek definitions" })
+vim.keymap.set("n", "<leader>gR", "<cmd>Glance references<cr>", { desc = "Peek references" })
+vim.keymap.set("n", "<leader>gt", "<cmd>Glance type_definitions<cr>", { desc = "Peek type definitions" })
+vim.keymap.set("n", "<leader>gi", "<cmd>Glance implementations<cr>", { desc = "Peek implementations" })
+
 require("zq.keymaps.lsp")
