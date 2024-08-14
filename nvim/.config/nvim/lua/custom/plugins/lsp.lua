@@ -13,4 +13,7 @@ return {
 		opts = {},
 		config = function() end,
 	},
+	{
+		"dnlhc/glance.nvim",
+	},
 }
