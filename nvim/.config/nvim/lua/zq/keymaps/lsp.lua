@@ -3,7 +3,7 @@ local nmap = function(keys, func, desc)
 		desc = "LSP: " .. desc
 	end
 
-	vim.keymap.set("n", keys, func, { buffer = 0, desc = desc })
+	vim.keymap.set("n", keys, func, { desc = desc })
 end
 
 nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
@@ -39,4 +39,3 @@ nmap("<leader>hr", ":Gitsigns reset_hunk<CR>", "[R]eset hunk")
 nmap("<leader>hR", ":Gitsigns reset_buffer<CR>", "[R]eset buffer")
 nmap("<leader>hp", ":Gitsigns preview_hunk<CR>", "[P]review hunk")
 nmap("<leader>hb", ":Gitsigns toggle_current_line_blame<CR>", "Show line [B]lame")
-nmap("<leader>og", ":Git<CR>", "[O]pen [G]it status")
