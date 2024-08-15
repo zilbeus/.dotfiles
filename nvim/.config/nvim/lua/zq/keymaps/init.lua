@@ -55,4 +55,7 @@ vim.keymap.set("n", "<leader>gR", "<cmd>Glance references<cr>", { desc = "Peek r
 vim.keymap.set("n", "<leader>gt", "<cmd>Glance type_definitions<cr>", { desc = "Peek type definitions" })
 vim.keymap.set("n", "<leader>gi", "<cmd>Glance implementations<cr>", { desc = "Peek implementations" })
 
+-- SESSIONS
+vim.keymap.set("n", "<leader>gs", require("mini.sessions").select, { desc = "Select session" })
+
 require("zq.keymaps.lsp")
