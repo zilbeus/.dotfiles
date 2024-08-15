@@ -35,4 +35,7 @@ return {
 			-- vim.opt.fillchars = vim.opt.fillchars + "diff:-"
 		end,
 	},
+	{
+		"FabijanZulj/blame.nvim",
+	},
 }

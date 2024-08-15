@@ -58,4 +58,7 @@ vim.keymap.set("n", "<leader>gi", "<cmd>Glance implementations<cr>", { desc = "P
 -- SESSIONS
 vim.keymap.set("n", "<leader>gs", require("mini.sessions").select, { desc = "Select session" })
 
+-- BLAME
+vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<cr>", { desc = "Git blame" })
+
 require("zq.keymaps.lsp")
