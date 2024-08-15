@@ -2,7 +2,7 @@ require("telescope").setup({
 	defaults = {
 		layout_strategy = "vertical",
 		layout_config = {
-			vertical = { width = 0.60 },
+			vertical = { width = 0.40, mirror = true, prompt_position = "top", height = 0.5 },
 		},
 		-- borderchars = {
 		-- 	"─",
