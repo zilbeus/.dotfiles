@@ -10,13 +10,18 @@ local hlgroups = {
 	TelescopeNormal = { bg = colors.darker_black },
 
 	TelescopePreviewTitle = {
-		fg = colors.black,
-		bg = colors.green,
+		fg = "#bfc5d0",
+		bg = "#292929",
 	},
 
 	TelescopePromptTitle = {
-		fg = colors.black,
-		bg = colors.red,
+		fg = "#bfc5d0",
+		bg = "#292929",
+	},
+
+	TelescopeResultsTitle = {
+		fg = "#bfc5d0",
+		bg = "#292929",
 	},
 
 	TelescopeSelection = { bg = colors.black2, fg = colors.white },
@@ -39,8 +44,8 @@ local styles = {
 	bordered = {
 		TelescopeBorder = { fg = colors.one_bg3 },
 		TelescopePromptBorder = { fg = colors.one_bg3 },
-		TelescopeResultsTitle = { fg = colors.black, bg = colors.green },
-		TelescopePreviewTitle = { fg = colors.black, bg = colors.blue },
+		TelescopeResultsTitle = hlgroups.TelescopeResultsTitle,
+		TelescopePreviewTitle = hlgroups.TelescopePreviewTitle,
 		TelescopePromptPrefix = { fg = colors.red, bg = colors.black },
 		TelescopeNormal = { bg = colors.black },
 		TelescopePromptNormal = { bg = colors.black },
