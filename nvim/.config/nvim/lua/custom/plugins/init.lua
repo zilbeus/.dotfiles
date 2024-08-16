@@ -60,6 +60,7 @@ return {
 			"MunifTanjim/nui.nvim",
 			"neovim/nvim-lspconfig",
 			"mfussenegger/nvim-dap",
+			"JavaHello/spring-boot.nvim",
 			{
 				"williamboman/mason.nvim",
 				opts = {
