@@ -20,19 +20,6 @@ return {
 	},
 
 	{
-		"numToStr/Comment.nvim",
-		opts = {},
-	},
-
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-	},
-	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {},
@@ -50,26 +37,9 @@ return {
 		dependencies = { "neovim/nvim-lspconfig" },
 	},
 	{
-		"nvim-java/nvim-java",
+		"mfussenegger/nvim-jdtls",
 		dependencies = {
-			"nvim-java/lua-async-await",
-			"nvim-java/nvim-java-refactor",
-			"nvim-java/nvim-java-core",
-			"nvim-java/nvim-java-test",
-			"nvim-java/nvim-java-dap",
-			"MunifTanjim/nui.nvim",
-			"neovim/nvim-lspconfig",
 			"mfussenegger/nvim-dap",
-			"JavaHello/spring-boot.nvim",
-			{
-				"williamboman/mason.nvim",
-				opts = {
-					registries = {
-						"github:nvim-java/mason-registry",
-						"github:mason-org/mason-registry",
-					},
-				},
-			},
 		},
 	},
 	{
