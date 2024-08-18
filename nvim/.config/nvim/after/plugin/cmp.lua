@@ -10,11 +10,11 @@ cmp.setup({
 		format = lspkind.cmp_format({
 			mode = "symbol_text",
 			menu = {
-				buffer = "[Buffer]",
+				buffer = "[BUF]",
 				nvim_lsp = "[LSP]",
-				luasnip = "[LuaSnip]",
-				nvim_lua = "[Lua]",
-				latex_symbols = "[Latex]",
+				luasnip = "[SNP]",
+				nvim_lua = "[LUA]",
+				latex_symbols = "[LTX]",
 			},
 			before = function(entry, vim_item)
 				return vim_item
