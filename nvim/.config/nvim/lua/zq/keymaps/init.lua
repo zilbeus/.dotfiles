@@ -61,4 +61,7 @@ vim.keymap.set("n", "<leader>gs", require("mini.sessions").select, { desc = "Sel
 -- BLAME
 vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<cr>", { desc = "Git blame" })
 
+-- UNDOTREE
+vim.keymap.set("n", "<leader>ou", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
+
 require("zq.keymaps.lsp")

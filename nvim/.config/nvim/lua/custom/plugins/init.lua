@@ -52,4 +52,7 @@ return {
 	{
 		"kevinhwang91/nvim-bqf",
 	},
+	{
+		"mbbill/undotree",
+	},
 }
