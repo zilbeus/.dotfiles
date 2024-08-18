@@ -1,24 +1,24 @@
 layout {
     swap_tiled_layout name="vertical" {
-           tab max_panes=5 {
-               pane split_direction="vertical" {
-                   pane
-                   pane { children; }
-               }
-           }
-           tab max_panes=8 {
-               pane split_direction="vertical" {
-                   pane { children; }
-                   pane { pane; pane; pane; pane; }
-               }
-           }
-           tab max_panes=12 {
-               pane split_direction="vertical" {
-                   pane { children; }
-                   pane { pane; pane; pane; pane; }
-                   pane { pane; pane; pane; pane; }
-               }
-           }
+        tab max_panes=5 {
+            pane split_direction="vertical" {
+                pane
+                pane { children; }
+            }
+        }
+        tab max_panes=8 {
+            pane split_direction="vertical" {
+                pane { children; }
+                pane { pane; pane; pane; pane; }
+            }
+        }
+        tab max_panes=12 {
+            pane split_direction="vertical" {
+                pane { children; }
+                pane { pane; pane; pane; pane; }
+                pane { pane; pane; pane; pane; }
+            }
+        }
     }
     default_tab_template {
         pane size=2 borderless=true {
@@ -46,15 +46,15 @@ layout {
                 mode_move "#[bg=$bg,fg=$mode_pill_bg]#[bg=$mode_pill_bg]MOVE#[bg=$bg,fg=$mode_pill_bg]"
                 mode_prompt "#[bg=$bg,fg=$mode_pill_bg]#[bg=$mode_pill_bg]PROMPT#[bg=$bg,fg=$mode_pill_bg]"
                 mode_tmux  "#[bg=$bg,fg=$mode_pill_bg]#[bg=$mode_pill_bg]TMUX#[bg=$bg,fg=$mode_pill_bg]"
- 
+
                 tab_active   "#[bg=$bg,fg=$tab_active_index_bg]#[fg=$tab_active_index_fg,bg=$tab_active_index_bg,bold]{index} #[bg=$tab_active_name_bg,fg=$tab_active_name_fg] {name}#[bg=$bg,fg=$tab_active_name_bg] "
                 tab_normal   "#[bg=$bg,fg=$tab_normal_index_bg]#[fg=$tab_normal_index_fg,bg=$tab_normal_index_bg,bold]{index} #[bg=$tab_normal_name_bg,fg=$tab_normal_name_fg] {name}#[bg=$bg,fg=$tab_normal_name_bg] "
- 
+
                 command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
                 command_git_branch_format      "#[fg=blue] {stdout} "
                 command_git_branch_interval    "10"
                 command_git_branch_rendermode  "static"
- 
+
                 datetime "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]CLK #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {format}#[bg=$bg,fg=$info_val_pill_bg]"
                 datetime_format "%Y-%m-%d %H:%M"
                 datetime_timezone "Europe/Tallinn"
@@ -108,6 +108,6 @@ layout {
                 color_tab_normal_name_fg "#ced4df"
             }
         }
-       children
+        children
     }
 }
