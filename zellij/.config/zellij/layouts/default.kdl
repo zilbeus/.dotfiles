@@ -25,7 +25,7 @@ layout {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} {tabs}"
                 format_center "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]SSN #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {session}#[bg=$bg,fg=$info_val_pill_bg] {command_player}"
-                format_right  "{command_timew} {command_uptime} {command_mem} #[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]USR #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {command_user}@{command_host}#[bg=$bg,fg=$info_val_pill_bg] {datetime}"
+                format_right  "{command_timew} {command_mem} {datetime}"
                 format_space  ""
                 border_enabled  "true"
                 border_char     "─"
@@ -59,25 +59,10 @@ layout {
                 datetime_format "%Y-%m-%d %H:%M"
                 datetime_timezone "Europe/Tallinn"
 
-                command_user_command  "whoami"
-                command_user_format  "{stdout}"
-                command_user_interval  "0"
-                command_user_rendermode  "static"
-
-                command_host_command  "uname -n"
-                command_host_format  "{stdout}"
-                command_host_interval  "0"
-                command_host_rendermode  "static"
-
                 command_mem_command "bash -c /home/zilq/bin/mem.sh"
                 command_mem_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]MEM #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
                 command_mem_interval  "5"
                 command_mem_rendermode  "static"
-
-                command_uptime_command "bash -c /home/zilq/bin/uptime.sh"
-                command_uptime_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]UP #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
-                command_uptime_interval  "60"
-                command_uptime_rendermode  "static"
 
                 command_player_command "bash -c /home/zilq/bin/spotify-status.sh"
                 command_player_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]PLR #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
