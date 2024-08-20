@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>gf", require("mini.files").open, { desc = "Open fil
 
 -- DIFFVIEW
 vim.keymap.set("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>", { desc = "Open [G]it File [H]istory view" })
-vim.keymap.set("n", "<leader>gkg", "<cmd>DiffviewFileHistory<cr>", { desc = "[K]ill [G]it Diff view" })
+vim.keymap.set("n", "<leader>kt", "<cmd>tabclose<cr>", { desc = "kill tab" })
 
 -- GITSIGNS
 vim.keymap.set("n", "<leader>gd", require("gitsigns").preview_hunk, { desc = "Open [G]it Hunk [D]iff" })
