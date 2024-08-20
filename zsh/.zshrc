@@ -1,19 +1,12 @@
-source /usr/share/fzf/shell/key-bindings.zsh
-source /usr/share/fzf/shell/completion.zsh
-
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 TERM=xterm-256color
 # Aliases
 alias diff='diff --color=auto'
