@@ -1,5 +1,3 @@
-source $HOME/antigen.zsh
-source $HOME/.antigenrc
 source /usr/share/fzf/shell/key-bindings.zsh
 source /usr/share/fzf/shell/completion.zsh
 
@@ -25,7 +23,6 @@ alias lsg='eza -la --icons --header --git --time-style=long-iso --grid'
 alias ip='ip -color=auto'
 alias bat='bat --paging=never'
 alias vg='vagrant'
-alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vp='fd -t file -t d . /home/zilq/projects | fzf --print0 | xargs -0 -o nvim'
 alias vc='fd -t file -t d . /home/zilq/.config | fzf --print0 | xargs -0 -o nvim'
 alias ng='nvim -c Neogit'
@@ -47,3 +44,4 @@ export PATH=$PATH:/home/zilq/.spicetify:/home/zilq/bin:/home/zilq/.local/bin:/us
 export CLASSPATH=~/.java/libs/algs4.jar
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+source <(fzf --zsh)
