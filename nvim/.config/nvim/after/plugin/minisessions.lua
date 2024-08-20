@@ -1,5 +1,5 @@
 require("mini.sessions").setup({
 	file = "",
-	directory = "/home/zilq/.config/nvim/sessions/",
+	directory = vim.fn.stdpath("config") .. "/sessions/",
 	autoread = false,
 })
