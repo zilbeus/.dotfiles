@@ -49,6 +49,9 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
+vim.keymap.set("n", "<S-h>", "20zh", { desc = "Scroll buffer to the left" })
+vim.keymap.set("n", "<S-l>", "20zl", { desc = "Scroll buffer to the right" })
+
 -- GLANCE
 vim.keymap.set("n", "<leader>gD", "<cmd>Glance definitions<cr>", { desc = "Peek definitions" })
 vim.keymap.set("n", "<leader>gR", "<cmd>Glance references<cr>", { desc = "Peek references" })
