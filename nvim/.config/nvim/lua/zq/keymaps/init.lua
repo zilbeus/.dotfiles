@@ -12,7 +12,13 @@ vim.keymap.set("n", "<leader>sH", require("telescope.builtin").highlights, { des
 
 -- DIAGNOSTICS
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>q", "<cmd>Trouble<cr>", { desc = "Open diagnostics list" })
+vim.keymap.set(
+	"n",
+	"<leader>q",
+	"<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>",
+	{ desc = "Open buffer diagnostics list" }
+)
+vim.keymap.set("n", "<leader>Q", "<cmd>Trouble diagnostics toggle focus=true<cr>", { desc = "Open diagnostics list" })
 
 -- HALF PAGE NAVIGATION
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
