@@ -5,8 +5,6 @@ setopt autocd
 bindkey -e
 zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -Uz compinit
-compinit
 TERM=xterm-256color
 # Aliases
 alias diff='diff --color=auto'
@@ -38,3 +36,6 @@ export CLASSPATH=~/.java/libs/algs4.jar
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 source <(fzf --zsh)
+. "$HOME/.asdf/asdf.sh"
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
