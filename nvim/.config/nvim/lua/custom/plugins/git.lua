@@ -26,14 +26,6 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
-		opts = {
-			use_icons = true,
-			enhanced_diff_hl = true,
-		},
-		config = function()
-			vim.opt.fillchars = vim.opt.fillchars + "diff:╱" -- Kitty terminal could solve this issue
-			-- vim.opt.fillchars = vim.opt.fillchars + "diff:-"
-		end,
 	},
 	{
 		"FabijanZulj/blame.nvim",
