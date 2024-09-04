@@ -13,6 +13,7 @@ local integrations = {
 	"zq.theme.integrations.telescope",
 	"zq.theme.integrations.whichkey",
 	"zq.theme.integrations.trouble",
+	"zq.theme.integrations.diffview",
 }
 
 local apply_integration = function(integrationName)
