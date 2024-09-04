@@ -40,14 +40,20 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>gf", require("mini.files").open, { desc = "Open file tree" })
 
 -- DIFFVIEW
-vim.keymap.set("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>", { desc = "Open [G]it File [H]istory view" })
+vim.keymap.set("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>", { desc = "repository history" })
 vim.keymap.set("n", "<leader>kt", "<cmd>tabclose<cr>", { desc = "kill tab" })
+vim.keymap.set("n", "<leader>ghf", "<cmd>DiffviewFileHistory --follow %<cr>", { desc = "file history" })
+vim.keymap.set("v", "<leader>ghv", "<esc><cmd>'<,'>DiffviewFileHistory --follow<cr>", { desc = "range history" })
+vim.keymap.set("n", "<leader>ghl", "<cmd>.DiffviewFileHistory --follow<cr>", { desc = "line history" })
 
 -- GITSIGNS
 vim.keymap.set("n", "<leader>gd", require("gitsigns").preview_hunk, { desc = "Open [G]it Hunk [D]iff" })
 vim.keymap.set("n", "<leader>gr", require("gitsigns").reset_hunk, { desc = "[R]eset [G]it Hunk" })
 vim.keymap.set("n", "<leader>ghn", require("gitsigns").next_hunk, { desc = "[N]ext [G]it [H]unk" })
 vim.keymap.set("n", "<leader>ghp", require("gitsigns").prev_hunk, { desc = "[P]revious [G]it [H]unk" })
+vim.keymap.set("n", "<leader>Gsw", require("gitsigns").toggle_word_diff, { desc = "toggle word diff" })
+vim.keymap.set("n", "<leader>Gsl", require("gitsigns").toggle_linehl, { desc = "toggle line diff" })
+vim.keymap.set("n", "<leader>Gsd", require("gitsigns").toggle_deleted, { desc = "toggle deleted line diff" })
 
 -- BUFFER NAVIGATION
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
