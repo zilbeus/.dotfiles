@@ -24,12 +24,12 @@ local hlgroups = {
 		bg = "#292929",
 	},
 
-	TelescopeSelection = { bg = colors.black2, fg = colors.white },
+	TelescopeSelection = { bg = colors.pmenu_bg, fg = colors.base01 },
 	TelescopeResultsDiffAdd = { fg = colors.green },
 	TelescopeResultsDiffChange = { fg = colors.yellow },
 	TelescopeResultsDiffDelete = { fg = colors.red },
 
-	TelescopeMatching = { bg = colors.one_bg, fg = colors.blue },
+	TelescopeMatching = { bg = colors.pmenu_bg, fg = colors.base01 },
 }
 
 local styles = {
