@@ -33,7 +33,7 @@ layout {
                 border_position "bottom"
 
                 mode_normal  "#[bg=$bg,fg=$mode_pill_bg]#[bg=$mode_pill_bg]NORMAL#[bg=$bg,fg=$mode_pill_bg]"
-                mode_locked  "#[bg=$bg,fg=$mode_locked_pill_bg]#[bg=$mode_locked_pill_bg,fg=$mode_locked_pill_fg]LOCKED#[bg=$bg,fg=$mode_locked_pill_bg]"
+                mode_locked  "#[bg=$bg,fg=$mode_locked_pill_bg]#[bg=$mode_locked_pill_bg,fg=$mode_locked_pill_fg]󰌾 LOCKED#[bg=$bg,fg=$mode_locked_pill_bg]"
                 mode_resize  "#[bg=$bg,fg=$mode_pill_bg]#[bg=$mode_pill_bg]RESIZE#[bg=$bg,fg=$mode_pill_bg]"
                 mode_pane "#[bg=$bg,fg=$mode_pill_bg]#[bg=$mode_pill_bg]PANE#[bg=$bg,fg=$mode_pill_bg]"
                 mode_tab "#[bg=$bg,fg=$mode_pill_bg]#[bg=$mode_pill_bg]TAB#[bg=$bg,fg=$mode_pill_bg]"
