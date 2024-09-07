@@ -14,8 +14,8 @@ alias lsg='eza -la --icons --header --git --time-style=long-iso --grid'
 alias ip='ip -color=auto'
 alias bat='bat --paging=never'
 alias vg='vagrant'
-alias vp='fd -t file -t d . /home/zilq/projects | fzf --print0 | xargs -0 -o nvim'
-alias vc='fd -t file -t d . /home/zilq/.config | fzf --print0 | xargs -0 -o nvim'
+alias vp='fd -t file -t d . $HOME/projects | fzf --print0 | xargs -0 -o nvim'
+alias vc='fd -t file -t d . $HOME/.config | fzf --print0 | xargs -0 -o nvim'
 alias ng='nvim -c Neogit'
 
 export EDITOR='/usr/bin/nvim'
@@ -34,7 +34,7 @@ export NVM_DIR="$HOME/.config/nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export PATH=$PATH:/home/zilq/.spicetify:/home/zilq/bin:/home/zilq/.local/bin:/usr/local/go/bin:/home/zilq/go/bin:/home/zilq/.cargo/bin
+export PATH=$PATH:$HOME/.spicetify:$HOME/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.cargo/bin
 export CLASSPATH=~/.java/libs/algs4.jar
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
