@@ -25,18 +25,3 @@ for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
 		numhl = "DiagnosticSign" .. diag,
 	})
 end
-
--- require("tiny-inline-diagnostic").setup({
--- 	signs = {
--- 		left = "",
--- 		right = "",
--- 		diag = "●",
--- 		arrow = " ",
--- 		up_arrow = "    ",
--- 		vertical = " │",
--- 		vertical_end = " └",
--- 	},
--- 	options = {
--- 		show_source = true,
--- 	},
--- })
