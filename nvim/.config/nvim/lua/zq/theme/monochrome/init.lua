@@ -14,6 +14,7 @@ local integrations = {
 	"zq.theme.integrations.whichkey",
 	"zq.theme.integrations.trouble",
 	"zq.theme.integrations.diffview",
+	"zq.theme.integrations.diagnostics",
 }
 
 local apply_integration = function(integrationName)
