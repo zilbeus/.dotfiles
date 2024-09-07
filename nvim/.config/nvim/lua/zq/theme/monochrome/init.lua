@@ -15,6 +15,7 @@ local integrations = {
 	"zq.theme.integrations.trouble",
 	"zq.theme.integrations.diffview",
 	"zq.theme.integrations.diagnostics",
+	"zq.theme.integrations.indentblankline",
 }
 
 local apply_integration = function(integrationName)
