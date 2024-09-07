@@ -1,0 +1,19 @@
+[manager]
+cwd = { fg = "#eee8d5" }
+hovered = { fg = "#2e2e2e", bg = "#859ba2" }
+border_style = { fg = "#383838" }
+
+[status]
+separator_style = { bg = "#2e2e2e", fg = "#2e2e2e" }
+mode_normal = { fg = "#2e2e2e", bg = "#859ba2" }
+permissions_t = { fg = "#bfc5d0" }
+permissions_r = { fg = "#bfc5d0" }
+permissions_w = { fg = "#bfc5d0" }
+permissions_x = { fg = "#bfc5d0" }
+permissions_s = { fg = "#383838" }
+
+[filetype]
+rules = [
+    { name = "*/", fg = "#859ba2"},
+    { name = "*", fg = "#ced4df"}
+]
