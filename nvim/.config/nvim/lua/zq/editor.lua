@@ -1,6 +1,6 @@
 vim.o.hlsearch = true
 vim.wo.number = true
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 vim.o.clipboard = "unnamedplus" -- :help clipboard
 vim.o.breakindent = true
 vim.o.undofile = true
@@ -11,6 +11,7 @@ vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = "menuone,noselect"
+vim.o.showtabline = 1
 vim.opt.guicursor = ""
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4

@@ -41,7 +41,6 @@ vim.keymap.set("n", "<leader>gf", require("mini.files").open, { desc = "Open fil
 
 -- DIFFVIEW
 vim.keymap.set("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>", { desc = "repository history" })
-vim.keymap.set("n", "<leader>kt", "<cmd>tabclose<cr>", { desc = "kill tab" })
 vim.keymap.set("n", "<leader>ghf", "<cmd>DiffviewFileHistory --follow %<cr>", { desc = "file history" })
 vim.keymap.set("v", "<leader>ghv", "<esc><cmd>'<,'>DiffviewFileHistory --follow<cr>", { desc = "range history" })
 vim.keymap.set("n", "<leader>ghl", "<cmd>.DiffviewFileHistory --follow<cr>", { desc = "line history" })
@@ -81,5 +80,11 @@ vim.keymap.set("n", "<leader>ou", "<cmd>UndotreeToggle<cr>", { desc = "Undotree"
 
 -- COMMENTs
 vim.keymap.set("n", "<leader>gT", "<cmd>TodoLocList<cr>", { desc = "list TODO comments" })
+
+-- TABS
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "next tab" })
+vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "previous tab" })
+vim.keymap.set("n", "<leader>tN", "<cmd>tabnew<cr>", { desc = "new tab" })
+vim.keymap.set("n", "<leader>tk", "<cmd>tabclose<cr>", { desc = "kill tab" })
 
 require("zq.keymaps.lsp")
