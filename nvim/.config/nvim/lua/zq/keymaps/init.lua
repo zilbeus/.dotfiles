@@ -79,4 +79,7 @@ vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<cr>", { desc = "Git blame" }
 -- UNDOTREE
 vim.keymap.set("n", "<leader>ou", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
 
+-- COMMENTs
+vim.keymap.set("n", "<leader>gT", "<cmd>TodoLocList<cr>", { desc = "list TODO comments" })
+
 require("zq.keymaps.lsp")
