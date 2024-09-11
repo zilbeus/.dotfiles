@@ -10,6 +10,7 @@ local colors = {
 	grey_fg = "#4c4c4c",
 	grey_fg2 = "#606060",
 	light_grey = "#677777",
+	visual_line = "#1a2022",
 	red = "#ec8989",
 	baby_pink = "#eca8a8",
 	pink = "#da838b",
