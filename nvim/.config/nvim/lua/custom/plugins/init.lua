@@ -73,4 +73,9 @@ return {
 		ft = "markdown",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	{
+		"0xAdk/full_visual_line.nvim",
+		keys = "V",
+		opts = {},
+	},
 }
