@@ -9,6 +9,7 @@ vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc
 vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
 vim.keymap.set("n", "<leader>sk", require("telescope.builtin").keymaps, { desc = "[S]earch [K]eymaps" })
 vim.keymap.set("n", "<leader>sH", require("telescope.builtin").highlights, { desc = "[S]earch [H]ighlights" })
+vim.keymap.set("n", "<leader>sb", require("telescope.builtin").git_branches, { desc = "search git branches" })
 
 -- DIAGNOSTICS
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
@@ -78,7 +79,7 @@ vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<cr>", { desc = "Git blame" }
 -- UNDOTREE
 vim.keymap.set("n", "<leader>ou", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
 
--- COMMENTs
+-- COMMENTS
 vim.keymap.set("n", "<leader>gT", "<cmd>TodoLocList<cr>", { desc = "list TODO comments" })
 
 -- TABS
