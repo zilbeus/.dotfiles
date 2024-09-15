@@ -88,4 +88,7 @@ vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "previous tab
 vim.keymap.set("n", "<leader>tN", "<cmd>tabnew<cr>", { desc = "new tab" })
 vim.keymap.set("n", "<leader>tk", "<cmd>tabclose<cr>", { desc = "kill tab" })
 
+-- ILLUMINATE
+vim.keymap.set("n", "<leader>ti", "<cmd>IlluminateToggle<cr>", { desc = "toggle cursor word match highlight" })
+
 require("zq.keymaps.lsp")

@@ -18,6 +18,7 @@ local integrations = {
 	"zq.theme.integrations.indentblankline",
 	"zq.theme.integrations.bqf",
 	"zq.theme.integrations.minifiles",
+	"zq.theme.integrations.illuminate",
 }
 
 local apply_integration = function(integrationName)

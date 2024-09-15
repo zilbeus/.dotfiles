@@ -92,4 +92,7 @@ return {
 		ft = { "http" },
 		dependencies = { "luarocks.nvim" },
 	},
+	{
+		"RRethy/vim-illuminate",
+	},
 }
