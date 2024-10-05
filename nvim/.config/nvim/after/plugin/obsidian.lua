@@ -28,4 +28,14 @@ require("obsidian").setup({
 	attachments = {
 		img_folder = "99_ETC/attachments",
 	},
+	disable_frontmatter = true,
+	note_id_func = function(title)
+		return title
+	end,
 })
+
+vim.api.nvim_create_user_command("ObsidianNewNoteFromTemplate", function()
+	vim.cmd("ObsidianNew")
+	vim.cmd("normal! ggdG")
+	vim.cmd("ObsidianTemplate")
+end, {})

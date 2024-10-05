@@ -91,4 +91,12 @@ vim.keymap.set("n", "<leader>tk", "<cmd>tabclose<cr>", { desc = "kill tab" })
 -- ILLUMINATE
 vim.keymap.set("n", "<leader>ti", "<cmd>IlluminateToggle<cr>", { desc = "toggle cursor word match highlight" })
 
+-- OBSIDIAN NOTES
+vim.keymap.set("n", "<leader>nn", "<cmd>ObsidianNewNoteFromTemplate<cr>", { desc = "new obsidian note from template" })
+vim.keymap.set("n", "<leader>nN", "<cmd>ObsidianNew<cr>", { desc = "new obsidian note" })
+vim.keymap.set("v", "<leader>ne", "<cmd>ObsidianExtractNote<cr>", { desc = "extract selection to new obsidian note" })
+vim.keymap.set("n", "<leader>nt", "<cmd>ObsidianTemplate<cr>", { desc = "apply template to obsidian note" })
+vim.keymap.set("n", "<leader>nf", "<cmd>ObsidianSearch<cr>", { desc = "find obsidian note" })
+vim.keymap.set("n", "<leader>no", "<cmd>ObsidianOpen<cr>", { desc = "open note in obsidian" })
+
 require("zq.keymaps.lsp")
