@@ -23,5 +23,6 @@ for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
 		texthl = "DiagnosticSign" .. diag,
 		linehl = "",
 		numhl = "DiagnosticSign" .. diag,
+		culhl = "DiagnosticSignCurrentLine" .. diag,
 	})
 end
