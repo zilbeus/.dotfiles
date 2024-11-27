@@ -6,8 +6,9 @@ config.color_scheme = "zenbones_dark"
 config.enable_tab_bar = false
 config.window_decorations = "TITLE | RESIZE"
 config.enable_wayland = false
+config.max_fps = 240
 config.font = wezterm.font({
-	family = "JetBrainsMono Nerd Font",
+	family = "Berkeley Mono",
 	weight = "Bold",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
