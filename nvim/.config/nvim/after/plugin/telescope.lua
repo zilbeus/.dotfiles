@@ -5,7 +5,7 @@ require("telescope").setup({
 	defaults = {
 		layout_strategy = "vertical",
 		layout_config = {
-			vertical = { width = 0.60, mirror = true, prompt_position = "top", height = 0.5 },
+			vertical = { width = { padding = 0 }, mirror = true, prompt_position = "top", height = 0.60, anchor = "S" },
 		},
 		path_display = function(opts, path)
 			local tail = require("telescope.utils").path_tail(path)
