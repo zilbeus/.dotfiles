@@ -1,7 +1,10 @@
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt AUTO_CD
+setopt SHARE_HISTORY
+
 bindkey -e
 zstyle :compinstall filename '$HOME/.zshrc'
 
