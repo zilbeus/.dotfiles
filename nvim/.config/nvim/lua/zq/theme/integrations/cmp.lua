@@ -51,6 +51,7 @@ local styles = {
 	default = {
 		-- CmpBorder = { fg = colors.grey_fg },
 		CmpBorder = { fg = colors.line },
+		BlinkCmpMenuBorder = { fg = colors.line },
 	},
 
 	atom = {
@@ -79,6 +80,7 @@ local styles = {
 		},
 
 		CmpBorder = { fg = colors.black2, bg = colors.black2 },
+		BlinkCmpMenuBorder = { fg = colors.black2, bg = colors.black2 },
 		CmpDocumentationBorder = { fg = colors.darker_black, bg = colors.darker_black },
 	},
 
@@ -88,6 +90,7 @@ local styles = {
 		},
 
 		CmpBorder = { fg = colors.darker_black, bg = colors.darker_black },
+		BlinkCmpMenuBorder = { fg = colors.darker_black, bg = colors.darker_black },
 		CmpDocumentationBorder = { fg = colors.black2, bg = colors.black2 },
 		CmpDoc = { bg = colors.black2 },
 	},
