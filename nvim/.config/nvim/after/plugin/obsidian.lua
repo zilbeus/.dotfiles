@@ -10,7 +10,7 @@ require("obsidian").setup({
 		date_format = "%Y-%m-%d",
 	},
 	completion = {
-		nvim_cmp = true,
+		nvim_cmp = false,
 		min_chars = 2,
 	},
 	new_notes_location = "00_INBOX",

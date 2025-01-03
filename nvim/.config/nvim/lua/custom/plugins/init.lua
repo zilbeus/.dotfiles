@@ -35,9 +35,7 @@ return {
 
 		-- example using `opts` for defining servers
 		opts = {
-			servers = {
-				lua_ls = {},
-			},
+			servers = {},
 		},
 		config = function(_, opts)
 			local lspconfig = require("lspconfig")
