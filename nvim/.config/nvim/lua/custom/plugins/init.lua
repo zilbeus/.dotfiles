@@ -4,11 +4,10 @@ return {
 	{
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
 	},
 	{
 		"saghen/blink.cmp",
-		version = "v0.9.0",
+		version = "v0.9.1",
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
