@@ -2,6 +2,11 @@ return {
 	"tpope/vim-fugitive",
 	"tpope/vim-sleuth",
 	{
+		"ibhagwan/fzf-lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {},
+	},
+	{
 		"saghen/blink.cmp",
 		version = "v0.9.0",
 		---@module 'blink.cmp'
