@@ -3,7 +3,17 @@ require("fzf-lua").setup({
 		height = 0.4,
 		width = 1.0,
 		row = 1,
-		border = "single",
+		-- border = "single",
+		border = {
+			"┏",
+			"━",
+			"┓",
+			"┃",
+			"┛",
+			"━",
+			"┗",
+			"┃",
+		},
 		backdrop = 100,
 		preview = {
 			vertical = "up:65%",
