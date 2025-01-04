@@ -1,14 +1,50 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-vim.keymap.set("n", "<leader>rf", require("telescope.builtin").oldfiles, { desc = "[rf] Find recently opened files" })
-vim.keymap.set("n", "<leader>b", require("telescope.builtin").buffers, { desc = "[b] Find existing buffers" })
-vim.keymap.set("n", "<leader>gF", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
-vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
 vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
 vim.keymap.set("n", "<leader>sk", require("telescope.builtin").keymaps, { desc = "[S]earch [K]eymaps" })
 vim.keymap.set("n", "<leader>sH", require("telescope.builtin").highlights, { desc = "[S]earch [H]ighlights" })
-vim.keymap.set("n", "<leader>sb", require("telescope.builtin").git_branches, { desc = "search git branches" })
 vim.keymap.set("n", "<leader>fs", "<cmd>FzfLua files hls.border=FzfLuaBorderInvisible<cr>", { desc = "search files" })
+vim.keymap.set(
+	"n",
+	"<leader>gB",
+	"<cmd>FzfLua git_branches hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search git branches" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>gc",
+	"<cmd>FzfLua git_commits hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search git commits" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>gF",
+	"<cmd>FzfLua git_files hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search git files" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sg",
+	"<cmd>FzfLua live_grep hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search pattern" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sw",
+	"<cmd>FzfLua grep_cword hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search word" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>fr",
+	"<cmd>FzfLua oldfiles hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search recent files" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>bs",
+	"<cmd>FzfLua buffers hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search buffers" }
+)
 vim.keymap.set(
 	"n",
 	"<leader>hs",
