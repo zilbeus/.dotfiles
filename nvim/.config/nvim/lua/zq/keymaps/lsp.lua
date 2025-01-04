@@ -33,7 +33,7 @@ vim.api.nvim_buf_create_user_command(0, "Format", function(_)
 	vim.lsp.buf.format()
 end, { desc = "Format current buffer with LSP" })
 
-nmap("<leader>f", vim.lsp.buf.format, "[F]ormat buffer")
+nmap("<leader>bf", vim.lsp.buf.format, "[F]ormat buffer")
 nmap("<leader>ob", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", "[O]pen File [B]rowser")
 nmap("<leader>hr", ":Gitsigns reset_hunk<CR>", "[R]eset hunk")
 nmap("<leader>hR", ":Gitsigns reset_buffer<CR>", "[R]eset buffer")
