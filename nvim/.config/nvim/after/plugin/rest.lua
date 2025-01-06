@@ -1,7 +1,7 @@
-require("rest-nvim").setup({
-	result = {
-		formatters = {
-			json = "jq",
-		},
-	},
-})
+-- require("rest-nvim").setup({
+-- 	result = {
+-- 		formatters = {
+-- 			json = "jq",
+-- 		},
+-- 	},
+-- })

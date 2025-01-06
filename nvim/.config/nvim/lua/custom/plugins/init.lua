@@ -127,20 +127,6 @@ return {
 		opts = {},
 	},
 	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		opts = {
-			rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
-		},
-		config = true,
-	},
-	{
-		"rest-nvim/rest.nvim",
-		event = "VeryLazy",
-		ft = { "http" },
-		dependencies = { "luarocks.nvim" },
-	},
-	{
 		"RRethy/vim-illuminate",
 	},
 }
