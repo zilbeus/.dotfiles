@@ -1,8 +1,23 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
-vim.keymap.set("n", "<leader>sk", require("telescope.builtin").keymaps, { desc = "[S]earch [K]eymaps" })
-vim.keymap.set("n", "<leader>sH", require("telescope.builtin").highlights, { desc = "[S]earch [H]ighlights" })
 vim.keymap.set("n", "<leader>fs", "<cmd>FzfLua files hls.border=FzfLuaBorderInvisible<cr>", { desc = "search files" })
+vim.keymap.set(
+	"n",
+	"<leader>sd",
+	"<cmd>FzfLua diagnostics_workspace hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search diagnostics" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sk",
+	"<cmd>FzfLua keymaps hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search keymaps" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sh",
+	"<cmd>FzfLua highlights hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search highlights" }
+)
 vim.keymap.set(
 	"n",
 	"<leader>gB",
