@@ -2,30 +2,6 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "<leader>fs", "<cmd>FzfLua files hls.border=FzfLuaBorderInvisible<cr>", { desc = "search files" })
 vim.keymap.set(
 	"n",
-	"<leader>ca",
-	"<cmd>FzfLua lsp_code_actions hls.border=FzfLuaBorderInvisible<cr>",
-	{ desc = "code actions" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>cs",
-	"<cmd>FzfLua lsp_document_symbols hls.border=FzfLuaBorderInvisible<cr>",
-	{ desc = "code symbols" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>cr",
-	"<cmd>FzfLua lsp_references hls.border=FzfLuaBorderInvisible<cr>",
-	{ desc = "code references" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>sd",
-	"<cmd>FzfLua diagnostics_workspace hls.border=FzfLuaBorderInvisible<cr>",
-	{ desc = "search diagnostics" }
-)
-vim.keymap.set(
-	"n",
 	"<leader>sk",
 	"<cmd>FzfLua keymaps hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "search keymaps" }
