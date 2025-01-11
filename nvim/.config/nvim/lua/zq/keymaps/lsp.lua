@@ -6,12 +6,27 @@ local nmap = function(keys, func, desc)
 	vim.keymap.set("n", keys, func, { desc = desc })
 end
 
-nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+nmap("<leader>cR", vim.lsp.buf.rename, "rename symbol")
 
-nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
 nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+vim.keymap.set(
+	"n",
+	"<leader>ci",
+	"<cmd>FzfLua lsp_implementations hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "implementations" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>cd",
+	"<cmd>FzfLua lsp_definitions hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "definitions" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>cD",
+	"<cmd>FzfLua lsp_typedefs hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "type definitions" }
+)
 vim.keymap.set(
 	"n",
 	"<leader>ca",
