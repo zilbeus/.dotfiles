@@ -18,6 +18,7 @@ require("fzf-lua").setup({
 		preview = {
 			vertical = "up:65%",
 			layout = "vertical",
+			title_pos = "left",
 		},
 	},
 	hls = {
