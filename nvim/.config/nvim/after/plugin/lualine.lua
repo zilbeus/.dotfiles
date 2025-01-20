@@ -1,3 +1,4 @@
+local colors_theme = require("zq.theme.monochrome.palette")
 local colors = {
 	black = "#141414",
 	white = "#adadad",
@@ -21,44 +22,64 @@ local colors = {
 	filename_fg = "#adadad",
 }
 
+local modes = {
+	["NORMAL"] = "NRM",
+	["O-PENDING"] = "N?",
+	["INSERT"] = "INS",
+	["VISUAL"] = "VIS",
+	["V-BLOCK"] = "VBL",
+	["V-LINE"] = "VLN",
+	["V-REPLACE"] = "VRP",
+	["REPLACE"] = "RPL",
+	["COMMAND"] = "CMD",
+	["SHELL"] = "SHL",
+	["TERMINAL"] = "TRM",
+	["EX"] = "EX",
+	["S-BLOCK"] = "SBL",
+	["S-LINE"] = "SLN",
+	["SELECT"] = "SEL",
+	["CONFIRM"] = "CNF",
+	["MORE"] = "MRE",
+}
+
 local lualine_theme = {
 	normal = {
-		a = { bg = colors.gray_bg, fg = colors.gray_fg, gui = "bold" },
+		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
 		b = { bg = colors.b_black, fg = colors.filename_fg },
 		c = { bg = colors.black, fg = colors.white },
 		y = { bg = colors.b_black, fg = colors.white },
 		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
 	},
 	insert = {
-		a = { bg = colors.accent, fg = colors.accent_fg, gui = "bold" },
+		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
 		b = { bg = colors.b_black, fg = colors.filename_fg },
 		c = { bg = colors.black, fg = colors.white },
 		y = { bg = colors.b_black, fg = colors.white },
 		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
 	},
 	visual = {
-		a = { bg = colors.green, fg = colors.green_fg, gui = "bold" },
+		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
 		b = { bg = colors.b_black, fg = colors.filename_fg },
 		c = { bg = colors.black, fg = colors.white },
 		y = { bg = colors.b_black, fg = colors.white },
 		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
 	},
 	replace = {
-		a = { bg = colors.blue, fg = colors.blue_fg, gui = "bold" },
+		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
 		b = { bg = colors.b_black, fg = colors.filename_fg },
 		c = { bg = colors.black, fg = colors.white },
 		y = { bg = colors.b_black, fg = colors.white },
 		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
 	},
 	command = {
-		a = { bg = colors.red_bg, fg = colors.red, gui = "bold" },
+		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
 		b = { bg = colors.b_black, fg = colors.filename_fg },
 		c = { bg = colors.black, fg = colors.white },
 		y = { bg = colors.b_black, fg = colors.white },
 		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
 	},
 	inactive = {
-		a = { bg = colors.black, fg = colors.white, gui = "bold" },
+		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
 		b = { bg = colors.black, fg = colors.white },
 		c = { bg = colors.black, fg = colors.white },
 	},
@@ -69,13 +90,18 @@ require("lualine").setup({
 		-- theme = lualine_theme,
 		icons_enabled = true,
 		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		always_divide_middle = true,
 		globalstatus = true,
 	},
 	sections = {
 		lualine_a = {
-			"mode",
+			{
+				"mode",
+				fmt = function(s)
+					return modes[s] or s
+				end,
+			},
 		},
 		lualine_b = {
 			{
