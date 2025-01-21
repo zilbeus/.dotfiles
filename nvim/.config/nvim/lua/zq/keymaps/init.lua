@@ -1,5 +1,5 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-vim.keymap.set("n", "<leader>fs", "<cmd>FzfLua files hls.border=FzfLuaBorderInvisible<cr>", { desc = "search files" })
+vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files hls.border=FzfLuaBorderInvisible<cr>", { desc = "search files" })
 vim.keymap.set(
 	"n",
 	"<leader>sk",
@@ -50,7 +50,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>bs",
+	"<leader>bb",
 	"<cmd>FzfLua buffers hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "search buffers" }
 )
