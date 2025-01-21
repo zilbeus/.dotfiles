@@ -21,6 +21,8 @@ alias vp='fd -t file -t d . $HOME/projects | fzf --print0 | xargs -0 -o nvim'
 alias vc='fd -t file -t d . $HOME/.config | fzf --print0 | xargs -0 -o nvim'
 alias ng='nvim -c Neogit'
 alias oo='cd $HOME/.pkm && nvim'
+alias k='kubectl'
+alias kg='kubectl get'
 
 export EDITOR='/usr/bin/nvim'
 export FZF_ALT_C_COMMAND='(fd -t d . -H $HOME)'
