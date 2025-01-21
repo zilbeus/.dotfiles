@@ -6,7 +6,7 @@ local nmap = function(keys, func, desc)
 	vim.keymap.set("n", keys, func, { desc = desc })
 end
 
-nmap("<leader>cR", vim.lsp.buf.rename, "rename symbol")
+nmap("<leader>cr", vim.lsp.buf.rename, "rename symbol")
 
 nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 vim.keymap.set(
@@ -17,13 +17,13 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>cd",
+	"<leader>cdd",
 	"<cmd>FzfLua lsp_definitions hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "definitions" }
 )
 vim.keymap.set(
 	"n",
-	"<leader>cD",
+	"<leader>cdt",
 	"<cmd>FzfLua lsp_typedefs hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "type definitions" }
 )
@@ -54,7 +54,7 @@ vim.keymap.set(
 
 -- See `:help K` for why this keymap
 nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-nmap("<leader>dS", vim.lsp.buf.signature_help, "Signature Documentation")
+nmap("<leader>ch", vim.lsp.buf.signature_help, "Signature Documentation")
 
 -- Lesser used LSP functionality
 nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -71,7 +71,7 @@ end, { desc = "Format current buffer with LSP" })
 
 nmap("<leader>bf", vim.lsp.buf.format, "[F]ormat buffer")
 nmap("<leader>ob", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", "[O]pen File [B]rowser")
-nmap("<leader>hr", ":Gitsigns reset_hunk<CR>", "[R]eset hunk")
-nmap("<leader>hR", ":Gitsigns reset_buffer<CR>", "[R]eset buffer")
+nmap("<leader>hrr", ":Gitsigns reset_hunk<CR>", "[R]eset hunk")
+nmap("<leader>hrb", ":Gitsigns reset_buffer<CR>", "[R]eset buffer")
 nmap("<leader>hp", ":Gitsigns preview_hunk<CR>", "[P]review hunk")
 nmap("<leader>hb", ":Gitsigns toggle_current_line_blame<CR>", "Show line [B]lame")

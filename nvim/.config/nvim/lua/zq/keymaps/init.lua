@@ -14,7 +14,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>gB",
+	"<leader>gbr",
 	"<cmd>FzfLua git_branches hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "search git branches" }
 )
@@ -26,13 +26,13 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>gF",
+	"<leader>gfg",
 	"<cmd>FzfLua git_files hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "search git files" }
 )
 vim.keymap.set(
 	"n",
-	"<leader>sg",
+	"<leader>ss",
 	"<cmd>FzfLua live_grep hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "search pattern" }
 )
@@ -91,7 +91,7 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>gf", require("mini.files").open, { desc = "Open file tree" })
 
 -- DIFFVIEW
-vim.keymap.set("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>", { desc = "repository history" })
+vim.keymap.set("n", "<leader>ghr", "<cmd>DiffviewFileHistory<cr>", { desc = "repository history" })
 vim.keymap.set("n", "<leader>ghf", "<cmd>DiffviewFileHistory --follow %<cr>", { desc = "file history" })
 vim.keymap.set("v", "<leader>ghv", "<esc><cmd>'<,'>DiffviewFileHistory --follow<cr>", { desc = "range history" })
 vim.keymap.set("n", "<leader>ghl", "<cmd>.DiffviewFileHistory --follow<cr>", { desc = "line history" })
@@ -115,8 +115,8 @@ vim.keymap.set("n", "<S-h>", "20zh", { desc = "Scroll buffer to the left" })
 vim.keymap.set("n", "<S-l>", "20zl", { desc = "Scroll buffer to the right" })
 
 -- GLANCE
-vim.keymap.set("n", "<leader>gD", "<cmd>Glance definitions<cr>", { desc = "Peek definitions" })
-vim.keymap.set("n", "<leader>gR", "<cmd>Glance references<cr>", { desc = "Peek references" })
+vim.keymap.set("n", "<leader>gpd", "<cmd>Glance definitions<cr>", { desc = "Peek definitions" })
+vim.keymap.set("n", "<leader>gpr", "<cmd>Glance references<cr>", { desc = "Peek references" })
 vim.keymap.set("n", "<leader>gt", "<cmd>Glance type_definitions<cr>", { desc = "Peek type definitions" })
 vim.keymap.set("n", "<leader>gi", "<cmd>Glance implementations<cr>", { desc = "Peek implementations" })
 
@@ -130,20 +130,20 @@ vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<cr>", { desc = "Git blame" }
 vim.keymap.set("n", "<leader>ou", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
 
 -- COMMENTS
-vim.keymap.set("n", "<leader>gT", "<cmd>TodoLocList<cr>", { desc = "list TODO comments" })
+vim.keymap.set("n", "<leader>gtt", "<cmd>TodoLocList<cr>", { desc = "list TODO comments" })
 
 -- TABS
 vim.keymap.set("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "next tab" })
 vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "previous tab" })
-vim.keymap.set("n", "<leader>tN", "<cmd>tabnew<cr>", { desc = "new tab" })
+vim.keymap.set("n", "<leader>tc", "<cmd>tabnew<cr>", { desc = "new tab" })
 vim.keymap.set("n", "<leader>tk", "<cmd>tabclose<cr>", { desc = "kill tab" })
 
 -- ILLUMINATE
 vim.keymap.set("n", "<leader>ti", "<cmd>IlluminateToggle<cr>", { desc = "toggle cursor word match highlight" })
 
 -- OBSIDIAN NOTES
-vim.keymap.set("n", "<leader>nn", "<cmd>ObsidianNewNoteFromTemplate<cr>", { desc = "new obsidian note from template" })
-vim.keymap.set("n", "<leader>nN", "<cmd>ObsidianNew<cr>", { desc = "new obsidian note" })
+vim.keymap.set("n", "<leader>nnt", "<cmd>ObsidianNewNoteFromTemplate<cr>", { desc = "new obsidian note from template" })
+vim.keymap.set("n", "<leader>nnn", "<cmd>ObsidianNew<cr>", { desc = "new obsidian note" })
 vim.keymap.set("v", "<leader>ne", "<cmd>ObsidianExtractNote<cr>", { desc = "extract selection to new obsidian note" })
 vim.keymap.set("n", "<leader>nt", "<cmd>ObsidianTemplate<cr>", { desc = "apply template to obsidian note" })
 vim.keymap.set("n", "<leader>nf", "<cmd>ObsidianSearch<cr>", { desc = "find obsidian note" })
