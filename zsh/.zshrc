@@ -23,17 +23,6 @@ alias ng='nvim -c Neogit'
 alias oo='cd $HOME/.pkm && nvim'
 alias k='kubectl'
 alias kg='kubectl get'
-alias ff="rg . \
-    --column \
-    --color=always \
-    --smart-case | \
-    fzf \
-    --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
-    --delimiter ':' \
-    --preview-window up,~3,+{2}+3/3 \
-    --height 50 \
-    --ansi \
-    --bind 'enter:become:nvim {1} +{2}'"
 
 export EDITOR='/usr/bin/nvim'
 export FZF_ALT_C_COMMAND='(fd -t d . -H $HOME)'
@@ -59,3 +48,19 @@ source <(fzf --zsh)
 . "$HOME/.asdf/asdf.sh"
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
+ff() (
+  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+  fzf \
+  --disabled \
+  --multi \
+  --bind "start:$RELOAD" \
+  --bind "change:$RELOAD" \
+  --bind "enter:become:nvim {1} +{2}" \
+  --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+  --delimiter ':' \
+  --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+  --preview-window 'up,~3,+{2}+3/3' \
+  --height 50 \
+  --ansi \
+  --query "$*"
+)
