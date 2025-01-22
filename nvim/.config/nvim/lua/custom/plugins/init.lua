@@ -16,6 +16,20 @@ return {
 				menu = {
 					border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
 					winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
+					draw = {
+						columns = { { "kind_icon" }, {"label", "label_description", gap = 1}, { "kind" }},
+						components = {
+							label = {
+								width = { fill = true, max = 120}
+							},
+							label_description = {
+								width = { fill = true, max = 120}
+							},
+							kind = {
+								text = function(ctx) return '[' .. ctx.kind .. ']' end,
+							}
+						}
+					}
 				},
 			},
 			appearance = {
@@ -24,6 +38,9 @@ return {
 			},
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer" },
+				min_keyword_length = function(ctx)
+					return ctx.trigger.kind == "trigger_character" and 0 or 3
+				end,
 			},
 		},
 		opts_extend = { "sources.default" },
