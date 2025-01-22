@@ -85,6 +85,14 @@ local lualine_theme = {
 	},
 }
 
+local function session()
+	return string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
+end
+
+local function project()
+	return string.upper(vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t"))
+end
+
 require("lualine").setup({
 	options = {
 		theme = lualine_theme,
@@ -105,9 +113,18 @@ require("lualine").setup({
 		},
 		lualine_b = {
 			{
+				session,
+			},
+			-- {
+			-- 	project,
+			-- },
+			{
 				"filename",
 				file_status = true,
 				path = 1,
+				fmt = function(s)
+					return vim.fn.fnamemodify(s, ":t")
+				end,
 				symbols = {
 					modified = "[+]",
 					readonly = "[RO]",
