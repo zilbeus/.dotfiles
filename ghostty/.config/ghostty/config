@@ -203,7 +203,7 @@ font-thicken = false
 #     that things like status lines continue to look aligned.
 adjust-cell-width = 
 
-adjust-cell-height = 
+adjust-cell-height = 1
 # Distance in pixels or percentage adjustment from the bottom of the cell to the text baseline.
 # Increase to move baseline UP, decrease to move baseline DOWN.
 # See the notes about adjustments in `adjust-cell-width`.
