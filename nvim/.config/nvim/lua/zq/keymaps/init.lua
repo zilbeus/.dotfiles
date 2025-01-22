@@ -88,7 +88,7 @@ vim.keymap.set(
 )
 
 -- MINI.FILES
-vim.keymap.set("n", "<leader>gf", require("mini.files").open, { desc = "Open file tree" })
+vim.keymap.set("n", "<leader>ft", require("mini.files").open, { desc = "Open file tree" })
 
 -- DIFFVIEW
 vim.keymap.set("n", "<leader>ghr", "<cmd>DiffviewFileHistory<cr>", { desc = "repository history" })

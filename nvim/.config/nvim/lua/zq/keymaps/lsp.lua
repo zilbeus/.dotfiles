@@ -6,25 +6,37 @@ local nmap = function(keys, func, desc)
 	vim.keymap.set("n", keys, func, { desc = desc })
 end
 
-nmap("<leader>cr", vim.lsp.buf.rename, "rename symbol")
+nmap("<leader>csr", vim.lsp.buf.rename, "rename symbol")
 
 nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 vim.keymap.set(
 	"n",
 	"<leader>ci",
-	"<cmd>FzfLua lsp_implementations hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua lsp_implementations hls.border=FzfLuaBorderInvisible jump_to_single_result=true<cr>",
 	{ desc = "implementations" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>cdd",
-	"<cmd>FzfLua lsp_definitions hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua lsp_definitions hls.border=FzfLuaBorderInvisible jump_to_single_result=true<cr>",
+	{ desc = "definitions" }
+)
+vim.keymap.set(
+	"n",
+	"gdd",
+	"<cmd>FzfLua lsp_definitions hls.border=FzfLuaBorderInvisible jump_to_single_result=true<cr>",
 	{ desc = "definitions" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>cdt",
-	"<cmd>FzfLua lsp_typedefs hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua lsp_typedefs hls.border=FzfLuaBorderInvisible jump_to_single_result=true<cr>",
+	{ desc = "type definitions" }
+)
+vim.keymap.set(
+	"n",
+	"gdt",
+	"<cmd>FzfLua lsp_typedefs hls.border=FzfLuaBorderInvisible jump_to_single_result=true<cr>",
 	{ desc = "type definitions" }
 )
 vim.keymap.set(
@@ -42,7 +54,7 @@ vim.keymap.set(
 vim.keymap.set(
 	"n",
 	"<leader>cr",
-	"<cmd>FzfLua lsp_references hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua lsp_references hls.border=FzfLuaBorderInvisible jump_to_single_result=true<cr>",
 	{ desc = "code references" }
 )
 vim.keymap.set(
