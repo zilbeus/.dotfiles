@@ -20,6 +20,8 @@ local colors = {
 	green_fg = "#002700",
 	red_bg = "#ff4d4d",
 	filename_fg = "#adadad",
+	b_bg = "#232830",
+	b_fg = "#7a879d",
 }
 
 local modes = {
@@ -45,48 +47,48 @@ local modes = {
 local lualine_theme = {
 	normal = {
 		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_black, fg = colors.filename_fg },
+		b = { bg = colors.b_bg, fg = colors.b_fg },
 		c = { bg = colors.black, fg = colors.white },
-		y = { bg = colors.b_black, fg = colors.white },
-		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
+		y = { bg = colors.b_bg, fg = colors.b_fg },
+		z = { bg = colors.b_bg, fg = colors.b_fg },
 	},
 	insert = {
 		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_black, fg = colors.filename_fg },
+		b = { bg = colors.b_bg, fg = colors.b_fg },
 		c = { bg = colors.black, fg = colors.white },
-		y = { bg = colors.b_black, fg = colors.white },
-		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
+		y = { bg = colors.b_bg, fg = colors.b_fg },
+		z = { bg = colors.b_bg, fg = colors.b_fg },
 	},
 	visual = {
 		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_black, fg = colors.filename_fg },
+		b = { bg = colors.b_bg, fg = colors.b_fg },
 		c = { bg = colors.black, fg = colors.white },
-		y = { bg = colors.b_black, fg = colors.white },
-		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
+		y = { bg = colors.b_bg, fg = colors.b_fg },
+		z = { bg = colors.b_bg, fg = colors.b_fg },
 	},
 	replace = {
 		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_black, fg = colors.filename_fg },
+		b = { bg = colors.b_bg, fg = colors.b_fg },
 		c = { bg = colors.black, fg = colors.white },
-		y = { bg = colors.b_black, fg = colors.white },
-		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
+		y = { bg = colors.b_bg, fg = colors.b_fg },
+		z = { bg = colors.b_bg, fg = colors.b_fg },
 	},
 	command = {
 		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_black, fg = colors.filename_fg },
+		b = { bg = colors.b_bg, fg = colors.b_fg },
 		c = { bg = colors.black, fg = colors.white },
-		y = { bg = colors.b_black, fg = colors.white },
-		z = { bg = colors.accent_r, fg = colors.accent_r_fg },
+		y = { bg = colors.b_bg, fg = colors.b_fg },
+		z = { bg = colors.b_bg, fg = colors.b_fg },
 	},
 	inactive = {
 		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.black, fg = colors.white },
+		b = { bg = colors.b_bg, fg = colors.b_fg },
 		c = { bg = colors.black, fg = colors.white },
 	},
 }
 
 local function session()
-	return string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
+	return "󱗝 " .. string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
 end
 
 local function project()
@@ -115,15 +117,18 @@ require("lualine").setup({
 			{
 				session,
 			},
+			{ "branch", icon = { "", color = { fg = "#7cfc00" } }, color = { fg = "#4c9a00" } },
 			-- {
 			-- 	project,
 			-- },
+		},
+		lualine_c = {
 			{
 				"filename",
 				file_status = true,
 				path = 1,
 				fmt = function(s)
-					return vim.fn.fnamemodify(s, ":t")
+					return " " .. vim.fn.fnamemodify(s, ":t")
 				end,
 				symbols = {
 					modified = "[+]",
@@ -133,8 +138,7 @@ require("lualine").setup({
 				},
 			},
 		},
-		lualine_c = {
-			{ "branch", icon = { "", color = { fg = "#7cfc00" } }, color = { fg = "#4c9a00" } },
+		lualine_x = {
 			{
 				"diff",
 				colored = true,
@@ -145,11 +149,19 @@ require("lualine").setup({
 				},
 			},
 			"diagnostics",
+			{
+				"encoding",
+				fmt = function(s)
+					return string.upper(s)
+				end,
+			},
 		},
-		lualine_x = { "encoding" },
 		lualine_y = {
 			{
 				"filetype",
+				fmt = function(s)
+					return string.upper(s)
+				end,
 			},
 		},
 		lualine_z = {
