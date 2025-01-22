@@ -23,6 +23,17 @@ alias ng='nvim -c Neogit'
 alias oo='cd $HOME/.pkm && nvim'
 alias k='kubectl'
 alias kg='kubectl get'
+alias ff="rg . \
+    --column \
+    --color=always \
+    --smart-case | \
+    fzf \
+    --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+    --delimiter ':' \
+    --preview-window up,~3,+{2}+3/3 \
+    --height 50 \
+    --ansi \
+    --bind 'enter:become:nvim {1} +{2}'"
 
 export EDITOR='/usr/bin/nvim'
 export FZF_ALT_C_COMMAND='(fd -t d . -H $HOME)'
