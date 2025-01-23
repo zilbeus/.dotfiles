@@ -14,7 +14,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>gbr",
+	"<leader>gbb",
 	"<cmd>FzfLua git_branches hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "search git branches" }
 )
@@ -124,7 +124,7 @@ vim.keymap.set("n", "<leader>gi", "<cmd>Glance implementations<cr>", { desc = "P
 vim.keymap.set("n", "<leader>gs", require("mini.sessions").select, { desc = "Select session" })
 
 -- BLAME
-vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<cr>", { desc = "Git blame" })
+vim.keymap.set("n", "<leader>gbl", "<cmd>BlameToggle<cr>", { desc = "Git blame" })
 
 -- UNDOTREE
 vim.keymap.set("n", "<leader>ou", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
