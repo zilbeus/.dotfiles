@@ -1,3 +1,4 @@
+local navic = require("nvim-navic")
 local colors_theme = require("zq.theme.monochrome.palette")
 local colors = {
 	black = "#141414",
@@ -136,6 +137,9 @@ require("lualine").setup({
 					unnamed = "[NO NAME]",
 					newfile = "[NEW]",
 				},
+			},
+			{
+				"navic",
 			},
 		},
 		lualine_x = {

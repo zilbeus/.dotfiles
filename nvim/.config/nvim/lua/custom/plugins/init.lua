@@ -2,6 +2,10 @@ return {
 	"tpope/vim-fugitive",
 	"tpope/vim-sleuth",
 	{
+		"SmiteshP/nvim-navic",
+		dependencies = { "neovim/nvim-lspconfig" },
+	},
+	{
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
@@ -17,19 +21,21 @@ return {
 					border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
 					winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
 					draw = {
-						columns = { { "kind_icon" }, {"label", "label_description", gap = 1}, { "kind" }},
+						columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
 						components = {
 							label = {
-								width = { fill = true, max = 120}
+								width = { fill = true, max = 120 },
 							},
 							label_description = {
-								width = { fill = true, max = 120}
+								width = { fill = true, max = 120 },
 							},
 							kind = {
-								text = function(ctx) return '[' .. ctx.kind .. ']' end,
-							}
-						}
-					}
+								text = function(ctx)
+									return "[" .. ctx.kind .. "]"
+								end,
+							},
+						},
+					},
 				},
 			},
 			appearance = {

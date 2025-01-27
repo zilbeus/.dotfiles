@@ -1,6 +1,12 @@
+local navic = require("nvim-navic")
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 function on_attach(client, bufnr)
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
+
 	--- toggle inlay hints
 	vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 	local function toggle_inlay_hints()
