@@ -47,7 +47,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>cs",
+	"<leader>css",
 	"<cmd>FzfLua lsp_document_symbols hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "code symbols" }
 )
