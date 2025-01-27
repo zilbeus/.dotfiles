@@ -140,6 +140,7 @@ require("lualine").setup({
 			},
 			{
 				"navic",
+				color = { fg = colors_theme.light_grey },
 			},
 		},
 		lualine_x = {
