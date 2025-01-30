@@ -2,6 +2,18 @@ return {
 	"tpope/vim-fugitive",
 	"tpope/vim-sleuth",
 	{
+		"LintaoAmons/bookmarks.nvim",
+		tag = "v2.6.1",
+		dependencies = {
+			{ "kkharji/sqlite.lua" },
+			{ "stevearc/dressing.nvim" },
+		},
+		config = function()
+			local opts = {}
+			require("bookmarks").setup(opts)
+		end,
+	},
+	{
 		"SmiteshP/nvim-navic",
 		dependencies = { "neovim/nvim-lspconfig" },
 	},
