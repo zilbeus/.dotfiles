@@ -89,7 +89,9 @@ local lualine_theme = {
 }
 
 local function session()
-	return "󱗝 " .. string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
+	local session_name = string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
+	local session_exists = session_name ~= nil and session_name ~= ""
+	return session_exists and "󱗝 " .. session_name or ""
 end
 
 local function project()
