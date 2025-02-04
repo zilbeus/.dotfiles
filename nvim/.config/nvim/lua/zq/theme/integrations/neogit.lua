@@ -26,8 +26,8 @@ local highligths = {
 	NeogitHunkMergeHeaderHighlight = { fg = colors.black, bg = colors.cyan, bold = true },
 	NeogitHunkMergeHeaderCursor = { fg = colors.black, bg = colors.cyan, bold = true },
 	NeogitHunkHeader = { fg = colors.black, bg = colors.grey, bold = true },
-	NeogitHunkHeaderHighlight = { fg = colors.black, bg = colors.dark_purple, bold = true },
-	NeogitHunkHeaderCursor = { fg = colors.black, bg = colors.dark_purple, bold = true },
+	NeogitHunkHeaderHighlight = { fg = colors.black, bg = colors.base05, bold = true },
+	NeogitHunkHeaderCursor = { fg = colors.black, bg = colors.base05, bold = true },
 
 	NeogitDiffContext = { bg = colors.one_bg },
 	NeogitDiffContextHighlight = { bg = colors.black2 },
@@ -47,7 +47,7 @@ local highligths = {
 	NeogitPopupActionKey = { fg = colors.purple },
 
 	NeogitFilePath = { fg = colors.blue, italic = true },
-	NeogitCommitViewHeader = { bg = colors.cyan, fg = colors.black },
+	NeogitCommitViewHeader = { bg = colors.base05, fg = colors.black },
 	NeogitDiffHeader = { bg = colors.one_bg2, fg = colors.blue, bold = true },
 	NeogitDiffHeaderHighlight = { bg = colors.one_bg2, fg = colors.orange, bold = true },
 	NeogitBranch = { fg = colors.blue, bold = true },
@@ -67,7 +67,7 @@ local highligths = {
 	NeogitChangeCopied = { fg = colors.cyan, bold = true, italic = true },
 	NeogitChangeUnmerged = { fg = colors.yellow, bold = true, italic = true },
 	NeogitChangeNewFile = { fg = colors.green, bold = true, italic = true },
-	NeogitSectionHeader = { fg = colors.red, bold = true },
+	NeogitSectionHeader = { fg = colors.base0A, bold = true },
 
 	NeogitTagName = { fg = colors.yellow },
 	NeogitTagDistance = { fg = colors.cyan },
