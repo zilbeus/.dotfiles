@@ -127,11 +127,17 @@ require("lualine").setup({
 		},
 		lualine_c = {
 			{
+				"filetype",
+				colored = false,
+				icon_only = true,
+				padding = { left = 1, right = 0 },
+			},
+			{
 				"filename",
 				file_status = true,
 				path = 1,
 				fmt = function(s)
-					return " " .. vim.fn.fnamemodify(s, ":t")
+					return vim.fn.fnamemodify(s, ":t")
 				end,
 				symbols = {
 					modified = "[+]",
@@ -139,6 +145,7 @@ require("lualine").setup({
 					unnamed = "[NO NAME]",
 					newfile = "[NEW]",
 				},
+				padding = { left = 0 },
 			},
 			{
 				"navic",
@@ -156,18 +163,13 @@ require("lualine").setup({
 				},
 			},
 			"diagnostics",
-			{
-				"encoding",
-				fmt = function(s)
-					return string.upper(s)
-				end,
-			},
 		},
 		lualine_y = {
 			{
-				"filetype",
+				"encoding",
 				fmt = function(s)
-					return string.upper(s)
+					local value_exists = s ~= nil and s ~= ""
+					return value_exists and "󰈚 " .. string.upper(s) or ""
 				end,
 			},
 		},
