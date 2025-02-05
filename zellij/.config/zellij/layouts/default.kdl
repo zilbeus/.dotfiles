@@ -24,7 +24,7 @@ layout {
         pane size=2 borderless=true {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} {tabs}"
-                format_center "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]SSN #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {session}#[bg=$bg,fg=$info_val_pill_bg] {command_player}"
+                format_center "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg] #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {session}#[bg=$bg,fg=$info_val_pill_bg] {command_player}"
                 format_right  "{command_timew} {command_mem} {datetime}"
                 format_space  ""
                 border_enabled  "true"
@@ -58,22 +58,22 @@ layout {
                 command_git_branch_interval    "10"
                 command_git_branch_rendermode  "static"
 
-                datetime "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]CLK #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {format}#[bg=$bg,fg=$info_val_pill_bg]"
+                datetime "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]󰃭 #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {format}#[bg=$bg,fg=$info_val_pill_bg]"
                 datetime_format "%Y-%m-%d %H:%M"
                 datetime_timezone "Europe/Tallinn"
 
                 command_mem_command "bash -c $HOME/bin/mem.sh"
-                command_mem_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]MEM #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
+                command_mem_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg] #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
                 command_mem_interval  "5"
                 command_mem_rendermode  "static"
 
                 command_player_command "bash -c $HOME/bin/spotify-status.sh"
-                command_player_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]PLR #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
+                command_player_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]󰎄 #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
                 command_player_interval  "5"
                 command_player_rendermode  "static"
 
                 command_timew_command "bash -c $HOME/bin/timew_status.sh"
-                command_timew_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]TW #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
+                command_timew_format "#[bg=$bg,fg=$info_key_pill_bg]#[bg=$info_key_pill_bg,fg=$info_key_pill_fg]󰔚 #[bg=$info_val_pill_bg,fg=$info_val_pill_fg] {stdout}#[bg=$bg,fg=$info_val_pill_bg]"
                 command_timew_interval  "5"
                 command_timew_rendermode  "static"
 
