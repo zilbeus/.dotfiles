@@ -47,8 +47,8 @@ layout {
                 mode_prompt "#[bg=$mode_pill_bg,fg=$mode_pill_fg] PRT #[bg=$bg,fg=$mode_pill_bg] "
                 mode_tmux  "#[bg=$mode_pill_bg,fg=$mode_pill_fg] TMX #[bg=$bg,fg=$mode_pill_bg] "
 
-                tab_active   "#[fg=$tab_active_index_fg,bg=$tab_active_index_bg,bold] {index} #[bg=$tab_active_name_bg,fg=$tab_active_name_fg] {name} "
-                tab_normal   "#[fg=$tab_normal_index_fg,bg=$tab_normal_index_bg,bold] {index} #[bg=$tab_normal_name_bg,fg=$tab_normal_name_fg] {name} "
+                tab_active   "#[fg=$tab_active_index_fg,bg=$tab_active_index_bg,bold] {index} #[bg=$tab_active_name_bg,fg=$tab_active_name_fg] {name} #[bg=$color_bg] "
+                tab_normal   "#[fg=$tab_normal_index_fg,bg=$tab_normal_index_bg,bold] {index} #[bg=$tab_normal_name_bg,fg=$tab_normal_name_fg] {name} #[bg=$color_bg] "
 
                 format_hide_on_overlength "true"
                 format_precendence "lrc"
