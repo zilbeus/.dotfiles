@@ -32,3 +32,16 @@ require("fzf-lua").setup({
 		formatter = "path.filename_first",
 	},
 })
+
+require("fzf-lua").register_ui_select({
+	winopts = {
+		height = 0.3,
+		width = 0.2,
+		row = 0.5,
+		col = 0.5,
+	},
+	fzf_opts = {
+		["--layout"] = "reverse-list",
+		["--info"] = "hidden",
+	},
+})
