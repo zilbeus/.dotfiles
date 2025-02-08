@@ -20,6 +20,7 @@ local integrations = {
 	"zq.theme.integrations.minifiles",
 	"zq.theme.integrations.illuminate",
 	"zq.theme.integrations.fzf-lua",
+	"zq.theme.integrations.fidget",
 }
 
 local apply_integration = function(integrationName)
