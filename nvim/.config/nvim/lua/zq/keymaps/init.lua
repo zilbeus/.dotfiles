@@ -149,4 +149,7 @@ vim.keymap.set("n", "<leader>nt", "<cmd>ObsidianTemplate<cr>", { desc = "apply t
 vim.keymap.set("n", "<leader>nf", "<cmd>ObsidianSearch<cr>", { desc = "find obsidian note" })
 vim.keymap.set("n", "<leader>no", "<cmd>ObsidianOpen<cr>", { desc = "open note in obsidian" })
 
+-- DBUI
+vim.keymap.set("n", "<leader>od", "<cmd>DBUIToggle<cr>", { desc = "open DB viewer" })
+
 require("zq.keymaps.lsp")
