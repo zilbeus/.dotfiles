@@ -5,9 +5,26 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		typescript = { "prettierd", "prettier", stop_after_first = true },
 		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+		sql = { "sql_formatter" },
 	},
 	format_on_save = {
 		timeout_ms = 500,
 		lsp_format = "fallback",
+	},
+	formatters = {
+		sql_formatter = {
+			args = {
+				"-l",
+				"postgresql",
+				"-c",
+				'{\
+					"language": "postgresql",\
+					"tabWidth": 4,\
+					"useTabs": false,\
+					"keywordCase": "upper",\
+					"linesBetweenQueries": 2\
+				}',
+			},
+		},
 	},
 })
