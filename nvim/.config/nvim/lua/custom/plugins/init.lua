@@ -55,7 +55,10 @@ return {
 				nerd_font_variant = "normal",
 			},
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+				providers = {
+					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+				},
 				min_keyword_length = function(ctx)
 					return ctx.trigger.kind == "trigger_character" and 0 or 3
 				end,
