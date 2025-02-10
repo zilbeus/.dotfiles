@@ -11,6 +11,7 @@ local colors = {
 	grey_fg2 = "#606060",
 	light_grey = "#677777",
 	visual_line = "#8692a6",
+	indent_line = "#8692a6",
 	red = "#ec8989",
 	baby_pink = "#eca8a8",
 	pink = "#da838b",
