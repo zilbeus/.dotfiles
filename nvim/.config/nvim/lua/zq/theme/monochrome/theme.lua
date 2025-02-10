@@ -165,14 +165,6 @@ theme.set_highlights = function()
 	hl(0, "markdownFootnoteDefinition", { fg = c.orange, bg = "NONE" })
 	hl(0, "markdownEscape", { fg = c.yellow, bg = "NONE" })
 
-	-- Whichkey
-	hl(0, "WhichKey", { fg = c.blue, bg = "NONE" })
-	hl(0, "WhichKeySeperator", { fg = c.light_grey, bg = "NONE" })
-	hl(0, "WhichKeyDesc", { fg = c.red, bg = "NONE" })
-	hl(0, "WhichKeyGroup", { fg = c.green, bg = "NONE" })
-	hl(0, "WhichKeyValue", { fg = c.green, bg = "NONE" })
-	hl(0, "WhichKeyFloat", { link = "NormalFloat" })
-
 	-- Git
 	hl(0, "SignAdd", { fg = c.green, bg = "NONE" })
 	hl(0, "SignChange", { fg = c.blue, bg = "NONE" })
