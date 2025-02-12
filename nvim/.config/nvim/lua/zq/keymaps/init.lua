@@ -162,8 +162,8 @@ vim.keymap.set("n", "<leader>od", "<cmd>DBUIToggle<cr>", { desc = "open DB viewe
 vim.keymap.set("n", "<leader>mm", "<cmd>BookmarksMark<cr>", { desc = "add bookmark" })
 vim.keymap.set("n", "<leader>mt", "<cmd>BookmarksTree<cr>", { desc = "open bookmarks tree" })
 vim.keymap.set("n", "<leader>mc", "<cmd>BookmarksCommands<cr>", { desc = "open bookmarks commands list" })
-vim.keymap.set("n", "<leader>mn", "<cmd>BookmarksGotoNext<cr>", { desc = "goto next bookmark in current list" })
-vim.keymap.set("n", "<leader>mp", "<cmd>BookmarksGotoPrev<cr>", { desc = "goto prev bookmark in current list" })
+vim.keymap.set("n", "<leader>mn", "<cmd>BookmarksGotoNextInList<cr>", { desc = "goto next bookmark in current list" })
+vim.keymap.set("n", "<leader>mp", "<cmd>BookmarksGotoPrevInList<cr>", { desc = "goto prev bookmark in current list" })
 vim.keymap.set("n", "<leader>md", "<cmd>BookmarksDesc<cr>", { desc = "add description to bookmark under cursor" })
 vim.keymap.set("n", "<leader>mi", "<cmd>BookmarksInfoCurrentBookmark<cr>",
 	{ desc = "display current bookmark info" })
