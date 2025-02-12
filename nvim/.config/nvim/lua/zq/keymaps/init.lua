@@ -14,6 +14,12 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
+	"<leader>sc",
+	"<cmd>FzfLua commands hls.border=FzfLuaBorderInvisible<cr>",
+	{ desc = "search commands" }
+)
+vim.keymap.set(
+	"n",
 	"<leader>gbb",
 	"<cmd>FzfLua git_branches hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "search git branches" }
