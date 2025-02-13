@@ -27,6 +27,7 @@ vim.keymap.set(
 	"<cmd>FzfLua lsp_definitions hls.border=FzfLuaBorderInvisible jump_to_single_result=true<cr>",
 	{ desc = "definitions" }
 )
+vim.keymap.set("n", "gdD", "<cmd>Glance definitions<cr>", { desc = "Peek definitions" })
 vim.keymap.set(
 	"n",
 	"<leader>cdt",
@@ -39,12 +40,15 @@ vim.keymap.set(
 	"<cmd>FzfLua lsp_typedefs hls.border=FzfLuaBorderInvisible jump_to_single_result=true<cr>",
 	{ desc = "type definitions" }
 )
+vim.keymap.set("n", "gdT", "<cmd>Glance type_definitions<cr>", { desc = "Peek type definitions" })
 vim.keymap.set(
 	"n",
 	"<leader>ca",
 	"<cmd>FzfLua lsp_code_actions hls.border=FzfLuaBorderInvisible<cr>",
 	{ desc = "code actions" }
 )
+vim.keymap.set("n", "gdI", "<cmd>Glance implementations<cr>", { desc = "Peek implementations" })
+vim.keymap.set("n", "gdR", "<cmd>Glance references<cr>", { desc = "Peek references" })
 vim.keymap.set(
 	"n",
 	"<leader>css",

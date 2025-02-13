@@ -120,12 +120,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 vim.keymap.set("n", "<S-h>", "20zh", { desc = "Scroll buffer to the left" })
 vim.keymap.set("n", "<S-l>", "20zl", { desc = "Scroll buffer to the right" })
 
--- GLANCE
-vim.keymap.set("n", "<leader>gpd", "<cmd>Glance definitions<cr>", { desc = "Peek definitions" })
-vim.keymap.set("n", "<leader>gpr", "<cmd>Glance references<cr>", { desc = "Peek references" })
-vim.keymap.set("n", "<leader>gt", "<cmd>Glance type_definitions<cr>", { desc = "Peek type definitions" })
-vim.keymap.set("n", "<leader>gi", "<cmd>Glance implementations<cr>", { desc = "Peek implementations" })
-
 -- SESSIONS
 vim.keymap.set("n", "<leader>gs", require("mini.sessions").select, { desc = "Select session" })
 
@@ -165,8 +159,7 @@ vim.keymap.set("n", "<leader>mc", "<cmd>BookmarksCommands<cr>", { desc = "open b
 vim.keymap.set("n", "<leader>mn", "<cmd>BookmarksGotoNextInList<cr>", { desc = "goto next bookmark in current list" })
 vim.keymap.set("n", "<leader>mp", "<cmd>BookmarksGotoPrevInList<cr>", { desc = "goto prev bookmark in current list" })
 vim.keymap.set("n", "<leader>md", "<cmd>BookmarksDesc<cr>", { desc = "add description to bookmark under cursor" })
-vim.keymap.set("n", "<leader>mi", "<cmd>BookmarksInfoCurrentBookmark<cr>",
-	{ desc = "display current bookmark info" })
+vim.keymap.set("n", "<leader>mi", "<cmd>BookmarksInfoCurrentBookmark<cr>", { desc = "display current bookmark info" })
 vim.keymap.set("n", "<leader>mf", "<cmd>BookmarksGrep<cr>", { desc = "find contents in bookmarked files" })
 vim.keymap.set("n", "<leader>mg", "<cmd>BookmarksGrep<cr>", { desc = "goto bookmark at current active list" })
 
