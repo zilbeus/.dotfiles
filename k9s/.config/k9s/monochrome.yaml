@@ -4,8 +4,8 @@ k9s:
     bgColor: '#101010'
     logoColor: '#859ba2'
   info:
-    fgColor: '#D8DEE9'
-    sectionColor: '#859ba2'
+    sectionColor: '#D8DEE9'
+    fgColor: '#859ba2'
   frame:
     border:
       fgColor: '#bfc5d0'
@@ -13,25 +13,25 @@ k9s:
     menu:
       fgColor: '#D8DEE9'
       keyColor: '#859ba2'
-      numKeyColor: '#bfc5d0'
+      numKeyColor: '#859ba2'
     crumbs:
-      fgColor: '#D8DEE9'
+      fgColor: '#1a1a1a'
       bgColor: '#859ba2'
       activeColor: '#bfc5d0'
     status:
-      newColor: '#c9d36a'
+      newColor: '#bfc5d0'
       modifyColor: '#a5c6e1'
       addColor: '#a5c6e1'
       errorColor: '#ec8989'
       highlightcolor: '#bfc5d0'
       killColor: '#ec8989'
-      completedColor: '#c9d36a'
+      completedColor: '#859ba2'
     title:
       fgColor: '#1a1a1a'
       bgColor: '#bfc5d0'
-      highlightColor: '#859ba2'
-      counterColor: '#7797b7'
-      filterColor: '#7797b7'
+      highlightColor: '#1a1a1a'
+      counterColor: '#1a1a1a'
+      filterColor: '#1a1a1a'
   views:
     table:
       fgColor: '#D8DEE9'
@@ -39,8 +39,8 @@ k9s:
       cursorColor: '#D8DEE9'
       header:
         fgColor: '#1a1a1a'
-        bgColor: '#bfc5d0'
-        sorterColor: '#7797b7'
+        bgColor: '#859ba2'
+        sorterColor: '#1a1a1a'
     yaml:
       keyColor: '#eee8d5'
       colonColor: '#eee8d5'
