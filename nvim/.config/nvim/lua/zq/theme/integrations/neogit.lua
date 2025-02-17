@@ -41,10 +41,10 @@ local highligths = {
 	NeogitDiffDeleteHighlight = { bg = lighten_col(colors.red, -47), fg = colors.red },
 	NeogitDiffDeleteCursor = { bg = colors.one_bg, fg = colors.red },
 
-	NeogitPopupSwitchKey = { fg = colors.purple },
-	NeogitPopupOptionKey = { fg = colors.purple },
-	NeogitPopupConfigKey = { fg = colors.purple },
-	NeogitPopupActionKey = { fg = colors.purple },
+	NeogitPopupSwitchKey = { fg = colors.base0A },
+	NeogitPopupOptionKey = { fg = colors.base0A },
+	NeogitPopupConfigKey = { fg = colors.base0A },
+	NeogitPopupActionKey = { fg = colors.base0A },
 
 	NeogitFilePath = { fg = colors.blue, italic = true },
 	NeogitCommitViewHeader = { bg = colors.base05, fg = colors.black },
