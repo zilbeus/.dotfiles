@@ -1,7 +1,7 @@
 local colors = require("zq.theme.monochrome.palette")
 local lighten_col = require("zq.theme.colors").change_hex_lightness
 
-local highligths = {
+local highlights = {
 	NeogitGraphAuthor = { fg = colors.orange },
 	NeogitGraphRed = { fg = colors.red },
 	NeogitGraphWhite = { fg = colors.white },
@@ -75,4 +75,4 @@ local highligths = {
 	NeogitFloatHeaderHighlight = { bg = colors.black2, fg = colors.cyan, bold = true },
 }
 
-return highligths
+return highlights
