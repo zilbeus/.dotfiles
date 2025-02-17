@@ -21,6 +21,7 @@ local integrations = {
 	"zq.theme.integrations.illuminate",
 	"zq.theme.integrations.fzf-lua",
 	"zq.theme.integrations.fidget",
+	"zq.theme.integrations.rendermarkdown",
 }
 
 local apply_integration = function(integrationName)
