@@ -114,6 +114,22 @@ return {
 	},
 
 	GitSignsChange = {
-		fg = colors.git_change
+		fg = colors.git_change,
+		bg = colors.darker_black
+	},
+
+	LuaLineDiffAdd = {
+		fg = colors.green,
+		bg = colors.darker_black
+	},
+
+	LuaLineDiffChange = {
+		fg = colors.git_change,
+		bg = colors.darker_black
+	},
+
+	LuaLineDiffDelete = {
+		fg = colors.red,
+		bg = colors.darker_black
 	}
 }

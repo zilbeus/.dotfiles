@@ -161,6 +161,11 @@ require("lualine").setup({
 					modified = " ",
 					removed = " ",
 				},
+				diff_color = {
+					added = 'LuaLineDiffAdd',
+					modified = 'LuaLineDiffChange',
+					removed = 'LuaLineDiffDelete',
+				}
 			},
 			"diagnostics",
 		},
