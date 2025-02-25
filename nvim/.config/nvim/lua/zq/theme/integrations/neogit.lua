@@ -9,7 +9,7 @@ local highlights = {
 	NeogitGraphGreen = { fg = colors.green },
 	NeogitGraphCyan = { fg = colors.cyan },
 	NeogitGraphBlue = { fg = colors.blue },
-	NeogitGraphPurple = { fg = colors.purple },
+	NeogitGraphPurple = { fg = colors.base05 },
 	NeogitGraphGray = { fg = colors.grey },
 	NeogitGraphOrange = { fg = colors.orange },
 	NeogitGraphBoldOrange = { fg = colors.orange, bold = true },
@@ -71,7 +71,7 @@ local highlights = {
 
 	NeogitTagName = { fg = colors.yellow },
 	NeogitTagDistance = { fg = colors.cyan },
-	NeogitFloatHeader = { bg = colors.black, bold = true },
+	NeogitFloatHeader = { fg = colors.black, bg = colors.base05, bold = true },
 	NeogitFloatHeaderHighlight = { bg = colors.black2, fg = colors.cyan, bold = true },
 }
 

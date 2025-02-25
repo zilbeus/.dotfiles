@@ -108,4 +108,12 @@ return {
 		fg = theme.base0B,
 		bold = true,
 	},
+
+	GitSignsAdd = {
+		fg = "#1C582E"
+	},
+
+	GitSignsChange = {
+		fg = colors.git_change
+	}
 }

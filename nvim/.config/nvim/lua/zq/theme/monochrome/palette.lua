@@ -34,6 +34,7 @@ local colors = {
 	-- pmenu_bg = "#859ba2",
 	pmenu_bg = "#bfc5d0",
 	folder_bg = "#7797b7",
+	git_change = "#7797b7",
 	base00 = "#101010",
 	base01 = "#1f1f1f",
 	base02 = "#2e2e2e",
