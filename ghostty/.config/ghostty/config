@@ -1209,6 +1209,7 @@ keybind = ctrl+shift+h=resize_split:left,10
 keybind = ctrl+shift+j=resize_split:down,10
 keybind = ctrl+shift+k=resize_split:up,10
 keybind = ctrl+a>equal=equalize_splits
+keybind = ctrl+a>h=write_scrollback_file:open
 
 # Horizontal window padding. This applies padding between the terminal cells
 # and the left and right window borders. The value is in points, meaning that
