@@ -1150,7 +1150,7 @@ keybind = ctrl+shift+q=quit
 keybind = ctrl+shift+n=new_window
 keybind = ctrl+shift+page_down=jump_to_prompt:1
 keybind = ctrl+shift+comma=reload_config
-keybind = ctrl+minus=decrease_font_size:1
+keybind = alt+comma=decrease_font_size:1
 keybind = shift+left=adjust_selection:left
 keybind = super+ctrl+shift+up=resize_split:up,10
 keybind = alt+eight=goto_tab:8
@@ -1180,7 +1180,7 @@ keybind = alt+two=goto_tab:2
 keybind = ctrl+alt+down=goto_split:bottom
 keybind = super+ctrl+shift+down=resize_split:down,10
 keybind = super+ctrl+shift+right=resize_split:right,10
-keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+comma=increase_font_size:1
 keybind = alt+four=goto_tab:4
 keybind = ctrl+shift+e=new_split:down
 keybind = ctrl+alt+right=goto_split:right
