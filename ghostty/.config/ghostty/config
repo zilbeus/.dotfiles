@@ -1212,6 +1212,8 @@ keybind = ctrl+shift+j=resize_split:down,10
 keybind = ctrl+shift+k=resize_split:up,10
 keybind = ctrl+a>equal=equalize_splits
 keybind = ctrl+a>s=write_scrollback_file:open
+keybind = alt+e=scroll_page_lines:1
+keybind = alt+y=scroll_page_lines:-1
 
 # Horizontal window padding. This applies padding between the terminal cells
 # and the left and right window borders. The value is in points, meaning that
