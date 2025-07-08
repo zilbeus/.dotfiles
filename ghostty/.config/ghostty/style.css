@@ -6,18 +6,61 @@ tabbar tabbox {
     font-family: monospace;
 }
 
-tabbar tabbox tab {
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    padding: 0px;
-    background-color: #2e2e2e;
+tabbar tabbox separator {
+    opacity: 0;
+    max-width: 0px;
+    min-width: 0px;
+    width: 0px;
+    height: 0px;
+    max-height: 0px;
+    min-height: 0px;
+    display: none;
+    padding: 0;
+    margin: 0;
+    background-size: 0px;
+    font-size: 0px;
 }
 
-tabbar tabbox tab:selected {
-    background-color: #bfc5d0;
-    color: #101010;
+/* separator.vertical { */
+/*     opacity: 0; */
+/*     width: 0px; */
+/*     max-width: 0px; */
+/* } */
+
+tabbar tabbox tabboxchild {
+    border-radius: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+tabbar tabbox tab {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #101010;
+    border-radius: 0px;
+}
+
+tabbar tabbox > tabboxchild > tab {
+    /* border-left: 2px solid transparent; */
+    border-right: 2px solid transparent;
+}
+
+tabbar tabbox tabboxchild:not(:first-child) tab {
+    border-left-color: #383838;
+    border-right-color: #383838;
+}
+
+tabbar tabbox:first-child tab {
+    /* border-left: 0px; */
+}
+
+tabbar tabbox > tabboxchild > tab:selected {
+    color: #bfc5d0;
+    background-color: #202020;
+    border-radius: 0px;
 }
 
 tabbar tabbox tab label {
