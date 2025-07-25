@@ -1,69 +1,76 @@
 tabbar tabbox {
     margin: 0px;
     padding: 0px;
-    min-height: 25px;
+    min-height: 15px;
+    max-height: 15px;
+    height: 15px;
     background-color: #101010;
     font-family: monospace;
 }
 
 tabbar tabbox separator {
-    opacity: 0;
-    max-width: 0px;
-    min-width: 0px;
-    width: 0px;
-    height: 0px;
-    max-height: 0px;
+    /* opacity: 0; */
+    min-width: 1px;
     min-height: 0px;
-    display: none;
     padding: 0;
     margin: 0;
     background-size: 0px;
-    font-size: 0px;
+    font-size: 10px;
+    border-bottom: 1px solid transparent;
+    border-color: #424242;
 }
 
-/* separator.vertical { */
-/*     opacity: 0; */
-/*     width: 0px; */
-/*     max-width: 0px; */
-/* } */
+separator.vertical {
+    /* opacity: 100; */
+    width: 0px;
+    max-width: 0px;
+    min-width: 10px;
+    color: #202020;
+    background-color: #202020;
+    border-bottom: 1px solid transparent;
+    border-color: #424242;
+}
 
 tabbar tabbox tabboxchild {
     border-radius: 0px;
     margin-right: 0px;
     margin-left: 0px;
+
 }
 
 tabbar tabbox tab {
     margin-left: 0px;
     margin-right: 0px;
     padding: 0px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     background-color: #101010;
     border-radius: 0px;
+    min-height: 5px;
 }
 
 tabbar tabbox > tabboxchild > tab {
     /* border-left: 2px solid transparent; */
-    border-right: 2px solid transparent;
-}
-
-tabbar tabbox tabboxchild:not(:first-child) tab {
-    border-left-color: #383838;
-    border-right-color: #383838;
-}
-
-tabbar tabbox:first-child tab {
-    /* border-left: 0px; */
+    /* border-right: 2px solid transparent; */
+    /* border-bottom: 1px solid transparent; */
+    /* border-color: #101010; */
+    background-color: #202020;
+    border: 1px solid transparent;
+    border-color: #202020;
+    border-bottom-color: #424242;
+    min-height: 5px;
 }
 
 tabbar tabbox > tabboxchild > tab:selected {
     color: #bfc5d0;
-    background-color: #202020;
+    background-color: #101010;
     border-radius: 0px;
+    border-color: #424242;
+    border-bottom-color: #101010;
+    min-height: 5px;
 }
 
 tabbar tabbox tab label {
-    font-size: 13px;
+    font-size: 12px;
 }
 
