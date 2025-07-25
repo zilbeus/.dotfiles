@@ -1,4 +1,5 @@
 local colors = {
+	statuscolumn = "#171717",
 	white = "#D8DEE9",
 	darker_black = "#1a1a1a",
 	black = "#101010",

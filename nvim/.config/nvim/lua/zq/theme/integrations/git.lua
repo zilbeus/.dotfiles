@@ -110,26 +110,28 @@ return {
 	},
 
 	GitSignsAdd = {
-		fg = "#1C582E"
+		fg = "#1C582E",
+		-- fg = colors.green,
+		bg = colors.statuscolumn,
 	},
 
 	GitSignsChange = {
 		fg = colors.git_change,
-		bg = colors.darker_black
+		bg = colors.statuscolumn,
 	},
 
 	LuaLineDiffAdd = {
 		fg = colors.green,
-		bg = colors.darker_black
+		bg = colors.darker_black,
 	},
 
 	LuaLineDiffChange = {
 		fg = colors.git_change,
-		bg = colors.darker_black
+		bg = colors.darker_black,
 	},
 
 	LuaLineDiffDelete = {
 		fg = colors.red,
-		bg = colors.darker_black
-	}
+		bg = colors.darker_black,
+	},
 }
