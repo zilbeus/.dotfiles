@@ -1,4 +1,5 @@
 return {
+	"luukvbaal/statuscol.nvim",
 	"tpope/vim-fugitive",
 	"tpope/vim-sleuth",
 	{
@@ -169,9 +170,9 @@ return {
 	{
 		"mistweaverco/kulala.nvim",
 		keys = {
-			{ "<leader>Rs", desc = "send request"},
-			{ "<leader>Ra", desc = "send all requests"},
-			{ "<leader>Rb", desc = "open scratchpad"},
+			{ "<leader>Rs", desc = "send request" },
+			{ "<leader>Ra", desc = "send all requests" },
+			{ "<leader>Rb", desc = "open scratchpad" },
 		},
 		ft = { "http", "rest" },
 		opts = {
