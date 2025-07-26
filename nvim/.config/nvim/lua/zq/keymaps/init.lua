@@ -84,17 +84,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- NEOGIT
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Git status window" })
 
--- NEOTREE
--- vim.keymap.set("n", "<leader>gf", "<cmd>Neotree<cr>", { desc = "Open file tree" })
-vim.keymap.set(
-	"n",
-	"<leader>kf",
-	'<cmd>lua require("neo-tree.command").execute({ action = "close" })<cr>',
-	{ desc = "[K]ill [F]ile tree" }
-)
-
--- MINI.FILES
-vim.keymap.set("n", "<leader>ft", require("mini.files").open, { desc = "Open file tree" })
+-- FILE BROWSERS
+vim.keymap.set("n", "<leader>ft", "<cmd>Neotree filesystem reveal right toggle<cr>", { desc = "Open file tree" })
 
 -- DIFFVIEW
 vim.keymap.set("n", "<leader>ghr", "<cmd>DiffviewFileHistory<cr>", { desc = "repository history" })

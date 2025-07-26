@@ -9,7 +9,6 @@ local integrations = {
 	"zq.theme.integrations.git",
 	"zq.theme.integrations.lsp",
 	"zq.theme.integrations.neogit",
-	"zq.theme.integrations.nvimtree",
 	"zq.theme.integrations.telescope",
 	"zq.theme.integrations.whichkey",
 	"zq.theme.integrations.trouble",
@@ -22,6 +21,7 @@ local integrations = {
 	"zq.theme.integrations.fzf-lua",
 	"zq.theme.integrations.fidget",
 	"zq.theme.integrations.rendermarkdown",
+	"zq.theme.integrations.neotree",
 }
 
 local apply_integration = function(integrationName)
