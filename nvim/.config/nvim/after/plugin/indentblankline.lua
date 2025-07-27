@@ -1,7 +1,7 @@
 vim.cmd([[highlight IndentScope ctermbg=0 guibg=lightgrey]])
 require("ibl").setup({
 	indent = {
-		char = "│",
+		char = "🭰",
 	},
-	scope = { enabled = true, show_start = false, char = "│", highlight = "IndentScope" },
+	scope = { enabled = true, show_start = false, char = "🭰", highlight = "IndentScope" },
 })

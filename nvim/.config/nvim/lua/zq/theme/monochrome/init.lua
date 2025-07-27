@@ -15,6 +15,7 @@ local integrations = {
 	"zq.theme.integrations.diffview",
 	"zq.theme.integrations.diagnostics",
 	"zq.theme.integrations.indentblankline",
+	"zq.theme.integrations.miniindentscope",
 	"zq.theme.integrations.bqf",
 	"zq.theme.integrations.minifiles",
 	"zq.theme.integrations.illuminate",
