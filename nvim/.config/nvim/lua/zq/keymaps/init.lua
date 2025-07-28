@@ -156,5 +156,8 @@ vim.keymap.set("n", "<leader>mg", "<cmd>BookmarksGrep<cr>", { desc = "goto bookm
 
 -- TERMINALS
 vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "toggle terminal" })
+vim.keymap.set("n", "<leader>tT", "<cmd>TermNew direction=horizontal size=20<cr>", { desc = "create new terminal" })
+vim.keymap.set("n", "<leader>ts", "<cmd>TermSelect<cr>", { desc = "select terminal" })
+vim.keymap.set("n", "<leader>tr", "<cmd>ToggleTermSetName<cr>", { desc = "rename terminal" })
 
 require("zq.keymaps.lsp")
