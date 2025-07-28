@@ -154,4 +154,7 @@ vim.keymap.set("n", "<leader>mi", "<cmd>BookmarksInfoCurrentBookmark<cr>", { des
 vim.keymap.set("n", "<leader>mf", "<cmd>BookmarksGrep<cr>", { desc = "find contents in bookmarked files" })
 vim.keymap.set("n", "<leader>mg", "<cmd>BookmarksGrep<cr>", { desc = "goto bookmark at current active list" })
 
+-- TERMINALS
+vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "toggle terminal" })
+
 require("zq.keymaps.lsp")
