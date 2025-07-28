@@ -36,7 +36,7 @@ require("fzf-lua").setup({
 require("fzf-lua").register_ui_select({
 	winopts = {
 		height = 0.3,
-		width = 0.2,
+		width = 0.4,
 		row = 0.5,
 		col = 0.5,
 	},
