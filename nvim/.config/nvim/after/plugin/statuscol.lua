@@ -1,7 +1,7 @@
 local builtin = require("statuscol.builtin")
 require("statuscol").setup({
 	relculright = true,
-	bt_ignore = { "nofile" },
+	bt_ignore = { "nofile", "terminal" },
 	segments = {
 		-- {
 		-- 	sign = { namespace = { "diagnostic/signs" }, maxwidth = 2, auto = true },
