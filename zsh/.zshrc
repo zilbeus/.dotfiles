@@ -42,6 +42,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH=$PATH:$HOME/.spicetify:$HOME/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.cargo/bin
 export CLASSPATH=~/.java/libs/algs4.jar
+export _ZO_FZF_OPTS='--select-1 --height 15 --highlight-line --layout=reverse --info=inline-right --separator="-" --prompt=" " --border="sharp" --border-label-pos=4 --margin 1 --scrollbar="█" --marker="█" --color=bg+:#bfc5d0,hl:#ec8989,hl+:#2e2e2e,fg+:#2e2e2e,gutter:#2e2e2e,prompt:#859ba2,pointer:#D8DEE9,info:#eee8d5,label:#859ba2,border:#383838,scrollbar:#424242,marker:#ec8989'
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 source <(fzf --zsh)
