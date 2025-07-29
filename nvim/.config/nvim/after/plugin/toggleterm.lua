@@ -1,4 +1,5 @@
 require("toggleterm").setup({
+	auto_scroll = false,
 	size = 20,
 	shade_terminals = true,
 	shading_factor = 50,
