@@ -31,6 +31,6 @@ require("notify").setup({
 		config.border = "single"
 		vim.api.nvim_win_set_config(win, config)
 	end,
-	fps = 60,
-	stages = "static",
+	fps = 30,
+	stages = "no_animation",
 })
