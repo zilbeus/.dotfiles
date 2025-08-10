@@ -132,10 +132,6 @@ return {
 		opts = {},
 	},
 	{
-		"fatih/vim-go",
-		config = function() end,
-	},
-	{
 		"windwp/nvim-ts-autotag",
 		config = function() end,
 	},
