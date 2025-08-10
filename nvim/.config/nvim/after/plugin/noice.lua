@@ -1,4 +1,21 @@
 require("noice").setup({
+	views = {
+		notify = {
+			replace = true,
+		},
+	},
+	cmdline = {
+		enabled = true,
+		view = "cmdline",
+	},
+	lsp = {
+		progress = {
+			view = "notify",
+		},
+		signature = {
+			enabled = true,
+		},
+	},
 	presets = {
 		bottom_search = true,
 		lsp_doc_border = true,
