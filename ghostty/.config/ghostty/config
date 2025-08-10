@@ -66,7 +66,7 @@ font-family = Berkeley Mono
 # These are only valid if its corresponding font-family is also specified. If
 # no font-family is specified, then the font-style is ignored unless you're
 # disabling the font style.
-font-style = "Bold"
+font-style = "Medium"
 
 # Control whether Ghostty should synthesize a style if the requested style is
 # not available in the specified font-family.
@@ -98,7 +98,7 @@ font-style = "Bold"
 # explicitly disable it. You cannot partially disable `bold-italic`.
 # 
 # By default, synthetic styles are enabled.
-font-synthetic-style = bold,italic,bold-italic
+# font-synthetic-style = bold,italic,bold-italic
 
 # Apply a font feature. This can be repeated multiple times to enable multiple
 # font features. You can NOT set multiple font features with a single value
@@ -130,7 +130,7 @@ font-feature =
 # depending on your `window-inherit-font-size` setting. If that setting is
 # true, only the first window will be affected by this change since all
 # subsequent windows will inherit the font size of the previous window.
-font-size = 11
+font-size = 12.5
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -203,7 +203,7 @@ font-thicken = false
 #     that things like status lines continue to look aligned.
 adjust-cell-width = 
 
-adjust-cell-height = 1
+# adjust-cell-height = 1
 # Distance in pixels or percentage adjustment from the bottom of the cell to the text baseline.
 # Increase to move baseline UP, decrease to move baseline DOWN.
 # See the notes about adjustments in `adjust-cell-width`.
@@ -297,7 +297,7 @@ grapheme-width-method = unicode
 #   * `autohint` - Use the freetype auto-hinter. Enabled by default.
 # 
 # Example: `hinting`, `no-hinting`, `force-autohint`, `no-force-autohint`
-freetype-load-flags = hinting,force-autohint,monochrome,autohint
+freetype-load-flags = hinting
 
 # A theme to use. This can be a built-in theme name, a custom theme
 # name, or an absolute path to a custom theme file. Ghostty also supports
