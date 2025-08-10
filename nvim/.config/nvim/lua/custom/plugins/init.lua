@@ -1,5 +1,13 @@
 return {
 	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
+	{
 		"akinsho/toggleterm.nvim",
 		config = true,
 	},
