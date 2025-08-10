@@ -4,6 +4,6 @@ require("noice").setup({
 		lsp_doc_border = true,
 		command_palette = true,
 		inc_rename = true,
-		long_messages_to_split = true,
+		long_message_to_split = true,
 	},
 })
