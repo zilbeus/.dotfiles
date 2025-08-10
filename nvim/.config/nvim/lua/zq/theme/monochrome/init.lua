@@ -20,7 +20,6 @@ local integrations = {
 	"zq.theme.integrations.minifiles",
 	"zq.theme.integrations.illuminate",
 	"zq.theme.integrations.fzf-lua",
-	"zq.theme.integrations.fidget",
 	"zq.theme.integrations.rendermarkdown",
 	"zq.theme.integrations.neotree",
 }
