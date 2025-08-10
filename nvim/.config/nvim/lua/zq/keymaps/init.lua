@@ -86,6 +86,12 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Git status w
 
 -- FILE BROWSERS
 vim.keymap.set("n", "<leader>ft", "<cmd>Neotree filesystem reveal right toggle<cr>", { desc = "Open file tree" })
+vim.keymap.set(
+	"n",
+	"<leader>fT",
+	"<cmd>Neotree filesystem reveal current toggle<cr>",
+	{ desc = "Open file tree in current buffer" }
+)
 
 -- DIFFVIEW
 vim.keymap.set("n", "<leader>ghr", "<cmd>DiffviewFileHistory<cr>", { desc = "repository history" })
