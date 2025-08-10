@@ -14,6 +14,7 @@ require("nvim-treesitter.configs").setup({
 		"markdown",
 		"markdown_inline",
 		"latex",
+		"regex",
 	},
 	auto_install = true,
 	highlight = { enable = true },
