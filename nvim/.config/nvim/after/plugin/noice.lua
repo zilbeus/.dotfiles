@@ -23,6 +23,18 @@ require("noice").setup({
 		inc_rename = true,
 		long_message_to_split = true,
 	},
+	routes = {
+		{
+			filter = {
+				event = "msg_show",
+				kind = "",
+				find = "written",
+			},
+			opts = {
+				skip = true,
+			},
+		},
+	},
 })
 
 require("notify").setup({
