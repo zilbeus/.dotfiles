@@ -24,3 +24,13 @@ require("noice").setup({
 		long_message_to_split = true,
 	},
 })
+
+require("notify").setup({
+	on_open = function(win)
+		local config = vim.api.nvim_win_get_config(win)
+		config.border = "single"
+		vim.api.nvim_win_set_config(win, config)
+	end,
+	fps = 60,
+	stages = "static",
+})
