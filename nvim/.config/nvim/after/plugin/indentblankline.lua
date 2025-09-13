@@ -4,5 +4,17 @@ require("ibl").setup({
 		char = "🭰",
 	},
 	scope = { enabled = true, show_start = false, char = "🭰", highlight = "IndentScope" },
-	exclude = { "toggleterm", "nofile", "quickfix", "prompt" },
+	exclude = {
+		filetypes = {
+			"toggleterm",
+			"lspinfo",
+			"checkhealth",
+			"help",
+			"man",
+			"gitcommit",
+			"TelescopePrompt",
+			"TelescopeResults",
+		},
+		buftypes = { "terminal", "nofile", "quickfix", "prompt" },
+	},
 })
