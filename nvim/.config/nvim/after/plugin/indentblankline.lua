@@ -4,4 +4,5 @@ require("ibl").setup({
 		char = "🭰",
 	},
 	scope = { enabled = true, show_start = false, char = "🭰", highlight = "IndentScope" },
+	exclude = { "toggleterm", "nofile", "quickfix", "prompt" },
 })
