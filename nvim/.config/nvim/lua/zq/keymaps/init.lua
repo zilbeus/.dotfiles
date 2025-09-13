@@ -131,7 +131,9 @@ vim.keymap.set("n", "<leader>gtt", "<cmd>TodoLocList<cr>", { desc = "list TODO c
 
 -- TABS
 vim.keymap.set("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "next tab" })
+vim.keymap.set("n", "<A-L>", "<cmd>tabnext<cr>", { desc = "next tab" })
 vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "previous tab" })
+vim.keymap.set("n", "<A-H>", "<cmd>tabprevious<cr>", { desc = "previous tab" })
 vim.keymap.set("n", "<leader>tc", "<cmd>tabnew<cr>", { desc = "new tab" })
 vim.keymap.set("n", "<leader>tk", "<cmd>tabclose<cr>", { desc = "kill tab" })
 
