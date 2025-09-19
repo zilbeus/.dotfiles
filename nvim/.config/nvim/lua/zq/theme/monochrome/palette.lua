@@ -1,6 +1,7 @@
 local colors = {
 	statuscolumn = "#171717",
 	white = "#D8DEE9",
+	real_black = "#000000",
 	darker_black = "#1a1a1a",
 	black = "#101010",
 	black2 = "#202020",
@@ -52,6 +53,7 @@ local colors = {
 	base0D = "#ced4df",
 	base0E = "#DAD4C3",
 	base0F = "#ced4df",
+	status_line_session = "#eda601",
 }
 
 return colors

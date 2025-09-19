@@ -1,5 +1,5 @@
 local navic = require("nvim-navic")
-local colors_theme = require("zq.theme.monochrome.palette")
+local c = require("zq.theme.monochrome.palette")
 local colors = {
 	black = "#141414",
 	white = "#adadad",
@@ -47,44 +47,44 @@ local modes = {
 
 local lualine_theme = {
 	normal = {
-		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_bg, fg = colors.b_fg },
-		c = { bg = colors_theme.darker_black, fg = colors_theme.base05 },
-		y = { bg = colors.b_bg, fg = colors.b_fg },
-		z = { bg = colors.b_bg, fg = colors.b_fg },
+		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		b = { bg = c.real_black, fg = colors.b_fg },
+		c = { bg = c.real_black, fg = c.base05 },
+		y = { bg = c.real_black, fg = colors.b_fg },
+		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	insert = {
-		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_bg, fg = colors.b_fg },
-		c = { bg = colors_theme.darker_black, fg = colors_theme.base05 },
-		y = { bg = colors.b_bg, fg = colors.b_fg },
-		z = { bg = colors.b_bg, fg = colors.b_fg },
+		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		b = { bg = c.real_black, fg = colors.b_fg },
+		c = { bg = c.real_black, fg = c.base05 },
+		y = { bg = c.real_black, fg = colors.b_fg },
+		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	visual = {
-		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_bg, fg = colors.b_fg },
-		c = { bg = colors_theme.darker_black, fg = colors_theme.base05 },
-		y = { bg = colors.b_bg, fg = colors.b_fg },
-		z = { bg = colors.b_bg, fg = colors.b_fg },
+		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		b = { bg = c.real_black, fg = colors.b_fg },
+		c = { bg = c.real_black, fg = c.base05 },
+		y = { bg = c.real_black, fg = colors.b_fg },
+		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	replace = {
-		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_bg, fg = colors.b_fg },
-		c = { bg = colors_theme.darker_black, fg = colors_theme.base05 },
-		y = { bg = colors.b_bg, fg = colors.b_fg },
-		z = { bg = colors.b_bg, fg = colors.b_fg },
+		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		b = { bg = c.real_black, fg = colors.b_fg },
+		c = { bg = c.real_black, fg = c.base05 },
+		y = { bg = c.real_black, fg = colors.b_fg },
+		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	command = {
-		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_bg, fg = colors.b_fg },
-		c = { bg = colors_theme.darker_black, fg = colors_theme.base05 },
-		y = { bg = colors.b_bg, fg = colors.b_fg },
-		z = { bg = colors.b_bg, fg = colors.b_fg },
+		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		b = { bg = c.real_black, fg = colors.b_fg },
+		c = { bg = c.real_black, fg = c.base05 },
+		y = { bg = c.real_black, fg = colors.b_fg },
+		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	inactive = {
-		a = { bg = colors_theme.pmenu_bg, fg = colors_theme.black, gui = "bold" },
-		b = { bg = colors.b_bg, fg = colors.b_fg },
-		c = { bg = colors.black, fg = colors.white },
+		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		b = { bg = c.real_black, fg = colors.b_fg },
+		c = { bg = c.real_black, fg = colors.white },
 	},
 }
 
@@ -117,15 +117,7 @@ require("lualine").setup({
 			},
 		},
 		lualine_b = {
-			{
-				session,
-			},
 			{ "branch", icon = { "", color = { fg = "#7cfc00" } }, color = { fg = "#4c9a00" } },
-			-- {
-			-- 	project,
-			-- },
-		},
-		lualine_c = {
 			{
 				"filetype",
 				colored = false,
@@ -147,9 +139,11 @@ require("lualine").setup({
 				},
 				padding = { left = 0 },
 			},
+		},
+		lualine_c = {
 			{
 				"navic",
-				color = { fg = colors_theme.light_grey },
+				color = { fg = c.light_grey },
 			},
 		},
 		lualine_x = {
@@ -162,10 +156,10 @@ require("lualine").setup({
 					removed = " ",
 				},
 				diff_color = {
-					added = 'LuaLineDiffAdd',
-					modified = 'LuaLineDiffChange',
-					removed = 'LuaLineDiffDelete',
-				}
+					added = "LuaLineDiffAdd",
+					modified = "LuaLineDiffChange",
+					removed = "LuaLineDiffDelete",
+				},
 			},
 			"diagnostics",
 		},
@@ -177,12 +171,15 @@ require("lualine").setup({
 					return value_exists and "󰈚 " .. string.upper(s) or ""
 				end,
 			},
-		},
-		lualine_z = {
 			{
 				"location",
 				icons_enabled = true,
 				icon = "",
+			},
+		},
+		lualine_z = {
+			{
+				session,
 			},
 		},
 	},

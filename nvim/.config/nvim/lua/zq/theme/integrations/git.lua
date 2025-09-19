@@ -122,16 +122,16 @@ return {
 
 	LuaLineDiffAdd = {
 		fg = colors.green,
-		bg = colors.darker_black,
+		bg = colors.real_black,
 	},
 
 	LuaLineDiffChange = {
 		fg = colors.git_change,
-		bg = colors.darker_black,
+		bg = colors.real_black,
 	},
 
 	LuaLineDiffDelete = {
 		fg = colors.red,
-		bg = colors.darker_black,
+		bg = colors.real_black,
 	},
 }
