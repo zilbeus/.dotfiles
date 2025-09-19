@@ -1,14 +1,16 @@
+local c = require("zq.theme.monochrome.palette")
+
 require("incline").setup({
 	window = {
 		margin = {
-			vertical = 0,
+			vertical = 1,
 			horizontal = 1,
 		},
 		padding = 0,
 	},
 	hide = {
 		cursorline = false,
-		focused_win = false,
+		focused_win = true,
 		only_win = true,
 	},
 	render = function(props)
@@ -35,8 +37,8 @@ require("incline").setup({
 					fname,
 					{ " " },
 					modified_glyph,
-					guibg = "#292929",
-					guifg = "#bfc5d0",
+					guifg = c.white,
+					guibg = c.darker_black,
 				},
 			}
 		end
