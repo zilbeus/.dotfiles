@@ -45,4 +45,6 @@ require("notify").setup({
 	end,
 	fps = 30,
 	stages = "no_animation",
+	top_down = false,
+	max_width = 150,
 })
