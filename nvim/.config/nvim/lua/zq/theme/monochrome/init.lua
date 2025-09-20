@@ -22,6 +22,7 @@ local integrations = {
 	"zq.theme.integrations.fzf-lua",
 	"zq.theme.integrations.rendermarkdown",
 	"zq.theme.integrations.neotree",
+	"zq.theme.integrations.notify",
 }
 
 local apply_integration = function(integrationName)
