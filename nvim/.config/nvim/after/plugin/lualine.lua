@@ -50,35 +50,35 @@ local lualine_theme = {
 		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = colors.b_fg },
+		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	insert = {
 		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = colors.b_fg },
+		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	visual = {
 		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = colors.b_fg },
+		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	replace = {
 		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = colors.b_fg },
+		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	command = {
 		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = colors.b_fg },
+		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	inactive = {
@@ -92,10 +92,6 @@ local function session()
 	local session_name = string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
 	local session_exists = session_name ~= nil and session_name ~= ""
 	return session_exists and " " .. session_name or ""
-end
-
-local function project()
-	return string.upper(vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t"))
 end
 
 require("lualine").setup({
@@ -123,6 +119,7 @@ require("lualine").setup({
 				colored = false,
 				icon_only = true,
 				padding = { left = 1, right = 0 },
+				color = { fg = c.base05 },
 			},
 			{
 				"filename",
@@ -138,12 +135,13 @@ require("lualine").setup({
 					newfile = "[NEW]",
 				},
 				padding = { left = 0 },
+				color = { fg = c.base05 },
 			},
 		},
 		lualine_c = {
 			{
 				"navic",
-				color = { fg = c.light_grey },
+				color = { fg = c.navic },
 			},
 		},
 		lualine_x = {

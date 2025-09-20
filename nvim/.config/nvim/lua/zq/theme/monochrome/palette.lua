@@ -54,6 +54,13 @@ local colors = {
 	base0E = "#DAD4C3",
 	base0F = "#ced4df",
 	status_line_session = "#eda601",
+	navic = "#7a879d",
+	diff_add = "#4c9a00",
+	diff_remove = "#b10000",
+	diff_modify = "#7797b7",
+	error = "#b10000",
+	warning = "#eda601",
+	hint = "#8abae1",
 }
 
 return colors

@@ -8,11 +8,11 @@ return {
 	LspReferenceWrite = { fg = colors.darker_black, bg = colors.white },
 
 	-- Lsp Diagnostics
-	DiagnosticHint = { fg = colors.purple },
-	DiagnosticError = { fg = colors.red },
-	DiagnosticWarn = { fg = colors.yellow },
+	DiagnosticHint = { fg = colors.hint },
+	DiagnosticError = { fg = colors.error },
+	DiagnosticWarn = { fg = colors.warning },
 	DiagnosticInfo = { fg = colors.green },
-	LspSignatureActiveParameter = { fg = colors.black, bg = colors.green },
+	LspSignatureActiveParameter = { fg = colors.black, bg = colors.base05 },
 
 	RenamerTitle = { fg = colors.black, bg = colors.red },
 	RenamerBorder = { fg = colors.red },
