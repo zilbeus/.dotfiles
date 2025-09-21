@@ -61,6 +61,7 @@ local colors = {
 	error = "#b10000",
 	warning = "#eda601",
 	hint = "#8abae1",
+	brackets = "#8692a6",
 }
 
 return colors

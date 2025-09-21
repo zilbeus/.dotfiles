@@ -1,5 +1,4 @@
 local theme = require("zq.theme.monochrome.palette")
-local base30 = require("zq.theme.monochrome.palette")
 
 return {
 
@@ -51,7 +50,7 @@ return {
 
 	["@operator"] = { fg = theme.base05 },
 	["@reference"] = { fg = theme.base05 },
-	["@punctuation.bracket"] = { fg = base30.red },
+	["@punctuation.bracket"] = { fg = theme.brackets },
 	["@punctuation.delimiter"] = { fg = theme.base0F },
 	["@symbol"] = { fg = theme.base0B },
 	["@tag"] = { fg = theme.base0A },
@@ -76,15 +75,15 @@ return {
 	["@markup.underline"] = { underline = true },
 	["@markup.italic"] = { italic = true },
 	["@markup.strikethrough"] = { strikethrough = true },
-	["@markup.quote"] = { bg = base30.black2 },
+	["@markup.quote"] = { bg = theme.black2 },
 
-	["@comment"] = { fg = base30.grey_fg },
-	["@comment.todo"] = { fg = base30.grey, bg = base30.white },
-	["@comment.warning"] = { fg = base30.black2, bg = theme.base09 },
-	["@comment.note"] = { fg = base30.black, bg = base30.blue },
-	["@comment.danger"] = { fg = base30.black2, bg = base30.red },
+	["@comment"] = { fg = theme.grey_fg },
+	["@comment.todo"] = { fg = theme.grey, bg = theme.white },
+	["@comment.warning"] = { fg = theme.black2, bg = theme.base09 },
+	["@comment.note"] = { fg = theme.black, bg = theme.blue },
+	["@comment.danger"] = { fg = theme.black2, bg = theme.red },
 
-	["@diff.plus"] = { fg = base30.green },
-	["@diff.minus"] = { fg = base30.red },
-	["@diff.delta"] = { fg = base30.light_grey },
+	["@diff.plus"] = { fg = theme.green },
+	["@diff.minus"] = { fg = theme.red },
+	["@diff.delta"] = { fg = theme.light_grey },
 }
