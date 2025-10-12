@@ -23,6 +23,7 @@ local integrations = {
 	"zq.theme.integrations.rendermarkdown",
 	"zq.theme.integrations.neotree",
 	"zq.theme.integrations.notify",
+	"zq.theme.integrations.snacks",
 }
 
 local apply_integration = function(integrationName)
