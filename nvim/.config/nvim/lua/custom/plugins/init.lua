@@ -1,5 +1,9 @@
 return {
 	{
+		"karb94/neoscroll.nvim",
+		opts = {},
+	},
+	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		dependencies = {

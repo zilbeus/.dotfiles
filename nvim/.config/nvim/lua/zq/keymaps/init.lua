@@ -78,8 +78,8 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>Q", "<cmd>Trouble diagnostics toggle focus=true<cr>", { desc = "Open diagnostics list" })
 
 -- HALF PAGE NAVIGATION
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- NEOGIT
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Git status window" })
