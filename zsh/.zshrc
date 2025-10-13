@@ -24,6 +24,7 @@ alias oo='cd $HOME/.pkm && nvim'
 alias k='kubectl'
 alias kg='kubectl get'
 alias brun="./gradlew bootRun --args='--spring.output.ansi.enabled=ALWAYS'"
+alias nv="nvim"
 
 export EDITOR='/usr/bin/nvim'
 export FZF_ALT_C_COMMAND='(fd -t d . -H $HOME)'
