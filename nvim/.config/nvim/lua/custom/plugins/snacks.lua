@@ -36,9 +36,17 @@ return {
 					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
 			},
+			formats = {
+				key = function(item)
+					return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } }
+				end,
+			},
 			sections = {
 				{ section = "header" },
-				{ section = "keys", gap = 1, padding = 1 },
+				{ title = ":: Actions", padding = 1 },
+				{ section = "keys", gap = 1, padding = 1, indent = 2 },
+				{ title = ":: Sessions", padding = 1 },
+				{ section = "projects", padding = 2, indent = 2 },
 				{ section = "startup" },
 			},
 		},
