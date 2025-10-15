@@ -1,5 +1,6 @@
 require("fzf-lua").setup({
 	defaults = {
+		file_icons = true,
 		formatter = "path.filename_first",
 	},
 	winopts = {
@@ -32,6 +33,8 @@ require("fzf-lua").setup({
 		builtin = { true, ["<Esc>"] = "hide" },
 	},
 	files = {
+		file_icons = true,
+		multiprocess = true,
 		formatter = "path.filename_first",
 	},
 })
