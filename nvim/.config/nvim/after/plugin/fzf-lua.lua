@@ -1,4 +1,7 @@
 require("fzf-lua").setup({
+	defaults = {
+		formatter = "path.filename_first",
+	},
 	winopts = {
 		height = 0.6,
 		width = 1.0,
