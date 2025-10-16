@@ -40,6 +40,9 @@ require("fzf-lua").setup({
 		multiprocess = true,
 		formatter = "path.filename_first",
 	},
+	grep = {
+		multiline = 2,
+	},
 })
 
 require("fzf-lua").register_ui_select({
