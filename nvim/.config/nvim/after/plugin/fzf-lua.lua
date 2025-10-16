@@ -3,6 +3,9 @@ require("fzf-lua").setup({
 		file_icons = true,
 		formatter = "path.filename_first",
 	},
+	fzf_opts = {
+		["--margin"] = 0,
+	},
 	winopts = {
 		height = 0.6,
 		width = 1.0,
