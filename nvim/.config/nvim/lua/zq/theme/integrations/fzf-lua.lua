@@ -2,5 +2,7 @@ local colors = require("zq.theme.monochrome.palette")
 
 return {
 	FzfLuaBorderInvisible = { fg = colors.base00 },
+	FzfLuaBorder = { fg = colors.grey_fg2 },
+	FzfLuaBorderPreview = { fg = colors.grey_fg2 },
 	FzfLuaPreviewTitle = { fg = colors.black, bg = colors.pmenu_bg },
 }

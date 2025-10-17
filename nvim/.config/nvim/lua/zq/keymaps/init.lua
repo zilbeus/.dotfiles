@@ -1,69 +1,69 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files hls.border=FzfLuaBorderInvisible<cr>", { desc = "search files" })
+vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "search files" })
 vim.keymap.set(
 	"n",
 	"<leader>sk",
-	"<cmd>FzfLua keymaps hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua keymaps<cr>",
 	{ desc = "search keymaps" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>sh",
-	"<cmd>FzfLua highlights hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua highlights<cr>",
 	{ desc = "search highlights" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>sc",
-	"<cmd>FzfLua commands hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua commands<cr>",
 	{ desc = "search commands" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>gbb",
-	"<cmd>FzfLua git_branches hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua git_branches<cr>",
 	{ desc = "search git branches" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>gc",
-	"<cmd>FzfLua git_commits hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua git_commits<cr>",
 	{ desc = "search git commits" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>gfg",
-	"<cmd>FzfLua git_files hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua git_files<cr>",
 	{ desc = "search git files" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>ss",
-	"<cmd>FzfLua live_grep hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua live_grep<cr>",
 	{ desc = "search pattern" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>sw",
-	"<cmd>FzfLua grep_cword hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua grep_cword<cr>",
 	{ desc = "search word" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>fr",
-	"<cmd>FzfLua oldfiles hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua oldfiles<cr>",
 	{ desc = "search recent files" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>bb",
-	"<cmd>FzfLua buffers hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua buffers<cr>",
 	{ desc = "search buffers" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>hs",
-	"<cmd>FzfLua helptags hls.border=FzfLuaBorderInvisible<cr>",
+	"<cmd>FzfLua helptags<cr>",
 	{ desc = "search help docs" }
 )
 

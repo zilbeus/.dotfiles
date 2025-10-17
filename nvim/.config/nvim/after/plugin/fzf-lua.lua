@@ -7,9 +7,9 @@ require("fzf-lua").setup({
 		["--margin"] = 0,
 	},
 	winopts = {
-		height = 0.6,
-		width = 1.0,
-		row = 1,
+		height = 0.95,
+		width = .7,
+		row = 0.5,
 		border = "single",
 		-- border = {
 		-- 	"┏",
@@ -23,14 +23,15 @@ require("fzf-lua").setup({
 		-- },
 		backdrop = 100,
 		preview = {
-			vertical = "up:65%",
+			border = "single",
+			vertical = "up:45%",
 			layout = "vertical",
 			title_pos = "left",
 		},
 	},
 	hls = {
-		border = "FloatBorder",
-		preview_border = "FloatBorder",
+		border = "FzfLuaBorder",
+		preview_border = "FzfLuaBorderPreview",
 	},
 	keymap = {
 		builtin = { true, ["<Esc>"] = "hide" },
