@@ -43,6 +43,7 @@ require("fzf-lua").setup({
 		formatter = "path.filename_first",
 	},
 	grep = {
+		resume = true,
 		multiline = 2,
 		winopts = {
 			height = 0.8,

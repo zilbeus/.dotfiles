@@ -1,71 +1,16 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "search files" })
-vim.keymap.set(
-	"n",
-	"<leader>sk",
-	"<cmd>FzfLua keymaps<cr>",
-	{ desc = "search keymaps" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>sh",
-	"<cmd>FzfLua highlights<cr>",
-	{ desc = "search highlights" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>sc",
-	"<cmd>FzfLua commands<cr>",
-	{ desc = "search commands" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>gbb",
-	"<cmd>FzfLua git_branches<cr>",
-	{ desc = "search git branches" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>gc",
-	"<cmd>FzfLua git_commits<cr>",
-	{ desc = "search git commits" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>gfg",
-	"<cmd>FzfLua git_files<cr>",
-	{ desc = "search git files" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>ss",
-	"<cmd>FzfLua live_grep<cr>",
-	{ desc = "search pattern" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>sw",
-	"<cmd>FzfLua grep_cword<cr>",
-	{ desc = "search word" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>fr",
-	"<cmd>FzfLua oldfiles<cr>",
-	{ desc = "search recent files" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>bb",
-	"<cmd>FzfLua buffers<cr>",
-	{ desc = "search buffers" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>hs",
-	"<cmd>FzfLua helptags<cr>",
-	{ desc = "search help docs" }
-)
+vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files resume=true<cr>", { desc = "search files" })
+vim.keymap.set("n", "<leader>sk", "<cmd>FzfLua keymaps<cr>", { desc = "search keymaps" })
+vim.keymap.set("n", "<leader>sh", "<cmd>FzfLua highlights<cr>", { desc = "search highlights" })
+vim.keymap.set("n", "<leader>sc", "<cmd>FzfLua commands<cr>", { desc = "search commands" })
+vim.keymap.set("n", "<leader>gbb", "<cmd>FzfLua git_branches<cr>", { desc = "search git branches" })
+vim.keymap.set("n", "<leader>gc", "<cmd>FzfLua git_commits<cr>", { desc = "search git commits" })
+vim.keymap.set("n", "<leader>gfg", "<cmd>FzfLua git_files<cr>", { desc = "search git files" })
+vim.keymap.set("n", "<leader>ss", "<cmd>FzfLua live_grep resume=true<cr>", { desc = "search pattern" })
+vim.keymap.set("n", "<leader>sw", "<cmd>FzfLua grep_cword resume=true<cr>", { desc = "search word" })
+vim.keymap.set("n", "<leader>fr", "<cmd>FzfLua oldfiles<cr>", { desc = "search recent files" })
+vim.keymap.set("n", "<leader>bb", "<cmd>FzfLua buffers<cr>", { desc = "search buffers" })
+vim.keymap.set("n", "<leader>hs", "<cmd>FzfLua helptags<cr>", { desc = "search help docs" })
 
 -- DIAGNOSTICS
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
