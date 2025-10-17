@@ -1,5 +1,6 @@
 require("fzf-lua").setup({
 	defaults = {
+		prompt = "",
 		file_icons = true,
 		formatter = "path.filename_first",
 	},
