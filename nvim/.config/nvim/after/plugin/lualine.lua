@@ -94,6 +94,10 @@ local function session()
 	return session_exists and " " .. session_name or ""
 end
 
+local function fileMetaSep()
+	return "--"
+end
+
 require("lualine").setup({
 	options = {
 		theme = lualine_theme,
@@ -113,7 +117,21 @@ require("lualine").setup({
 			},
 		},
 		lualine_b = {
-			{ "branch", icon = { "", color = { fg = "#7cfc00" } }, color = { fg = "#4c9a00" } },
+			{
+				"location",
+				icons_enabled = false,
+				fmt = function(s)
+					return "[" .. s
+				end,
+			},
+			{ fileMetaSep },
+			{
+				"encoding",
+				fmt = function(s)
+					local value_exists = s ~= nil and s ~= ""
+					return (value_exists and "󰈚 " .. string.upper(s) or "") .. "]"
+				end,
+			},
 			{
 				"filetype",
 				colored = false,
@@ -172,18 +190,7 @@ require("lualine").setup({
 			},
 		},
 		lualine_y = {
-			{
-				"encoding",
-				fmt = function(s)
-					local value_exists = s ~= nil and s ~= ""
-					return value_exists and "󰈚 " .. string.upper(s) or ""
-				end,
-			},
-			{
-				"location",
-				icons_enabled = true,
-				icon = "",
-			},
+			{ "branch", icon = { "", color = { fg = "#7cfc00" } }, color = { fg = "#4c9a00" } },
 		},
 		lualine_z = {
 			{
