@@ -25,64 +25,44 @@ local colors = {
 	b_fg = "#7a879d",
 }
 
-local modes = {
-	["NORMAL"] = "NRM",
-	["O-PENDING"] = "N?",
-	["INSERT"] = "INS",
-	["VISUAL"] = "VIS",
-	["V-BLOCK"] = "VBL",
-	["V-LINE"] = "VLN",
-	["V-REPLACE"] = "VRP",
-	["REPLACE"] = "RPL",
-	["COMMAND"] = "CMD",
-	["SHELL"] = "SHL",
-	["TERMINAL"] = "TRM",
-	["EX"] = "EX",
-	["S-BLOCK"] = "SBL",
-	["S-LINE"] = "SLN",
-	["SELECT"] = "SEL",
-	["CONFIRM"] = "CNF",
-	["MORE"] = "MRE",
-}
-
 local lualine_theme = {
 	normal = {
-		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
 		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	insert = {
-		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
 		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	visual = {
-		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
 		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	replace = {
-		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
 		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	command = {
-		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = c.base05 },
 		y = { bg = c.real_black, fg = c.base05 },
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	inactive = {
-		a = { bg = c.pmenu_bg, fg = c.black, gui = "bold" },
+		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = colors.white },
 	},
@@ -95,7 +75,7 @@ local function session()
 end
 
 local function fileMetaSep()
-	return "--"
+	return "-"
 end
 
 require("lualine").setup({
@@ -112,26 +92,26 @@ require("lualine").setup({
 			{
 				"mode",
 				fmt = function(s)
-					return modes[s] or s
+					return "[" .. s .. "]"
 				end,
 			},
 		},
 		lualine_b = {
-			{
-				"location",
-				icons_enabled = false,
-				fmt = function(s)
-					return "[" .. s
-				end,
-			},
-			{ fileMetaSep },
-			{
-				"encoding",
-				fmt = function(s)
-					local value_exists = s ~= nil and s ~= ""
-					return (value_exists and "󰈚 " .. string.upper(s) or "") .. "]"
-				end,
-			},
+			-- {
+			-- 	"location",
+			-- 	icons_enabled = false,
+			-- 	fmt = function(s)
+			-- 		return "[" .. s .. "]"
+			-- 	end,
+			-- },
+			-- { fileMetaSep },
+			-- {
+			-- 	"encoding",
+			-- 	fmt = function(s)
+			-- 		local value_exists = s ~= nil and s ~= ""
+			-- 		return "[" .. (value_exists and "󰈚 " .. string.upper(s) or "") .. "]"
+			-- 	end,
+			-- },
 			{
 				"filetype",
 				colored = false,
