@@ -7,8 +7,8 @@ require("fzf-lua").setup({
 		["--margin"] = 0,
 	},
 	winopts = {
-		height = 0.95,
-		width = .7,
+		height = 0.7,
+		width = 0.7,
 		row = 0.5,
 		border = "single",
 		-- border = {
@@ -24,7 +24,7 @@ require("fzf-lua").setup({
 		backdrop = 100,
 		preview = {
 			border = "single",
-			vertical = "up:45%",
+			vertical = "up:55%",
 			layout = "vertical",
 			title_pos = "left",
 		},
@@ -43,6 +43,15 @@ require("fzf-lua").setup({
 	},
 	grep = {
 		multiline = 2,
+		winopts = {
+			height = 0.8,
+			preview = {
+				border = "single",
+				vertical = "up:45%",
+				layout = "vertical",
+				title_pos = "left",
+			},
+		},
 	},
 })
 
