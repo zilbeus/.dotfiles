@@ -29,17 +29,17 @@ local highlights = {
 	NeogitHunkHeaderHighlight = { fg = colors.black, bg = colors.base05, bold = true },
 	NeogitHunkHeaderCursor = { fg = colors.black, bg = colors.base05, bold = true },
 
-	NeogitDiffContext = { bg = colors.one_bg },
-	NeogitDiffContextHighlight = { bg = colors.black2 },
-	NeogitDiffContextCursor = { bg = colors.one_bg },
+	NeogitDiffContext = { bg = colors.darker_black },
+	NeogitDiffContextHighlight = { bg = colors.darker_black },
+	NeogitDiffContextCursor = { bg = colors.darker_black },
 	NeogitDiffAdditions = { fg = colors.green },
-	NeogitDiffAdd = { fg = colors.green, bg = lighten_col(colors.green, -50) },
-	NeogitDiffAddHighlight = { fg = colors.green, bg = lighten_col(colors.green, -47) },
-	NeogitDiffAddCursor = { bg = colors.one_bg, fg = colors.green },
+	NeogitDiffAdd = { fg = lighten_col("#1B4327", 25), bg = "#12261E" },
+	NeogitDiffAddHighlight = { fg = lighten_col("#1B4327", 25), bg = "#12261E" },
+	NeogitDiffAddCursor = { bg = colors.one_bg, fg = lighten_col("#1B4327", 25) },
 	NeogitDiffDeletions = { fg = colors.red },
-	NeogitDiffDelete = { bg = lighten_col(colors.red, -50), fg = colors.red },
-	NeogitDiffDeleteHighlight = { bg = lighten_col(colors.red, -47), fg = colors.red },
-	NeogitDiffDeleteCursor = { bg = colors.one_bg, fg = colors.red },
+	NeogitDiffDelete = { bg = "#25171B", fg = lighten_col("#532426", 25) },
+	NeogitDiffDeleteHighlight = { bg = "#25171B", fg = lighten_col("#532426", 25) },
+	NeogitDiffDeleteCursor = { bg = colors.one_bg, fg = lighten_col("#532426", 25) },
 
 	NeogitPopupSwitchKey = { fg = colors.base0A },
 	NeogitPopupOptionKey = { fg = colors.base0A },
@@ -58,10 +58,8 @@ local highlights = {
 	NeogitUnpulledFrom = { fg = colors.purple, bold = true },
 
 	NeogitChangeModified = { fg = colors.blue, bold = true, italic = true },
-
-	NeogitChangeAdded = { fg = colors.green, bg = lighten_col(colors.green, -30), bold = true, italic = true },
-
-	NeogitChangeDeleted = { fg = colors.red, bold = true, italic = true },
+	NeogitChangeAdded = { fg = "#1B4327", bg = "#12261E" },
+	NeogitChangeDeleted = { bg = "#25171B", fg = "#532426" },
 	NeogitChangeRenamed = { fg = colors.purple, bold = true, italic = true },
 	NeogitChangeUpdated = { fg = colors.orange, bold = true, italic = true },
 	NeogitChangeCopied = { fg = colors.cyan, bold = true, italic = true },
@@ -69,7 +67,7 @@ local highlights = {
 	NeogitChangeNewFile = { fg = colors.green, bold = true, italic = true },
 	NeogitSectionHeader = { fg = colors.base0A, bold = true },
 
-	NeogitTagName = { fg = colors.yellow },
+	NeogitTagName = { fg = colors.blue },
 	NeogitTagDistance = { fg = colors.cyan },
 	NeogitFloatHeader = { fg = colors.black, bg = colors.base05, bold = true },
 	NeogitFloatHeaderHighlight = { bg = colors.black2, fg = colors.cyan, bold = true },
