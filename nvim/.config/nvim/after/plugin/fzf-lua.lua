@@ -7,6 +7,9 @@ require("fzf-lua").setup({
 	fzf_opts = {
 		["--margin"] = 0,
 	},
+	fzf_colors = {
+		["hl"] = "#8abae1",
+	},
 	winopts = {
 		height = 0.7,
 		width = 0.7,
@@ -53,6 +56,9 @@ require("fzf-lua").setup({
 				layout = "vertical",
 				title_pos = "left",
 			},
+		},
+		fzf_colors = {
+			["hl"] = "#8abae1",
 		},
 	},
 })
