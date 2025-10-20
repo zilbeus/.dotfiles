@@ -11,8 +11,8 @@ require("fzf-lua").setup({
 		["hl"] = "#8abae1",
 	},
 	winopts = {
-		height = 0.7,
-		width = 0.7,
+		height = 0.9,
+		width = 0.6,
 		row = 0.5,
 		border = "single",
 		-- border = {
@@ -49,7 +49,6 @@ require("fzf-lua").setup({
 		resume = true,
 		multiline = 2,
 		winopts = {
-			height = 0.8,
 			preview = {
 				border = "single",
 				vertical = "up:45%",
