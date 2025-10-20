@@ -5,7 +5,6 @@ require("neogit").setup({
 		item = { "", "" },
 		section = { "", "" },
 	},
-	process_spinner = true,
 	kind = "floating",
 	floating = {
 		border = "single",
