@@ -5,4 +5,6 @@ return {
 	FzfLuaBorder = { fg = colors.grey_fg2 },
 	FzfLuaBorderPreview = { fg = colors.grey_fg2 },
 	FzfLuaPreviewTitle = { fg = colors.black, bg = colors.pmenu_bg },
+	FzfLuaLiveSym = { fg = colors.blue },
+	FzfLuaLivePrompt = { fg = colors.white },
 }
