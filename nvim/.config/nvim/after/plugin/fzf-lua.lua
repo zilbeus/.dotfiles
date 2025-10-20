@@ -46,6 +46,7 @@ require("fzf-lua").setup({
 		formatter = "path.filename_first",
 	},
 	grep = {
+		RIPGREP_CONFIG_PATH = vim.env.RIPGREP_CONFIG_PATH,
 		resume = true,
 		multiline = 2,
 		winopts = {
