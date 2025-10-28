@@ -7,4 +7,5 @@ return {
 	DiffAddText = { bg = "#1B4327", fg = "NONE" },
 	DiffChange = { bg = "#091521", fg = "NONE" },
 	DiffText = { bg = "#25476A", fg = "NONE" },
+	DiffviewDiffDeleteDim = { fg = colors.one_bg, bg = "NONE" }
 }
