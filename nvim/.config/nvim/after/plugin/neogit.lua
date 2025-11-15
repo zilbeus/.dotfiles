@@ -30,4 +30,7 @@ require("neogit").setup({
 		kind = "floating",
 		verify_commit = vim.fn.executable("gpg") == 1,
 	},
+	popup = {
+		kind = "floating",
+	},
 })
