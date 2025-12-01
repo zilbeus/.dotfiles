@@ -60,6 +60,9 @@ require("fzf-lua").setup({
 		fzf_colors = {
 			["hl"] = "#8abae1",
 		},
+		actions = {
+			["ctrl-q"] = { fn = require "fzf-lua".actions.file_sel_to_qf, prefix = "select-all" }
+		}
 	},
 })
 
