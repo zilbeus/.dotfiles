@@ -24,6 +24,7 @@ local integrations = {
 	"zq.theme.integrations.neotree",
 	"zq.theme.integrations.notify",
 	"zq.theme.integrations.snacks",
+	"zq.theme.integrations.lazygit",
 }
 
 local apply_integration = function(integrationName)
