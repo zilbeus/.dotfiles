@@ -63,6 +63,11 @@ local colors = {
 	warning = "#eda601",
 	hint = "#8abae1",
 	brackets = "#8692a6",
+	navic_icon = "#7797b7",
+	navic_sep = "#2e2e2e",
+	navic_text = "#8692a6",
+	winbar_inactive_fg = "#606060",
+	navic_bg = "#1a1a1a",
 }
 
 return colors

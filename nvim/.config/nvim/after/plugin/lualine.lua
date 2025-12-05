@@ -62,11 +62,25 @@ local lualine_theme = {
 		z = { bg = c.real_black, fg = c.status_line_session },
 	},
 	inactive = {
-		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
+		a = { bg = c.navic_bg, fg = c.winbar_inactive_fg },
 		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.real_black, fg = colors.white },
 	},
 }
+
+local function navic_inactive()
+	return navic.format_data(navic.get_data(), { highlight = false })
+end
+
+local function navic_active()
+	return navic.format_data(navic.get_data())
+end
+
+local function filepath()
+	local path = vim.fn.expand("%")
+	path = path:gsub("/", "  ")
+	return " " .. path
+end
 
 local function session()
 	local session_name = string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
@@ -78,6 +92,10 @@ local function fileMetaSep()
 	return "-"
 end
 
+local function navic_active_filler()
+	return " "
+end
+
 require("lualine").setup({
 	options = {
 		theme = lualine_theme,
@@ -86,6 +104,27 @@ require("lualine").setup({
 		section_separators = { left = "", right = "" },
 		always_divide_middle = true,
 		globalstatus = true,
+	},
+	winbar = {
+		lualine_c = {
+			{
+				navic_active,
+			},
+			{
+				navic_active_filler,
+				color = { bg = c.navic_bg },
+			},
+		},
+	},
+	inactive_winbar = {
+		lualine_a = {
+			{
+				filepath,
+			},
+			{
+				navic_inactive,
+			},
+		},
 	},
 	sections = {
 		lualine_a = {
@@ -137,10 +176,10 @@ require("lualine").setup({
 			},
 		},
 		lualine_c = {
-			{
-				"navic",
-				color = { fg = c.navic },
-			},
+			-- {
+			-- 	"navic",
+			-- 	color = { fg = c.navic },
+			-- },
 		},
 		lualine_x = {
 			{

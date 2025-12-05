@@ -25,6 +25,7 @@ local integrations = {
 	"zq.theme.integrations.notify",
 	"zq.theme.integrations.snacks",
 	"zq.theme.integrations.lazygit",
+	"zq.theme.integrations.navic",
 }
 
 local apply_integration = function(integrationName)
