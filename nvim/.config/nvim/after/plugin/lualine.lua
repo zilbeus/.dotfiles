@@ -27,39 +27,44 @@ local colors = {
 
 local lualine_theme = {
 	normal = {
-		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
-		b = { bg = c.real_black, fg = colors.b_fg },
-		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = c.base05 },
-		z = { bg = c.real_black, fg = c.status_line_session },
+		a = { bg = c.lualine_a_bg, fg = c.lualine_a_fg },
+		b = { bg = c.lualine_b_bg, fg = c.lualine_b_fg },
+		c = { bg = c.lualine_c_bg, fg = c.lualine_c_fg },
+		x = { bg = c.lualine_c_bg, fg = c.lualine_c_fg },
+		y = { bg = c.lualine_y_bg, fg = c.lualine_y_fg },
+		z = { bg = c.lualine_z_bg, fg = c.lualine_z_fg },
 	},
 	insert = {
-		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
-		b = { bg = c.real_black, fg = colors.b_fg },
-		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = c.base05 },
-		z = { bg = c.real_black, fg = c.status_line_session },
+		a = { bg = c.lualine_a_bg, fg = c.lualine_a_fg },
+		b = { bg = c.lualine_b_bg, fg = c.lualine_b_fg },
+		c = { bg = c.lualine_c_bg, fg = c.lualine_c_fg },
+		x = { bg = c.lualine_x_bg, fg = c.lualine_x_fg },
+		y = { bg = c.lualine_y_bg, fg = c.lualine_y_fg },
+		z = { bg = c.lualine_z_bg, fg = c.lualine_z_fg },
 	},
 	visual = {
-		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
-		b = { bg = c.real_black, fg = colors.b_fg },
-		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = c.base05 },
-		z = { bg = c.real_black, fg = c.status_line_session },
+		a = { bg = c.lualine_a_bg, fg = c.lualine_a_fg },
+		b = { bg = c.lualine_b_bg, fg = c.lualine_b_fg },
+		c = { bg = c.lualine_c_bg, fg = c.lualine_c_fg },
+		x = { bg = c.lualine_x_bg, fg = c.lualine_x_fg },
+		y = { bg = c.lualine_y_bg, fg = c.lualine_y_fg },
+		z = { bg = c.lualine_z_bg, fg = c.lualine_z_fg },
 	},
 	replace = {
-		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
-		b = { bg = c.real_black, fg = colors.b_fg },
-		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = c.base05 },
-		z = { bg = c.real_black, fg = c.status_line_session },
+		a = { bg = c.lualine_a_bg, fg = c.lualine_a_fg },
+		b = { bg = c.lualine_b_bg, fg = c.lualine_b_fg },
+		c = { bg = c.lualine_c_bg, fg = c.lualine_c_fg },
+		x = { bg = c.lualine_x_bg, fg = c.lualine_x_fg },
+		y = { bg = c.lualine_y_bg, fg = c.lualine_y_fg },
+		z = { bg = c.lualine_z_bg, fg = c.lualine_z_fg },
 	},
 	command = {
-		a = { bg = c.real_black, fg = c.brackets, gui = "bold" },
-		b = { bg = c.real_black, fg = colors.b_fg },
-		c = { bg = c.real_black, fg = c.base05 },
-		y = { bg = c.real_black, fg = c.base05 },
-		z = { bg = c.real_black, fg = c.status_line_session },
+		a = { bg = c.lualine_a_bg, fg = c.lualine_a_fg },
+		b = { bg = c.lualine_b_bg, fg = c.lualine_b_fg },
+		c = { bg = c.lualine_c_bg, fg = c.lualine_c_fg },
+		x = { bg = c.lualine_x_bg, fg = c.lualine_x_fg },
+		y = { bg = c.lualine_y_bg, fg = c.lualine_y_fg },
+		z = { bg = c.lualine_z_bg, fg = c.lualine_z_fg },
 	},
 	inactive = {
 		a = { bg = c.navic_bg, fg = c.winbar_inactive_fg },
@@ -101,7 +106,7 @@ require("lualine").setup({
 		theme = lualine_theme,
 		icons_enabled = true,
 		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		always_divide_middle = true,
 		globalstatus = true,
 	},
@@ -131,26 +136,11 @@ require("lualine").setup({
 			{
 				"mode",
 				fmt = function(s)
-					return "[" .. s .. "]"
+					return " " .. s
 				end,
 			},
 		},
 		lualine_b = {
-			-- {
-			-- 	"location",
-			-- 	icons_enabled = false,
-			-- 	fmt = function(s)
-			-- 		return "[" .. s .. "]"
-			-- 	end,
-			-- },
-			-- { fileMetaSep },
-			-- {
-			-- 	"encoding",
-			-- 	fmt = function(s)
-			-- 		local value_exists = s ~= nil and s ~= ""
-			-- 		return "[" .. (value_exists and "󰈚 " .. string.upper(s) or "") .. "]"
-			-- 	end,
-			-- },
 			{
 				"filetype",
 				colored = false,
@@ -171,17 +161,14 @@ require("lualine").setup({
 					unnamed = "[NO NAME]",
 					newfile = "[NEW]",
 				},
-				padding = { left = 0 },
+				padding = { left = 0, right = 1 },
 				color = { fg = c.base05 },
 			},
 		},
 		lualine_c = {
-			-- {
-			-- 	"navic",
-			-- 	color = { fg = c.navic },
-			-- },
+			{ "branch", icon = { "" } },
 		},
-		lualine_x = {
+		lualine_y = {
 			{
 				"diff",
 				colored = true,
@@ -208,8 +195,18 @@ require("lualine").setup({
 				ignore_lsp = {},
 			},
 		},
-		lualine_y = {
-			{ "branch", icon = { "", color = { fg = "#7cfc00" } }, color = { fg = "#4c9a00" } },
+		lualine_x = {
+			{
+				"location",
+				icons_enabled = false,
+			},
+			{
+				"encoding",
+				fmt = function(s)
+					local value_exists = s ~= nil and s ~= ""
+					return value_exists and "󰈚 " .. string.upper(s) or ""
+				end,
+			},
 		},
 		lualine_z = {
 			{

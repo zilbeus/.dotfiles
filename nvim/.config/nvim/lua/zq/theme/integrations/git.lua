@@ -121,17 +121,17 @@ return {
 	},
 
 	LuaLineDiffAdd = {
-		fg = colors.diff_add,
-		bg = colors.real_black,
+		fg = colors.lualine_y_fg,
+		bg = colors.lualine_y_bg,
 	},
 
 	LuaLineDiffChange = {
-		fg = colors.diff_modify,
-		bg = colors.real_black,
+		fg = colors.lualine_y_fg,
+		bg = colors.lualine_y_bg,
 	},
 
 	LuaLineDiffDelete = {
-		fg = colors.diff_remove,
-		bg = colors.real_black,
+		fg = colors.lualine_y_fg,
+		bg = colors.lualine_y_bg,
 	},
 }

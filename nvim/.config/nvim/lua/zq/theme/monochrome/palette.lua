@@ -68,6 +68,18 @@ local colors = {
 	navic_text = "#8692a6",
 	winbar_inactive_fg = "#606060",
 	navic_bg = "#1a1a1a",
+	lualine_a_bg = "#bfc5d0",
+	lualine_a_fg = "#1f1f1f",
+	lualine_b_bg = "#2e2e2e",
+	lualine_b_fg = "#424242",
+	lualine_c_bg = "#171717",
+	lualine_c_fg = "#8692a6",
+	lualine_x_bg = "#171717",
+	lualine_x_fg = "#8692a6",
+	lualine_y_bg = "#2e2e2e",
+	lualine_y_fg = "#8692a6",
+	lualine_z_bg = "#8692a6",
+	lualine_z_fg = "#202020",
 }
 
 return colors
