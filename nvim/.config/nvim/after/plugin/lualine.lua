@@ -186,7 +186,7 @@ require("lualine").setup({
 			"diagnostics",
 			{
 				"lsp_status",
-				icon = "",
+				icon = "󱁻",
 				symbols = {
 					spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
 					done = "",
@@ -198,7 +198,7 @@ require("lualine").setup({
 		lualine_x = {
 			{
 				"location",
-				icons_enabled = false,
+				icons_enabled = true,
 			},
 			{
 				"encoding",
