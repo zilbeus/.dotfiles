@@ -73,6 +73,15 @@ local lualine_theme = {
 	},
 }
 
+local function macro()
+	local recording_register = vim.fn.reg_recording()
+	if recording_register == "" then
+		return ""
+	else
+		return "[REC @" .. recording_register .. "]"
+	end
+end
+
 local function navic_inactive()
 	return navic.format_data(navic.get_data(), { highlight = false })
 end
@@ -167,6 +176,7 @@ require("lualine").setup({
 		},
 		lualine_c = {
 			{ "branch", icon = { "" } },
+			{ macro },
 		},
 		lualine_y = {
 			{
