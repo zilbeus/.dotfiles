@@ -69,7 +69,8 @@ local lualine_theme = {
 	inactive = {
 		a = { bg = c.navic_bg, fg = c.winbar_inactive_fg },
 		b = { bg = c.real_black, fg = colors.b_fg },
-		c = { bg = c.real_black, fg = colors.white },
+		c = { bg = c.lualine_c_bg, fg = c.lualine_c_fg },
+		x = { bg = c.lualine_x_bg, fg = c.lualine_x_fg },
 	},
 }
 
@@ -132,15 +133,21 @@ require("lualine").setup({
 				color = { bg = c.navic_bg },
 			},
 		},
+		lualine_x = {
+			{ "filetype" },
+		},
 	},
 	inactive_winbar = {
-		lualine_a = {
+		lualine_c = {
 			{
 				filepath,
 			},
 			{
 				navic_inactive,
 			},
+		},
+		lualine_x = {
+			{ "filetype" },
 		},
 	},
 	sections = {
