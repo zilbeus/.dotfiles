@@ -1,23 +1,39 @@
 palette='zilq'
-# format = '''
-# [┌](bold lines)[\[](bold bracket)$directory[\]](bold bracket)$git_branch$fill$nodejs$java[─](bold lines)[\[](bold bracket)[\]](bold bracket)
-# [└](bold lines)$character
-# '''
-format = '''[\[](bold bracket)$directory[\]](bold bracket)$git_branch$nodejs$java[-](bold lines)$character'''
-add_newline = false
+format = '''
+[┌](fg:lines)[░▒▓](fg:#606060)$directory$git_branch$fill[](fg:#242424)$golang$nodejs$java$username$hostname$time
+[└](fg:lines)$character
+'''
+add_newline = true
+
+[golang]
+format = '[ \[golang \($version\)\] ](bg:#242424)'
+
+[hostname]
+format = '[$hostname](bold red)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#606060"
+format = '[](fg:#4c4c4c bg:#242424)[[󱑂 $time](fg:#b0b8c5 bg:#4c4c4c)]($style)'
 
 [character]
-success_symbol='[\[](bold bracket)[\$](bold char)[\]](bold bracket)'
-error_symbol='[\[](bold bracket)[\$](bold char)[\]](bold bracket)'
+format='[ ](fg:#606060)'
 
 [directory]
-format='[$path]($style)'
-style='bold dir'
+truncate_to_repo = false
+format='[󰉋 $path]($style)[](fg:#4c4c4c bg:#242424)'
+home_symbol='~'
+style='bg:#4c4c4c fg:#b0b8c5'
 read_only='RO'
+truncation_length = 3
 
 [git_branch]
-format='[─](bold lines)[\[](bold bracket)[$branch(:$remote_branch)]($style)[\]](bold bracket)'
-style='bold git'
+format='[  $branch(:$remote_branch)](bg:#242424)[](fg:#242424)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 
 [status]
 format='[$status]($style)'
@@ -25,13 +41,13 @@ disabled=false
 
 [fill]
 symbol='─'
-style='bold lines'
+style='fg:#1a1a1a'
 
 [java]
-format='[─](bold lines)[\[](bold bracket)[java](bold ver_key)[:](bold ver_sep)[(${version})](bold ver_val)[\]](bold bracket)'
+format = ' [\[java \($version\)\] ](bg:#242424)'
 
 [nodejs]
-format='[─](bold lines)[\[](bold bracket)[nodejs](bold ver_key)[:](bold ver_sep)[(${version})](bold ver_val)[\]](bold bracket)'
+format = ' [\[nodejs \($version\)\] ](bg:#242424)'
 
 [palettes.zilq]
 lines='#565656'
