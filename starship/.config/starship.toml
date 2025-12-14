@@ -1,6 +1,6 @@
 palette='zilq'
 format = '''
-[┌](fg:lines)[░▒▓](fg:#606060)$directory$git_branch$fill[](fg:#242424)$golang$nodejs$java$username$hostname$time
+[┌](fg:lines)[░▒▓](fg:#606060)$directory$git_branch[](fg:#242424)$fill[](fg:#242424)$golang$nodejs$java$username$hostname$time
 [└](fg:lines)$character
 '''
 add_newline = true
@@ -29,7 +29,7 @@ read_only='RO'
 truncation_length = 3
 
 [git_branch]
-format='[  $branch(:$remote_branch)](bg:#242424)[](fg:#242424)'
+format='[  $branch(:$remote_branch)](bg:#242424)'
 
 [git_status]
 style = "bg:#394260"
