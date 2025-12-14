@@ -118,6 +118,9 @@ require("lualine").setup({
 		section_separators = { left = "", right = "" },
 		always_divide_middle = true,
 		globalstatus = true,
+		disabled_filetypes = {
+			winbar = { "term", "toggleterm", "snacks_dashboard" },
+		},
 	},
 	winbar = {
 		lualine_c = {
