@@ -15,21 +15,21 @@ format = '[$hostname](bold red)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#606060"
-format = '[](fg:#4c4c4c bg:#242424)[[ 󱑂 $time](fg:#b0b8c5 bg:#4c4c4c)]($style)'
+format = '[](fg:#4c4c4c bg:#242424)[[ [󱑂 ](fg:#bfc5d0 bg:#4c4c4c)$time](fg:#b0b8c5 bg:#4c4c4c)]($style)'
 
 [character]
 format='[ ](fg:#606060)'
 
 [directory]
 truncate_to_repo = false
-format='[󰉋 $path ]($style)[](fg:#4c4c4c bg:#242424)'
+format='[[󰉋 ](fg:#bfc5d0 bg:#4c4c4c)$path ]($style)[](fg:#4c4c4c bg:#242424)'
 home_symbol='~'
 style='bg:#4c4c4c fg:#b0b8c5'
 read_only='RO'
 truncation_length = 3
 
 [git_branch]
-format='[  $branch(:$remote_branch) ](bg:#242424)'
+format='[ [ ](fg:#ced4df bg:#242424)$branch(:$remote_branch) ](bg:#242424)'
 
 [git_status]
 style = "bg:#394260"
