@@ -44,10 +44,10 @@ symbol='─'
 style='fg:#1a1a1a'
 
 [java]
-format = ' [\[java \($version\)\] ](bg:#242424)'
+format = '[ \[java \($version\)\] ](bg:#242424)'
 
 [nodejs]
-format = ' [\[nodejs \($version\)\] ](bg:#242424)'
+format = '[ \[nodejs \($version\)\] ](bg:#242424)'
 
 [palettes.zilq]
 lines='#565656'
