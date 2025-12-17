@@ -1,29 +1,5 @@
 local navic = require("nvim-navic")
 local c = require("zq.theme.monochrome.palette")
-local colors = {
-	black = "#141414",
-	white = "#adadad",
-	red = "#3b0000",
-	green = "#42be65",
-	blue = "#33b1ff",
-	yellow = "#ffe97b",
-	cyan = "#3ddbd9",
-	magenta = "#ff73b6",
-	b_black = "#292929",
-	accent = "#3e2b00",
-	accent_fg = "#eda601",
-	accent_r = "#666666",
-	accent_r_fg = "#1f1f1f",
-	gray_bg = "#666666",
-	gray_fg = "#1f1f1f",
-	blue_bg = "#4e4eff",
-	blue_fg = "#00009d",
-	green_fg = "#002700",
-	red_bg = "#ff4d4d",
-	filename_fg = "#adadad",
-	b_bg = "#232830",
-	b_fg = "#7a879d",
-}
 
 local lualine_theme = {
 	normal = {
@@ -68,7 +44,6 @@ local lualine_theme = {
 	},
 	inactive = {
 		a = { bg = c.navic_bg, fg = c.winbar_inactive_fg },
-		b = { bg = c.real_black, fg = colors.b_fg },
 		c = { bg = c.lualine_c_bg, fg = c.lualine_c_fg },
 		x = { bg = c.lualine_x_bg, fg = c.lualine_x_fg },
 	},
@@ -103,10 +78,6 @@ local function session()
 	return session_exists and " " .. session_name or ""
 end
 
-local function fileMetaSep()
-	return "-"
-end
-
 local function navic_active_filler()
 	return " "
 end
@@ -123,33 +94,33 @@ require("lualine").setup({
 			winbar = { "term", "toggleterm", "snacks_dashboard" },
 		},
 	},
-	winbar = {
-		lualine_c = {
-			{
-				navic_active,
-			},
-			{
-				navic_active_filler,
-				color = { bg = c.navic_bg },
-			},
-		},
-		lualine_x = {
-			{ "filetype" },
-		},
-	},
-	inactive_winbar = {
-		lualine_c = {
-			{
-				filepath,
-			},
-			{
-				navic_inactive,
-			},
-		},
-		lualine_x = {
-			{ "filetype" },
-		},
-	},
+	-- winbar = {
+	-- 	lualine_c = {
+	-- 		{
+	-- 			navic_active,
+	-- 		},
+	-- 		{
+	-- 			navic_active_filler,
+	-- 			color = { bg = c.navic_bg },
+	-- 		},
+	-- 	},
+	-- 	lualine_x = {
+	-- 		{ "filetype" },
+	-- 	},
+	-- },
+	-- inactive_winbar = {
+	-- 	lualine_c = {
+	-- 		{
+	-- 			filepath,
+	-- 		},
+	-- 		{
+	-- 			navic_inactive,
+	-- 		},
+	-- 	},
+	-- 	lualine_x = {
+	-- 		{ "filetype" },
+	-- 	},
+	-- },
 	sections = {
 		lualine_a = {
 			{
