@@ -1,8 +1,7 @@
 local colors = require("zq.theme.monochrome.palette")
 
 local highlights = {
-	SnacksDashboardHeader = { fg = colors.base0A },
-	-- SnacksDashboardHeader = { fg = colors.error },
+	SnacksDashboardHeader = { fg = colors.dashboard_header },
 }
 
 return highlights
