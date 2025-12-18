@@ -5,6 +5,9 @@ tabbar {
 tabbar tabbox {
     padding: 0px;
     font-family: monospace;
+    max-height: 15px;
+    min-height: 15px;
+    height: 15px;
 }
 
 separator.vertical {
@@ -16,11 +19,12 @@ tabbar tabbox tabboxchild {
     border-radius: 0px;
     margin-right: 0px;
     margin-left: 0px;
-
 }
 
 tabbar tabbox tab {
     border-radius: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 tabbar tabbox > tabboxchild > tab {
@@ -39,6 +43,6 @@ tabbar tabbox > tabboxchild > tab:selected {
 }
 
 tabbar tabbox tab label {
-    font-size: 20px;
+    font-size: 14px;
 }
 
