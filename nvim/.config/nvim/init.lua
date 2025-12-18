@@ -16,3 +16,16 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("custom.plugins")
 require("zq")
+
+local function get_window_name()
+	local session_name = string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
+	local session_exists = session_name ~= nil and session_name ~= ""
+	if session_exists then
+		vim.o.titlestring = session_name .. " :: %t"
+		return
+	end
+
+	vim.o.titlestring = "%t"
+end
+
+vim.api.nvim_create_autocmd('WinEnter', { callback = function() get_window_name() end })
