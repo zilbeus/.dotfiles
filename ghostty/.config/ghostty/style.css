@@ -38,7 +38,7 @@ tabbar tabbox > tabboxchild > tab {
 
 tabbar tabbox > tabboxchild > tab:selected {
     color: #bfc5d0;
-    background-color: #0F0F0F;
+    background-color: #101010;
     border-color: #2e2e2e;
 }
 
