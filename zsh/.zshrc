@@ -26,6 +26,7 @@ alias kg='kubectl get'
 alias brun="./gradlew bootRun --args='--spring.output.ansi.enabled=ALWAYS'"
 alias nv="nvim"
 alias lg="lazygit"
+alias oc="opencode"
 
 export EDITOR='/usr/bin/nvim'
 export FZF_ALT_C_COMMAND='(fd -t d . -H $HOME)'
@@ -70,3 +71,6 @@ ff() (
   --ansi \
   --query "$*"
 )
+
+# opencode
+export PATH=$HOME/.opencode/bin:$PATH
