@@ -1,5 +1,10 @@
 return {
 	{
+		"esmuellert/codediff.nvim",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		cmd = "CodeDiff",
+	},
+	{
 		"lewis6991/gitsigns.nvim",
 		opts = {
 			signs = {
