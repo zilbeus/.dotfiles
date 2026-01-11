@@ -26,8 +26,8 @@ vim.keymap.set("n", "<leader>Q", "<cmd>Trouble diagnostics toggle focus=true<cr>
 -- vim.keymap.set("n", "<C-d>", "<C-d>zz")
 -- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- NEOGIT
-vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Git status window" })
+-- GIT
+vim.keymap.set("n", "<leader>gg", "<cmd>CodeDiff<cr>", { desc = "Open Git status window" })
 
 -- FILE BROWSERS
 vim.keymap.set("n", "<leader>ft", "<cmd>Neotree filesystem reveal right toggle<cr>", { desc = "Open file tree" })
@@ -45,10 +45,14 @@ vim.keymap.set("v", "<leader>ghv", "<esc><cmd>'<,'>DiffviewFileHistory --follow<
 vim.keymap.set("n", "<leader>ghl", "<cmd>.DiffviewFileHistory --follow<cr>", { desc = "line history" })
 
 -- GITSIGNS
-vim.keymap.set("n", "<leader>gd", require("gitsigns").preview_hunk, { desc = "Open [G]it Hunk [D]iff" })
-vim.keymap.set("n", "<leader>gr", require("gitsigns").reset_hunk, { desc = "[R]eset [G]it Hunk" })
-vim.keymap.set("n", "<leader>ghn", require("gitsigns").next_hunk, { desc = "[N]ext [G]it [H]unk" })
-vim.keymap.set("n", "<leader>ghp", require("gitsigns").prev_hunk, { desc = "[P]revious [G]it [H]unk" })
+vim.keymap.set("n", "<leader>ghh", require("gitsigns").preview_hunk, { desc = "preview git hunk" })
+vim.keymap.set("n", "<leader>gR", require("gitsigns").reset_hunk, { desc = "reset git hunk" })
+vim.keymap.set("n", "ghh", function()
+	require("gitsigns").nav_hunk("next", nil)
+end, { desc = "go to next git hunk" })
+vim.keymap.set("n", "ghp", function()
+	require("gitsigns").nav_hunk("prev", nil)
+end, { desc = "go to previous git hunk" })
 vim.keymap.set("n", "<leader>Gsw", require("gitsigns").toggle_word_diff, { desc = "toggle word diff" })
 vim.keymap.set("n", "<leader>Gsl", require("gitsigns").toggle_linehl, { desc = "toggle line diff" })
 vim.keymap.set("n", "<leader>Gsd", require("gitsigns").toggle_deleted, { desc = "toggle deleted line diff" })
