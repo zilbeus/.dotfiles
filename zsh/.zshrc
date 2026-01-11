@@ -13,6 +13,7 @@ TERM=xterm-256color
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ls='eza -la --icons --header --git --time-style=long-iso'
+alias lss='eza -lT --icons --header --git --time-style=long-iso'
 alias lsg='eza -la --icons --header --git --time-style=long-iso --grid'
 alias ip='ip -color=auto'
 alias bat='bat --paging=never'
@@ -40,6 +41,7 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/rc
+export EZA_CONFIG_DIR=$HOME/.config/eza
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -50,6 +52,8 @@ export CLASSPATH=~/.java/libs/algs4.jar
 export _ZO_FZF_OPTS='--select-1 --height 15 --highlight-line --layout=reverse --info=inline-right --separator="-" --prompt=" " --border="sharp" --border-label-pos=4 --margin 1 --scrollbar="█" --marker="█" --color=bg+:#bfc5d0,hl:#ec8989,hl+:#2e2e2e,fg+:#2e2e2e,gutter:#2e2e2e,prompt:#859ba2,pointer:#D8DEE9,info:#eee8d5,label:#859ba2,border:#383838,scrollbar:#424242,marker:#ec8989'
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+source ~/bin/fzf-tab/fzf-tab.plugin.zsh
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
 source <(fzf --zsh)
 . "$HOME/.asdf/asdf.sh"
 fpath=(${ASDF_DIR}/completions $fpath)
