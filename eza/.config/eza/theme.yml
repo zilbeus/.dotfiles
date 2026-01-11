@@ -1,0 +1,70 @@
+colourful: false
+
+filekinds:
+  normal: {
+    foreground: "#D8DEE9"
+  }
+  directory: {
+    foreground: "#7a879d"
+  }
+  symlink:
+    foreground: "#9aafe6"
+  executable: {
+    foreground: "#D8DEE9"
+  }
+size:
+  major: {foreground: "#7a879d", is_bold: true}
+  minor: {foreground: "#7a879d"}
+  number_byte: {foreground: "#7a879d", is_bold: true}
+  number_kilo: {foreground: "#7a879d", is_bold: true}
+  number_mega: {foreground: "#7a879d", is_bold: true}
+  number_giga: {foreground: "#7a879d", is_bold: true}
+  number_huge: {foreground: "#7a879d", is_bold: true}
+  unit_byte: {foreground: "#7a879d"}
+  unit_kilo: {foreground: "#7a879d"}
+  unit_mega: {foreground: "#7a879d"}
+  unit_giga: {foreground: "#7a879d"}
+  unit_huge: {foreground: "#7a879d"}
+users:
+  user_you: {foreground: "#bfc5d0", is_bold: true}
+  user_root: {foreground: "#bfc5d0"}
+  user_other: {foreground: "#bfc5d0"}
+  group_yours: {foreground: "#bfc5d0", is_bold: true}
+  group_other: {foreground: "#bfc5d0"}
+  group_root: {foreground: "#bfc5d0"}
+perms:
+  user_read:
+    foreground: "#ced4df"
+  user_write:
+    foreground: "#ced4df"
+  user_execute_file:
+    foreground: "#eda601"
+  user_execute_other:
+    foreground: "#eda601"
+  group_read:
+    foreground: "#ced4df"
+  group_write:
+    foreground: "#ced4df"
+  group_execute:
+    foreground: "#eda601"
+  other_read:
+    foreground: "#ced4df"
+  other_write:
+    foreground: "#ced4df"
+  other_execute:
+    foreground: "#eda601"
+date: {foreground: "#8692a6"}
+header: {foreground: "#7797b7", is_underline: true}
+file_type:
+  source: {foreground: Red}
+  document: {foreground: Red}
+filenames:
+  # Just change the icon glyph
+  # Cargo.toml: {icon: {glyph: 🦀}}
+  # Cargo.lock: {icon: {glyph: 🦀}}
+extensions:
+  # Change the filename color and icon
+  # NOTE: not all unicode glyphs support color changes
+  # rs: {filename: {foreground: Red}, icon: {glyph: 🦀}}
+  # Change the icon glyph and color
+  # nix: {icon: {glyph: ❄, style: {foreground: White}}}
