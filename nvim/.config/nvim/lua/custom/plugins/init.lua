@@ -16,8 +16,8 @@ return {
 		-- setting the keybinding for LazyGit with 'keys' is recommended in
 		-- order to load the plugin when the command is run for the first time
 		keys = {
-			{ "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-		}
+			{ "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+		},
 	},
 	{
 		"karb94/neoscroll.nvim",
@@ -158,10 +158,6 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		config = function() end,
-	},
-	{
-		"creativenull/efmls-configs-nvim",
-		dependencies = { "neovim/nvim-lspconfig" },
 	},
 	{
 		"mfussenegger/nvim-jdtls",
