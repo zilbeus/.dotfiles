@@ -43,7 +43,7 @@ local apply_defaults = function()
 	local palette = require("koda.palette.dark")
 	palette.emphasis = colors.base06
 	palette.func = colors.base06
-	palette.string = colors.base06
+	palette.string = colors.dashboard_header
 	palette.const = colors.dashboard_header
 
 	-- Takes the user's 'colors' table from setup() and forces it into the palette
