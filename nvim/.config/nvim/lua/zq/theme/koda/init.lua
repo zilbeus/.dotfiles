@@ -3,7 +3,7 @@ local theme = require("zq.theme.koda.theme")
 local colors = require("zq.theme.koda.palette")
 
 local integrations = {
-	-- "zq.theme.koda.integrations.syntax",
+	"zq.theme.koda.integrations.syntax",
 	-- "zq.theme.koda.integrations.treesitter",
 	"zq.theme.koda.integrations.codeactionmenu",
 	"zq.theme.koda.integrations.devicons",
