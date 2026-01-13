@@ -1,0 +1,61 @@
+local colors = require("zq.theme.koda.palette")
+local colorize = require("zq.theme.colors").change_hex_lightness
+
+return {
+	-- LSP References
+	LspReferenceText = { fg = colors.darker_black, bg = colors.white },
+	LspReferenceRead = { fg = colors.darker_black, bg = colors.white },
+	LspReferenceWrite = { fg = colors.darker_black, bg = colors.white },
+
+	-- Lsp Diagnostics
+	DiagnosticHint = { fg = colors.hint },
+	DiagnosticError = { fg = colors.error },
+	DiagnosticWarn = { fg = colors.warning },
+	DiagnosticInfo = { fg = colors.green },
+	LspSignatureActiveParameter = { fg = colors.black, bg = colors.base05 },
+
+	RenamerTitle = { fg = colors.black, bg = colors.red },
+	RenamerBorder = { fg = colors.red },
+
+	LspInlayHint = {
+		bg = colorize(colors.black2, vim.o.bg == "dark" and 0 or 3),
+		fg = colors.light_grey,
+	},
+	LspDiagnosticsDefaultError = { fg = colors.base08, bg = "NONE" },
+	LspDiagnosticsDefaultWarning = { fg = colors.base09, bg = "NONE" },
+	LspDiagnosticsDefaultInformation = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsDefaultInfo = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsDefaultHint = { fg = colors.purple, bg = "NONE" },
+	LspDiagnosticsVirtualTextError = { fg = colors.base08, bg = "NONE" },
+	LspDiagnosticsVirtualTextWarning = { fg = colors.base09, bg = "NONE" },
+	LspDiagnosticsVirtualTextInformation = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsVirtualTextInfo = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsVirtualTextHint = { fg = colors.purple, bg = "NONE" },
+	LspDiagnosticsFloatingError = { fg = colors.base08, bg = "NONE" },
+	LspDiagnosticsFloatingWarning = { fg = colors.base09, bg = "NONE" },
+	LspDiagnosticsFloatingInformation = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsFloatingInfo = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsFloatingHint = { fg = colors.purple, bg = "NONE" },
+	DiagnosticSignError = { fg = colors.base08, bg = "NONE" },
+	DiagnosticSignWarning = { fg = colors.base09, bg = "NONE" },
+	DiagnosticSignInformation = { fg = colors.sun, bg = "NONE" },
+	DiagnosticSignInfo = { fg = colors.sun, bg = "NONE" },
+	DiagnosticSignHint = { fg = colors.purple, bg = "NONE" },
+	LspDiagnosticsSignError = { fg = colors.base08, bg = colors.statuscolumn },
+	LspDiagnosticsSignWarning = { fg = colors.base09, bg = "NONE" },
+	LspDiagnosticsSignInformation = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsSignInfo = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsSignHint = { fg = colors.purple, bg = "NONE" },
+	LspDiagnosticsError = { fg = colors.base08, bg = "NONE" },
+	LspDiagnosticsWarning = { fg = colors.base09, bg = "NONE" },
+	LspDiagnosticsInformation = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsInfo = { fg = colors.sun, bg = "NONE" },
+	LspDiagnosticsHint = { fg = colors.purple, bg = "NONE" },
+	LspDiagnosticsUnderlineError = { fg = "NONE", bg = "NONE", underline = true },
+	LspDiagnosticsUnderlineWarning = { fg = "NONE", bg = "NONE", underline = true },
+	LspDiagnosticsUnderlineInformation = { fg = "NONE", bg = "NONE", underline = true },
+	LspDiagnosticsUnderlineInfo = { fg = "NONE", bg = "NONE", underline = true },
+	LspDiagnosticsUnderlineHint = { fg = "NONE", bg = "NONE", underline = true },
+	LspCodeLens = { fg = colors.base04, bg = "NONE", italic = true },
+	LspCodeLensSeparator = { fg = colors.base04, bg = "NONE", italic = true },
+}
