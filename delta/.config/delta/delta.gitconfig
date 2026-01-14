@@ -1,4 +1,6 @@
 [delta]
+    navigate = true
+    line-numbers = true
     syntax-theme = tokyonight_night
     dark = true
     tabs = 2
