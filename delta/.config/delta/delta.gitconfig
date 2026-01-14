@@ -1,0 +1,36 @@
+[delta]
+    syntax-theme = tokyonight_night
+    dark = true
+    tabs = 2
+
+    file-modified-label = "[MODIFIED]"
+    file-added-label = "[ADDED]"
+    file-moved-label = "[MOVED]"
+    file-removed-label = "[REMOVED]"
+    file-renamed-label = "[RENAMED]"
+    file-style = "#7797b7"
+    file-decoration-style = "#242424" ol
+
+    line-numbers-left-format = "{nm:>4} "
+    line-numbers-right-format = "│ {np:>4} "
+    line-numbers-left-style = white dim
+    line-numbers-right-style = "#1f2335" dim
+    line-numbers-zero-style = white dim
+    line-numbers-plus-style = white dim 
+    line-numbers-minus-style = white dim
+    line-numbers-zero-style = white dim
+
+    wrap-left-symbol = " "
+    wrap-right-symbol = " "
+    wrap-right-prefix-symbol = " "
+
+    plus-style = syntax "#12261E"
+    plus-emph-style = syntax "#1B4327"
+    minus-style = syntax "#25171B"
+    minus-emph-style = syntax "#532426"
+
+    hunk-label = "  󰡏 "
+    hunk-header-line-number-style = "#10233A"
+    hunk-header-style = "#868E99"
+    hunk-header-file-style = "#868E99" dim
+    hunk-header-decoration-style = "#2e2e2e" ol ul
