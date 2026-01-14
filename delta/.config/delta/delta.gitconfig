@@ -1,7 +1,6 @@
 [delta]
     navigate = true
     line-numbers = true
-    syntax-theme = tokyonight_night
     dark = true
     tabs = 2
 
@@ -11,16 +10,15 @@
     file-removed-label = "[REMOVED]"
     file-renamed-label = "[RENAMED]"
     file-style = "#7797b7"
-    file-decoration-style = "#242424" ol
+    file-decoration-style = "#242424"
 
     line-numbers-left-format = "{nm:>4} "
     line-numbers-right-format = "│ {np:>4} "
     line-numbers-left-style = white dim
-    line-numbers-right-style = "#1f2335" dim
+    line-numbers-right-style = "#242424" dim
     line-numbers-zero-style = white dim
     line-numbers-plus-style = white dim 
     line-numbers-minus-style = white dim
-    line-numbers-zero-style = white dim
 
     wrap-left-symbol = " "
     wrap-right-symbol = " "
