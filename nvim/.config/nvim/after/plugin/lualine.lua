@@ -77,12 +77,12 @@ local function filepath_sep()
 end
 
 local function filepath_part1()
-	local dir1 = vim.fn.expand("%:h:t")
+	local dir1 = vim.fn.expand("%:p:h:h:t")
 	return " " .. dir1
 end
 
 local function filepath_part2()
-	local dir2 = vim.fn.expand("%:h:h:t")
+	local dir2 = vim.fn.expand("%:p:h:t")
 	return " " .. dir2
 end
 
