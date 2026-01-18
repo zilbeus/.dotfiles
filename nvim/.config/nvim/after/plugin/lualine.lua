@@ -72,6 +72,20 @@ local function filepath()
 	return " " .. path
 end
 
+local function filepath_sep()
+	return ""
+end
+
+local function filepath_part1()
+	local dir1 = vim.fn.expand("%:h:t")
+	return " " .. dir1
+end
+
+local function filepath_part2()
+	local dir2 = vim.fn.expand("%:h:h:t")
+	return " " .. dir2
+end
+
 local function session()
 	local session_name = string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
 	local session_exists = session_name ~= nil and session_name ~= ""
@@ -131,6 +145,10 @@ require("lualine").setup({
 			},
 		},
 		lualine_b = {
+			{ filepath_part1, color = { fg = c.base05 } },
+			{ filepath_sep, color = { fg = c.grey_fg }, padding = { left = 0, right = 0 } },
+			{ filepath_part2, color = { fg = c.base05 } },
+			{ filepath_sep, color = { fg = c.grey_fg }, padding = { left = 0, right = 0 } },
 			{
 				"filetype",
 				colored = false,
