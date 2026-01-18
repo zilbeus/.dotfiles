@@ -51,6 +51,13 @@ require("fzf-lua").setup({
 			["--tiebreak"] = "index",
 		},
 		multiprocess = true,
+		actions = {
+			["ctrl-s"] = FzfLua.actions.file_split,
+			["ctrl-v"] = FzfLua.actions.file_vsplit,
+			["ctrl-t"] = FzfLua.actions.file_tabedit,
+			["alt-i"] = FzfLua.actions.toggle_ignore,
+			["alt-h"] = FzfLua.actions.toggle_hidden,
+		},
 	},
 	grep = {
 		RIPGREP_CONFIG_PATH = vim.env.RIPGREP_CONFIG_PATH,
@@ -69,13 +76,6 @@ require("fzf-lua").setup({
 		},
 		actions = {
 			["ctrl-q"] = { fn = require("fzf-lua").actions.file_sel_to_qf, prefix = "select-all" },
-			files = {
-				["ctrl-s"] = FzfLua.actions.file_split,
-				["ctrl-v"] = FzfLua.actions.file_vsplit,
-				["ctrl-t"] = FzfLua.actions.file_tabedit,
-				["alt-i"] = FzfLua.actions.toggle_ignore,
-				["alt-h"] = FzfLua.actions.toggle_hidden,
-			},
 		},
 	},
 })
