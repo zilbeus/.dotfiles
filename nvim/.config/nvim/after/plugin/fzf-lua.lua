@@ -39,11 +39,18 @@ require("fzf-lua").setup({
 	},
 	keymap = {
 		builtin = { true, ["<Esc>"] = "hide" },
+		fzf = {
+			["alt-n"] = "preview-page-down",
+			["alt-p"] = "preview-page-up",
+		},
 	},
 	files = {
-		file_icons = true,
+		rg_ops = ' --files --hidden --ignore --glob "!.git" --sortr=modified',
+		fzf_opts = {
+			["--scheme"] = "path",
+			["--tiebreak"] = "index",
+		},
 		multiprocess = true,
-		formatter = "path.filename_first",
 	},
 	grep = {
 		RIPGREP_CONFIG_PATH = vim.env.RIPGREP_CONFIG_PATH,
@@ -61,8 +68,15 @@ require("fzf-lua").setup({
 			["hl"] = "#8abae1",
 		},
 		actions = {
-			["ctrl-q"] = { fn = require "fzf-lua".actions.file_sel_to_qf, prefix = "select-all" }
-		}
+			["ctrl-q"] = { fn = require("fzf-lua").actions.file_sel_to_qf, prefix = "select-all" },
+			files = {
+				["ctrl-s"] = FzfLua.actions.file_split,
+				["ctrl-v"] = FzfLua.actions.file_vsplit,
+				["ctrl-t"] = FzfLua.actions.file_tabedit,
+				["alt-i"] = FzfLua.actions.toggle_ignore,
+				["alt-h"] = FzfLua.actions.toggle_hidden,
+			},
+		},
 	},
 })
 
