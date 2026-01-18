@@ -83,6 +83,7 @@ local colors = {
 	lualine_z_fg = "#202020",
 	dashboard_header = "#7797b7",
 	notify_icon = "#7797b7",
+	menu_select = "#022745",
 }
 
 return colors
