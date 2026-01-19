@@ -1,3 +1,6 @@
+git:
+  pagers:
+    - pager: delta --dark --paging=never
 gui:
   authorColors:
      '*': '#859ba2'
