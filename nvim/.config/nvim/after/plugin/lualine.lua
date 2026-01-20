@@ -1,5 +1,5 @@
 local navic = require("nvim-navic")
-local c = require("zq.theme.monochrome.palette")
+local c = require("zq.theme.koda.palette")
 
 local lualine_theme = {
 	normal = {
@@ -145,16 +145,16 @@ require("lualine").setup({
 			},
 		},
 		lualine_b = {
-			{ filepath_part1, color = { fg = c.base05 } },
+			{ filepath_part1, color = { fg = c.lualine_b_fg } },
 			{ filepath_sep, color = { fg = c.grey_fg }, padding = { left = 0, right = 0 } },
-			{ filepath_part2, color = { fg = c.base05 } },
+			{ filepath_part2, color = { fg = c.lualine_b_fg } },
 			{ filepath_sep, color = { fg = c.grey_fg }, padding = { left = 0, right = 0 } },
 			{
 				"filetype",
 				colored = false,
 				icon_only = true,
 				padding = { left = 1, right = 0 },
-				color = { fg = c.base05 },
+				color = { fg = c.lualine_b_fg },
 			},
 			{
 				"filename",
@@ -170,7 +170,7 @@ require("lualine").setup({
 					newfile = "[NEW]",
 				},
 				padding = { left = 0, right = 1 },
-				color = { fg = c.base05 },
+				color = { fg = c.lualine_b_fg },
 			},
 		},
 		lualine_c = {
@@ -192,7 +192,7 @@ require("lualine").setup({
 					removed = "LuaLineDiffDelete",
 				},
 			},
-			"diagnostics",
+			{ "diagnostics", colored = false },
 			{
 				"lsp_status",
 				icon = "󱁻",
