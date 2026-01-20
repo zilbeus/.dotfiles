@@ -83,6 +83,7 @@ local colors = {
 	lualine_z_fg = "#202020",
 	dashboard_header = "#7797b7",
 	notify_icon = "#7797b7",
+	cmp_kind_fg = "#8692a6",
 	menu_select = "#022745",
 }
 
