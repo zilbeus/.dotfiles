@@ -1,5 +1,16 @@
 return {
 	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{
 		"kdheepak/lazygit.nvim",
 		lazy = true,
 		cmd = {
@@ -100,8 +111,13 @@ return {
 				nerd_font_variant = "normal",
 			},
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+				default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev" },
 				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						score_offset = 100,
+					},
 					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 				},
 				min_keyword_length = function(ctx)
