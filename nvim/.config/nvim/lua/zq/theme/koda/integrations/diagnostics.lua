@@ -1,12 +1,12 @@
 local colors = require("zq.theme.koda.palette")
 
 return {
-	DiagnosticSignError = { fg = colors.red, bg = colors.statuscolumn },
-	DiagnosticSignWarning = { fg = colors.yellow, bg = colors.statuscolumn },
-	DiagnosticSignInfo = { fg = colors.blue, bg = colors.statuscolumn },
-	DiagnosticSignHint = { fg = colors.dark_purple, bg = colors.statuscolumn },
-	DiagnosticSignCurrentLineError = { fg = colors.red, bg = colors.statuscolumn },
-	DiagnosticSignCurrentLineWarning = { fg = colors.yellow, bg = colors.statuscolumn },
-	DiagnosticSignCurrentLineInfo = { fg = colors.blue, bg = colors.statuscolumn },
-	DiagnosticSignCurrentLineHint = { fg = colors.dark_purple, bg = colors.statuscolumn },
+	DiagnosticSignError = { fg = colors.error, bg = colors.statuscolumn },
+	DiagnosticSignWarning = { fg = colors.warning, bg = colors.statuscolumn },
+	DiagnosticSignInfo = { fg = colors.info, bg = colors.statuscolumn },
+	DiagnosticSignHint = { fg = colors.hint, bg = colors.statuscolumn },
+	DiagnosticSignCurrentLineError = { fg = colors.error, bg = colors.statuscolumn },
+	DiagnosticSignCurrentLineWarning = { fg = colors.warning, bg = colors.statuscolumn },
+	DiagnosticSignCurrentLineInfo = { fg = colors.info, bg = colors.statuscolumn },
+	DiagnosticSignCurrentLineHint = { fg = colors.hint, bg = colors.statuscolumn },
 }
