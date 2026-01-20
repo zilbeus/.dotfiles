@@ -84,6 +84,12 @@ return {
 		---@type blink.cmp.Config
 		opts = {
 			fuzzy = { implementation = "rust" },
+			cmdline = {
+				keymap = { preset = "inherit" },
+				completion = {
+					menu = { auto_show = true },
+				},
+			},
 			keymap = { preset = "default" },
 			completion = {
 				menu = {
