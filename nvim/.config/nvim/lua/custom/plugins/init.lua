@@ -92,8 +92,14 @@ return {
 			},
 			keymap = { preset = "default" },
 			completion = {
+				documentation = {
+					window = {
+						border = "single",
+					},
+				},
 				menu = {
-					border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+					-- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+					border = "single",
 					winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
 					draw = {
 						columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
@@ -111,6 +117,11 @@ return {
 							},
 						},
 					},
+				},
+			},
+			signature = {
+				window = {
+					border = "single",
 				},
 			},
 			appearance = {
