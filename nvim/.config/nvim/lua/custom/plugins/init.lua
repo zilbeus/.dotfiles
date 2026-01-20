@@ -79,10 +79,11 @@ return {
 	},
 	{
 		"saghen/blink.cmp",
-		version = "v0.11.0",
+		version = "v1.8.0",
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
+			fuzzy = { implementation = "rust" },
 			keymap = { preset = "default" },
 			completion = {
 				menu = {
