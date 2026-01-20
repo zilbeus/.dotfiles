@@ -60,7 +60,7 @@ local apply_defaults = function()
 
 	-- Apply highlights
 	local hl_groups = groups.setup(palette, config.options)
-	hl_groups = require("koda.utils").resolve(hl_groups) -- unpack styles
+	hl_groups = groups.setup(palette, config.options)
 
 	for group, hl in pairs(hl_groups) do
 		vim.api.nvim_set_hl(0, group, hl)
