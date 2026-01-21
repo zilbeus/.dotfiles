@@ -164,12 +164,12 @@ return {
 		end,
 
 		-- example calling setup directly for each LSP
-		config = function()
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
-			-- local lspconfig = require("lspconfig")
-
-			-- vim.lsp.config["lua-ls"].setup({ capabilities = capabilities })
-		end,
+		-- config = function()
+		-- 	local capabilities = require("blink.cmp").get_lsp_capabilities()
+		-- 	-- local lspconfig = require("lspconfig")
+		--
+		-- 	vim.lsp.config["lua-ls"].setup({ capabilities = capabilities })
+		-- end,
 	},
 	{
 		"stevearc/conform.nvim",

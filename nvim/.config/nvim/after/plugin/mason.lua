@@ -5,43 +5,33 @@ require("zq.lsp")
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-	-- clangd = {},
-	gopls = {},
-	-- pyright = {},
-	["rust-analyzer"] = {},
-	["typescript-language-server"] = {},
-	["lua-language-server"] = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
+	gopls = { mason_reg_name = "gopls" },
+	["rust_analyzer"] = { mason_reg_name = "rust-analyzer" },
+	["ts_ls"] = { mason_reg_name = "typescript-language-server" },
+	["lua_ls"] = {
+		mason_reg_name = "lua-language-server",
+		settings = {
+			Lua = {
+				workspace = { checkThirdParty = false },
+				telemetry = { enable = false },
+			},
 		},
 	},
 }
 
--- Ensure the servers above are installed
-local mason_lspconfig = require("mason-lspconfig")
+local installed_package_names = require("mason-registry").get_installed_package_names()
+for _, v in pairs(vim.tbl_keys(servers)) do
+	if not vim.tbl_contains(installed_package_names, servers[v].mason_reg_name) then
+		vim.cmd(":MasonInstall " .. servers[v].mason_reg_name)
+	end
+end
 
-mason_lspconfig.setup({
-	-- ensure_installed = vim.tbl_keys(servers),
-})
+vim.lsp.enable(vim.tbl_keys(servers))
 
 for _, value in pairs(vim.tbl_keys(servers)) do
 	vim.lsp.config[value] = {
 		capabilities = capabilities,
 		on_attach = on_attach,
-		settings = servers[value],
+		settings = servers[value].settings,
 	}
 end
-
--- mason_lspconfig.setup_handlers({
--- 	function(server_name)
--- 		if server_name == "jdtls" then
--- 			return
--- 		end
--- 		require("lspconfig")[server_name].setup({
--- 			capabilities = capabilities,
--- 			on_attach = on_attach,
--- 			settings = servers[server_name],
--- 		})
--- 	end,
--- })
