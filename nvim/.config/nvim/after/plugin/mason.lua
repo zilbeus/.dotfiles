@@ -8,10 +8,9 @@ local servers = {
 	-- clangd = {},
 	gopls = {},
 	-- pyright = {},
-	rust_analyzer = {},
-	tsserver = {},
-
-	lua_ls = {
+	["rust-analyzer"] = {},
+	["typescript-language-server"] = {},
+	["lua-language-server"] = {
 		Lua = {
 			workspace = { checkThirdParty = false },
 			telemetry = { enable = false },
@@ -23,18 +22,26 @@ local servers = {
 local mason_lspconfig = require("mason-lspconfig")
 
 mason_lspconfig.setup({
-	ensure_installed = vim.tbl_keys(servers),
+	-- ensure_installed = vim.tbl_keys(servers),
 })
 
-mason_lspconfig.setup_handlers({
-	function(server_name)
-		if server_name == "jdtls" then
-			return
-		end
-		require("lspconfig")[server_name].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = servers[server_name],
-		})
-	end,
-})
+for _, value in pairs(vim.tbl_keys(servers)) do
+	vim.lsp.config[value] = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = servers[value],
+	}
+end
+
+-- mason_lspconfig.setup_handlers({
+-- 	function(server_name)
+-- 		if server_name == "jdtls" then
+-- 			return
+-- 		end
+-- 		require("lspconfig")[server_name].setup({
+-- 			capabilities = capabilities,
+-- 			on_attach = on_attach,
+-- 			settings = servers[server_name],
+-- 		})
+-- 	end,
+-- })
