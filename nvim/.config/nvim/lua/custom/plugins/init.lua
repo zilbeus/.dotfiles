@@ -57,7 +57,6 @@ return {
 	},
 	"luukvbaal/statuscol.nvim",
 	"tpope/vim-fugitive",
-	"tpope/vim-sleuth",
 	{
 		"LintaoAmons/bookmarks.nvim",
 		dependencies = {
