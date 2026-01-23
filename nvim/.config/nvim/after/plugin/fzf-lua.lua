@@ -33,6 +33,10 @@ require("fzf-lua").setup({
 			title_pos = "left",
 		},
 	},
+	code_actions = {
+		async_or_timeout = 5000,
+		previewer = "codeaction_native",
+	},
 	hls = {
 		border = "FzfLuaBorder",
 		preview_border = "FzfLuaBorderPreview",
