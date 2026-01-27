@@ -15,12 +15,12 @@ vim.keymap.set("n", "<leader>hs", "<cmd>FzfLua helptags<cr>", { desc = "search h
 -- DIAGNOSTICS
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set(
-	"n",
-	"<leader>q",
-	"<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>",
-	{ desc = "Open buffer diagnostics list" }
+    "n",
+    "<leader>q",
+    "<cmd>FzfLua diagnostics_document<cr>",
+    { desc = "Open buffer diagnostics list" }
 )
-vim.keymap.set("n", "<leader>Q", "<cmd>Trouble diagnostics toggle focus=true<cr>", { desc = "Open diagnostics list" })
+vim.keymap.set("n", "<leader>Q", "<cmd>FzfLua diagnostics_workspace<cr>", { desc = "Open diagnostics list" })
 
 -- HALF PAGE NAVIGATION
 -- vim.keymap.set("n", "<C-d>", "<C-d>zz")
