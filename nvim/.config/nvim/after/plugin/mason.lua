@@ -7,7 +7,10 @@ require("zq.lsp")
 local servers = {
 	gopls = { mason_reg_name = "gopls" },
 	["rust_analyzer"] = { mason_reg_name = "rust-analyzer" },
-	["ts_ls"] = { mason_reg_name = "typescript-language-server" },
+	["ts_ls"] = {
+		mason_reg_name = "typescript-language-server",
+		settings = { preferences = { importModuleSpecifier = "relative" } },
+	},
 	["lua_ls"] = {
 		mason_reg_name = "lua-language-server",
 		settings = {
