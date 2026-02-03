@@ -10,6 +10,9 @@ local servers = {
 	["ts_ls"] = {
 		mason_reg_name = "typescript-language-server",
 		settings = { preferences = { importModuleSpecifier = "relative" } },
+		init_options = {
+			preferences = { importModuleSpecifierPreference = "relative" },
+		},
 	},
 	["lua_ls"] = {
 		mason_reg_name = "lua-language-server",
@@ -36,5 +39,6 @@ for _, value in pairs(vim.tbl_keys(servers)) do
 		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = servers[value].settings,
+		init_options = servers[value].init_options,
 	}
 end
