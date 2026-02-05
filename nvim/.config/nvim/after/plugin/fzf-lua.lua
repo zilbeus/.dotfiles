@@ -25,7 +25,7 @@ require("fzf-lua").setup({
         -- 	"┗",
         -- 	"┃",
         -- },
-        backdrop = 100,
+        backdrop = 50,
         preview = {
             border = "single",
             vertical = "up:55%",
