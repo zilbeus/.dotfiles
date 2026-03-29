@@ -89,6 +89,7 @@ local colors = {
 	menu_select = "#022745",
 	breakpoint_stopped_line_bg = "#1e2b38",
 	breakpoint_stopped_statuscol_bg = "#2b3f52",
+	notif_bg = "#1a1a1a",
 }
 
 return colors
