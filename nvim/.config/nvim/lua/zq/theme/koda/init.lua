@@ -29,6 +29,7 @@ local integrations = {
 	"zq.theme.koda.integrations.navic",
 	"zq.theme.koda.integrations.noice",
 	"zq.theme.koda.integrations.cmp",
+	"zq.theme.koda.integrations.dap",
 }
 
 local apply_integration = function(integrationName)

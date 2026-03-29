@@ -44,8 +44,14 @@ dap.configurations.go = {
 	},
 }
 
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointText", linehl = "", numhl = "" })
+vim.fn.sign_define(
+	"DapBreakpointCondition",
+	{ text = "", texthl = "DapBreakpointConditionText", linehl = "", numhl = "" }
+)
+vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPointText", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStoppedText", linehl = "DapStoppedLine", numhl = "" })
+vim.fn.sign_define(
+	"DapBreakpointRejected",
+	{ text = "", texthl = "DapBreakpointRejectedText", linehl = "", numhl = "" }
+)
