@@ -86,6 +86,10 @@ local function filepath_part2()
 	return " " .. dir2
 end
 
+local function show_full_filepath()
+	return vim.api.nvim_win_get_width(0) >= 120
+end
+
 local function session()
 	local session_name = string.upper(vim.fn.fnamemodify(vim.v.this_session, ":t"))
 	local session_exists = session_name ~= nil and session_name ~= ""
@@ -145,10 +149,10 @@ require("lualine").setup({
 			},
 		},
 		lualine_b = {
-			{ filepath_part1, color = { fg = c.lualine_b_fg } },
-			{ filepath_sep, color = { fg = c.grey_fg }, padding = { left = 0, right = 0 } },
-			{ filepath_part2, color = { fg = c.lualine_b_fg } },
-			{ filepath_sep, color = { fg = c.grey_fg }, padding = { left = 0, right = 0 } },
+			{ filepath_part1, color = { fg = c.lualine_b_fg }, cond = show_full_filepath },
+			{ filepath_sep, color = { fg = c.grey_fg }, padding = { left = 0, right = 0 }, cond = show_full_filepath },
+			{ filepath_part2, color = { fg = c.lualine_b_fg }, cond = show_full_filepath },
+			{ filepath_sep, color = { fg = c.grey_fg }, padding = { left = 0, right = 0 }, cond = show_full_filepath },
 			{
 				"filetype",
 				colored = false,
