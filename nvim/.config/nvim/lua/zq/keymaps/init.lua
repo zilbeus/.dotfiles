@@ -14,12 +14,7 @@ vim.keymap.set("n", "<leader>hs", "<cmd>FzfLua helptags<cr>", { desc = "search h
 
 -- DIAGNOSTICS
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set(
-    "n",
-    "<leader>q",
-    "<cmd>FzfLua diagnostics_document<cr>",
-    { desc = "Open buffer diagnostics list" }
-)
+vim.keymap.set("n", "<leader>q", "<cmd>FzfLua diagnostics_document<cr>", { desc = "Open buffer diagnostics list" })
 vim.keymap.set("n", "<leader>Q", "<cmd>FzfLua diagnostics_workspace<cr>", { desc = "Open diagnostics list" })
 
 -- HALF PAGE NAVIGATION
@@ -118,3 +113,4 @@ vim.keymap.set("n", "<leader>ts", "<cmd>TermSelect<cr>", { desc = "select termin
 vim.keymap.set("n", "<leader>tr", "<cmd>ToggleTermSetName<cr>", { desc = "rename terminal" })
 
 require("zq.keymaps.lsp")
+require("zq.keymaps.dap")
