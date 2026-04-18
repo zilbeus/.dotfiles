@@ -44,6 +44,16 @@ dap.configurations.go = {
 	},
 }
 
+dap.configurations.java = {
+	{
+		type = "java",
+		request = "attach",
+		name = "Attach to Spring Boot",
+		hostName = "127.0.0.1",
+		port = 5005,
+	},
+}
+
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointText", linehl = "", numhl = "" })
 vim.fn.sign_define(
 	"DapBreakpointCondition",
