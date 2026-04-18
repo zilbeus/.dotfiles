@@ -1,3 +1,12 @@
+local wk = require("which-key")
+wk.add({
+	{ "<leader>f", group = "files" },
+	{ "<leader>s", group = "search" },
+	{ "<leader>l", group = "llm" },
+	{ "<leader>n", group = "notes" },
+	{ "<leader>g", group = "git" },
+	{ "<leader>b", group = "buffers" },
+})
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files resume=true<cr>", { desc = "search files" })
 vim.keymap.set("n", "<leader>sk", "<cmd>FzfLua keymaps<cr>", { desc = "search keymaps" })
