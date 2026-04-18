@@ -54,7 +54,7 @@ dap.configurations.java = {
 	},
 }
 
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointText", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointText", linehl = "", numhl = "" })
 vim.fn.sign_define(
 	"DapBreakpointCondition",
 	{ text = "", texthl = "DapBreakpointConditionText", linehl = "", numhl = "" }
