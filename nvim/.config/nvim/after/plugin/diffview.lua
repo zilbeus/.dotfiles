@@ -4,14 +4,20 @@ require("diffview").setup({
 	enhanced_diff_hl = true,
 	watch_index = true,
 	view = {
+		default = {
+			layout = "diff1_inline",
+		},
 		merge_tool = {
 			layout = "diff3_mixed",
-		}
+		},
+		inline = {
+			style = "unified",
+		},
 	},
 	hooks = {
 		diff_buf_win_enter = function(bufnr, winid, ctx)
 			-- fixes underline in diffview buffers
-			vim.wo[winid].culopt = 'number'
+			vim.wo[winid].culopt = "number"
 			if ctx.layout_name:match("^diff2") then
 				if ctx.symbol == "a" then
 					vim.opt_local.winhl = table.concat({

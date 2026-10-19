@@ -20,15 +20,12 @@ return {
 		"NeogitOrg/neogit",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"sindrets/diffview.nvim",
+			"dlyongemallo/diffview-plus.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
 	},
 	{
-		"sindrets/diffview.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
+		"dlyongemallo/diffview-plus.nvim",
 	},
 	{
 		"FabijanZulj/blame.nvim",
