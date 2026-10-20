@@ -10,3 +10,5 @@ require("mini.indentscope").setup({
 		try_as_border = true,
 	},
 })
+
+-- autocmd Filetype toggleterm lua vim.b.miniindentscope_disable = true
