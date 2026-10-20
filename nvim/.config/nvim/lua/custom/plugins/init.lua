@@ -285,18 +285,4 @@ return {
 	{
 		"RRethy/vim-illuminate",
 	},
-	{
-		"mistweaverco/kulala.nvim",
-		keys = {
-			{ "<leader>Rs", desc = "send request" },
-			{ "<leader>Ra", desc = "send all requests" },
-			{ "<leader>Rb", desc = "open scratchpad" },
-		},
-		ft = { "http", "rest" },
-		opts = {
-			global_keymaps = true,
-			global_keymaps_prefix = "<leader>R",
-			kulala_keymaps_prefix = "",
-		},
-	},
 }
