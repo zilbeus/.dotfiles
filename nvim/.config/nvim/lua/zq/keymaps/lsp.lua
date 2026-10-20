@@ -8,77 +8,22 @@ end
 
 nmap("<leader>csr", vim.lsp.buf.rename, "rename symbol")
 
-vim.keymap.set(
-	"n",
-	"<leader>ci",
-	"<cmd>FzfLua lsp_implementations  jump1=true<cr>",
-	{ desc = "implementations" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>cdd",
-	"<cmd>FzfLua lsp_definitions  jump1=true<cr>",
-	{ desc = "definitions" }
-)
-vim.keymap.set(
-	"n",
-	"gdd",
-	"<cmd>FzfLua lsp_definitions  jump1=true<cr>",
-	{ desc = "definitions" }
-)
+vim.keymap.set("n", "<leader>ci", "<cmd>FzfLua lsp_implementations  jump1=true<cr>", { desc = "implementations" })
+vim.keymap.set("n", "<leader>cdd", "<cmd>FzfLua lsp_definitions  jump1=true<cr>", { desc = "definitions" })
+vim.keymap.set("n", "gdd", "<cmd>FzfLua lsp_definitions  jump1=true<cr>", { desc = "definitions" })
 vim.keymap.set("n", "gdD", "<cmd>Glance definitions<cr>", { desc = "Peek definitions" })
-vim.keymap.set(
-	"n",
-	"<leader>cdt",
-	"<cmd>FzfLua lsp_typedefs  jump1=true<cr>",
-	{ desc = "type definitions" }
-)
-vim.keymap.set(
-	"n",
-	"gdt",
-	"<cmd>FzfLua lsp_typedefs  jump1=true<cr>",
-	{ desc = "type definitions" }
-)
+vim.keymap.set("n", "<leader>cdt", "<cmd>FzfLua lsp_typedefs  jump1=true<cr>", { desc = "type definitions" })
+vim.keymap.set("n", "gdt", "<cmd>FzfLua lsp_typedefs  jump1=true<cr>", { desc = "type definitions" })
 vim.keymap.set("n", "gdT", "<cmd>Glance type_definitions<cr>", { desc = "Peek type definitions" })
-vim.keymap.set(
-	"n",
-	"<leader>ca",
-	"<cmd>FzfLua lsp_code_actions<cr>",
-	{ desc = "code actions" }
-)
+vim.keymap.set("n", "<leader>ca", "<cmd>FzfLua lsp_code_actions<cr>", { desc = "code actions" })
 vim.keymap.set("n", "gdI", "<cmd>Glance implementations<cr>", { desc = "Peek implementations" })
 vim.keymap.set("n", "gdR", "<cmd>Glance references<cr>", { desc = "Peek references" })
-vim.keymap.set(
-	"n",
-	"<leader>css",
-	"<cmd>FzfLua lsp_document_symbols<cr>",
-	{ desc = "code symbols" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>cr",
-	"<cmd>FzfLua lsp_references  jump1=true<cr>",
-	{ desc = "code references" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>sd",
-	"<cmd>FzfLua diagnostics_workspace<cr>",
-	{ desc = "search diagnostics" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>cS",
-	"<cmd>FzfLua lsp_live_workspace_symbols<cr>",
-	{ desc = "workspace symbols" }
-)
+vim.keymap.set("n", "<leader>css", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "code symbols" })
+vim.keymap.set("n", "<leader>cr", "<cmd>FzfLua lsp_references  jump1=true<cr>", { desc = "code references" })
+vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua diagnostics_workspace<cr>", { desc = "search diagnostics" })
+vim.keymap.set("n", "<leader>cS", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", { desc = "workspace symbols" })
 
-vim.keymap.set(
-	"n",
-	"gS",
-	"<cmd>FzfLua lsp_live_workspace_symbols<cr>",
-	{ desc = "workspace symbols" }
-)
+vim.keymap.set("n", "gS", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", { desc = "workspace symbols" })
 
 -- See `:help K` for why this keymap
 nmap("K", vim.lsp.buf.hover, "Hover Documentation")
