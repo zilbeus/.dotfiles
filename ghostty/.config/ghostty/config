@@ -130,7 +130,7 @@ font-feature =
 # depending on your `window-inherit-font-size` setting. If that setting is
 # true, only the first window will be affected by this change since all
 # subsequent windows will inherit the font size of the previous window.
-font-size = 12.5
+font-size = 14.0
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -799,7 +799,8 @@ unfocused-split-opacity = 1.0
 # that rectangle and can be used to carefully control the dimming effect.
 # 
 # This will default to the background color.
-unfocused-split-fill = 
+unfocused-split-fill =
+split-divider-color = #444444
 
 # The command to run, usually a shell. If this is not an absolute path, it'll
 # be looked up in the `PATH`. If this is not set, a default will be looked up
@@ -1214,10 +1215,13 @@ keybind = ctrl+a>equal=equalize_splits
 keybind = ctrl+a>s=write_scrollback_file:open
 keybind = alt+e=scroll_page_lines:1
 keybind = alt+y=scroll_page_lines:-1
-keybind = alt+u=scroll_page_up
-keybind = alt+d=scroll_page_down
-keybind = alt+u+shift=scroll_page_fractional:0.5
-keybind = alt+d+shift=scroll_page_fractional:-0.5
+keybind = alt+u=scroll_page_fractional:-0.25
+keybind = alt+d=scroll_page_fractional:0.25
+keybind = alt+u+shift=scroll_page_up
+keybind = alt+d+shift=scroll_page_down
+keybind = alt+g=scroll_to_top
+keybind = alt+g+shift=scroll_to_bottom
+keybind = global:alt+escape=toggle_quick_terminal
 
 # Horizontal window padding. This applies padding between the terminal cells
 # and the left and right window borders. The value is in points, meaning that
@@ -1741,11 +1745,12 @@ quick-terminal-screen = main
 # Duration (in seconds) of the quick terminal enter and exit animation.
 # Set it to 0 to disable animation completely. This can be changed at
 # runtime.
-quick-terminal-animation-duration = 0.2
+quick-terminal-animation-duration = 0.1
 
 # Automatically hide the quick terminal when focus shifts to another window.
 # Set it to false for the quick terminal to remain open even when it loses focus.
 quick-terminal-autohide = true
+quick-terminal-size = 40%
 
 # Whether to enable shell integration auto-injection or not. Shell integration
 # greatly enhances the terminal experience by enabling a number of features:
@@ -2280,5 +2285,5 @@ auto-update = check
 # 
 # This only works on macOS since only macOS has an auto-update feature.
 auto-update-channel = 
-
+macos-titlebar-style=tabs
 gtk-custom-css=./style.css
