@@ -14,15 +14,37 @@ return {
 		config = function()
 			---@type opencode.Opts
 			vim.g.opencode_opts = {
-				-- Your configuration, if any; goto definition on the type or field for details
+				ask = {
+					snacks = {
+						expand = false,
+						win = {
+							relative = "cursor",
+							row = 1,
+							col = 0,
+							width = 0,
+							height = 10,
+							border = "top_bottom",
+							-- footer_keys = false,
+							wo = {
+								winhighlight = table.concat({
+									"NormalFloat:OpenCodeInputNormal",
+									"FloatBorder:OpenCodeInputBorder",
+									"FloatTitle:OpenCodeInputTitle",
+									"SnacksInputTitle:OpenCodeInputTitle",
+									"FloatFooter:OpenCodeInputFooter",
+									"SnacksFooter:OpenCodeInputFooter",
+									"SnacksFooterKey:OpenCodeInputFooterKey",
+									"SnacksFooterDesc:OpenCodeInputFooterDesc",
+								}, ","),
+							},
+						},
+					},
+				},
 			}
 
 			vim.o.autoread = true -- Required for `opts.events.reload`
 
 			-- Recommended/example keymaps
-			vim.keymap.set({ "n", "x" }, "<leader>la", function()
-				require("opencode").ask("@this: ", { submit = true })
-			end, { desc = "Ask opencode…" })
 			vim.keymap.set({ "n", "x" }, "<leader>ls", function()
 				require("opencode").select()
 			end, { desc = "Execute opencode action…" })

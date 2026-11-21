@@ -90,6 +90,17 @@ vim.keymap.set("n", "<A-H>", "<cmd>tabprevious<cr>", { desc = "previous tab" })
 vim.keymap.set("n", "<leader>tc", "<cmd>tabnew<cr>", { desc = "new tab" })
 vim.keymap.set("n", "<leader>tk", "<cmd>tabclose<cr>", { desc = "kill tab" })
 
+-- OPENCODE
+vim.keymap.set({ "n", "v" }, "<leader>la", function()
+	local filename = vim.fn.expand("%:~:.")
+	if filename == "" then
+		filename = "[No Name]"
+	end
+
+	require("opencode.config").opts.ask.prompt = " " .. filename
+	require("opencode").ask("@this: ", { submit = true })
+end, { desc = "Ask opencode…" })
+
 -- ILLUMINATE
 vim.keymap.set("n", "<leader>ti", "<cmd>IlluminateToggle<cr>", { desc = "toggle cursor word match highlight" })
 
