@@ -90,8 +90,9 @@ local colors = {
 	breakpoint_stopped_line_bg = "#1e2b38",
 	breakpoint_stopped_statuscol_bg = "#2b3f52",
 	notif_bg = "#1a1a1a",
-	opencode_input_border_bg = "#1f1f1f",
-	opencode_input_bg = "#151512",
+	opencode_input_border_bg = "#151515",
+	opencode_input_border_fg = "#465c73",
+	opencode_input_bg = "#121212",
 }
 
 return colors

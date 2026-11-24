@@ -20,10 +20,25 @@ return {
 						win = {
 							relative = "cursor",
 							row = 1,
-							col = 0,
-							width = 0,
-							height = 10,
+							col = function()
+								local win = vim.api.nvim_get_current_win()
+								local info = vim.fn.getwininfo(win)[1]
+								local cursor = vim.api.nvim_win_get_cursor(win)
+								local cursor_screen_col = vim.fn.screenpos(win, cursor[1], cursor[2] + 1).col
+
+								return info.wincol + info.textoff - cursor_screen_col
+							end,
+							width = function()
+								local win = vim.api.nvim_get_current_win()
+								local info = vim.fn.getwininfo(win)[1]
+
+								return vim.api.nvim_win_get_width(win) - info.textoff
+							end,
+							height = 5,
 							border = "top_bottom",
+							backdrop = {
+								blend = 85,
+							},
 							-- footer_keys = false,
 							wo = {
 								winhighlight = table.concat({
